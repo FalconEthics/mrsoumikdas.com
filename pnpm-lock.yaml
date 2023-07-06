@@ -8,6 +8,9 @@ dependencies:
   '@motionone/solid':
     specifier: ^10.16.2
     version: 10.16.2(solid-js@1.7.6)
+  '@solidjs/router':
+    specifier: ^0.8.2
+    version: 0.8.2(solid-js@1.7.6)
   sass:
     specifier: ^1.63.6
     version: 1.63.6
@@ -902,6 +905,14 @@ packages:
       solid-js: ^1.6.12
     dependencies:
       solid-js: 1.7.6
+
+  /@solidjs/router@0.8.2(solid-js@1.7.6):
+    resolution: {integrity: sha512-gUKW+LZqxtX6y/Aw6JKyy4gQ9E7dLqp513oB9pSYJR1HM5c56Pf7eijzyXX+b3WuXig18Cxqah4tMtF0YGu80w==}
+    peerDependencies:
+      solid-js: ^1.5.3
+    dependencies:
+      solid-js: 1.7.6
+    dev: false
 
   /@types/babel__core@7.20.1:
     resolution: {integrity: sha512-aACu/U/omhdk15O4Nfb+fHgH/z3QsfQzpnvRZhYhThms83ZnAOZz7zZAWO7mn2yyNQaA4xTO8GLK3uqFU4bYYw==}
