@@ -1,4 +1,10 @@
+import logo from "../assets/logo.png";
+import cool from "../assets/cool.jpg";
+
 export const data = {
+  logo: logo,
+  logo: logo,
+  pic: cool,
   title: "Welcome to my part of the internet!",
   header: "Hey it's Soumik Das here",
   subtitle: "I'm a Frontend Developer",
