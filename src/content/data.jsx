@@ -22,7 +22,7 @@ export const data = {
     frameworks: [
       "React/React Native",
       "Solid.js",
-      "Framer Motion",
+      "Motion One",
       "Vue.js",
       "Svelte",
     ],
