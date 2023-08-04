@@ -1,0 +1,46 @@
+{
+  "title": "Know more about me and my Work",
+  "opening": "India annually produces 1.5 million engineers every year but I believe that am not just another Indian engineer among those millions rather I am among the few passionate ones",
+  "section0": "Work Experiences",
+  "work2": {
+    "title": "React Native",
+    "bold": "Developer",
+    "company": "Tripsy Games",
+    "status": "present",
+    "desc0": "Currently working as a react-native web developer at TripsyGames (formerly known as Wisedeck Technologies)",
+    "desc1": "I work closely with a team of developers, designers, and project managers to ensure timely delivery of projects and high-quality outputs. I am responsible for developing and maintaining the front-end of both web and android applications, as well as implementing new features and functionalities."
+  },
+  "work1": {
+    "title": "Front-end",
+    "bold": "Developer",
+    "company": "Trace-works",
+    "status": "2022",
+    "desc0": " joined Traceworks as an intern last year to start my cs journey and gain some experience in web dev. domain",
+    "desc1": "I primarily worked there with React & Firebase there and got to learn from some great industry experts. Overall i gained a lot of experience there but unfortunately had to leave after a few months for some uncertain reasons."
+  },
+  "work0": {
+    "title": "Cc & Creatives",
+    "bold": "Team Lead",
+    "company": "NGL INDIA",
+    "status": "2021",
+    "desc0": "I joined NGL INDIA (branch of ngl.one Germany) in 2021 as a Video Editor/VFX artist there at first but later on I was promoted to Handle all the Creatives and Content Creation operations. In easy words I was responsible for all the uploads going live on their Social handles and YouTube Channel.",
+    "desc1": "Only within the first two months of my joining I made NGL India reach 8k+ online audience in total."
+  },
+  "section1": "My Academics",
+  "education0": {
+    "title": "University of London,",
+    "bold": "Goldsmiths",
+    "course": "BSc in Computer Science",
+    "status": "present",
+    "desc": "I am doing my B.Sc in Computer Science Engineering from Goldsmiths University of London, UK with Artificial Intelligence as my Honorary Subject/Specialization."
+  },
+  "education1": {
+    "title": "Central Institute of",
+    "bold": "Technology",
+    "course": "Diploma in CSE",
+    "status": "2019 to 2022",
+    "desc": "I did my Diploma in Computer Science Engineering from Central Institute of Technology, Kokrajhar, Assam, India with a CGPA of 7.6 in 2022"
+  },
+  "section2": "My Certifications",
+  "contact": "Contact for more info"
+}
