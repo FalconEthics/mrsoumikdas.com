@@ -1,5 +1,5 @@
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const jsonLd = {
@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <main className="flex min-h-screen flex-col items-center justify-between">
         <Nav />
-        <h1>Home Route</h1>
+        <h1>Home</h1>
         <Footer />
       </main>
 

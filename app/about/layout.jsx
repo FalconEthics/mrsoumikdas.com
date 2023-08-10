@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = {
+export const metadata = {
   title: "Soumik Das | ABOUT",
   description:
     "Know more about me and my Work, India annually produces 1.5 million engineers every year but I believe that am not just another Indian engineer among those millions rather I am among the few passionate ones.",
@@ -36,12 +35,11 @@ export const metadata: Metadata = {
 
 export default function AboutLayout({
   children,
-}: {
-  children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
-      <body></body>
+      <body>{children}</body>
     </html>
   );
 }

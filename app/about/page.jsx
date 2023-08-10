@@ -26,18 +26,18 @@ export default function About() {
   };
 
   return (
-    <div>
-      <div className="flex min-h-screen flex-col items-center justify-between">
-        <Nav />
-        <h1>About Route</h1>
-        <Footer />
-      </div>
+      <div>
+        <div className="flex min-h-screen flex-col items-center justify-between">
+          <Nav />
+          <h1>About Route</h1>
+          <Footer />
+        </div>
 
-      {/* schema for bots */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-    </div>
+        {/* schema for bots */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </div>
   );
 }

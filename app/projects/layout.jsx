@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = {
+export const metadata = {
   title: "Soumik Das | PROJECTS",
   description: "Explore some of the best projects of mine with source code!",
   keywords: [
@@ -36,12 +35,11 @@ export const metadata: Metadata = {
 
 export default function ProjectsLayout({
   children,
-}: {
-  children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
-      <body></body>
+      <body>{children}</body>
     </html>
   );
 }

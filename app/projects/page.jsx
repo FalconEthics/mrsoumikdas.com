@@ -1,7 +1,7 @@
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
-export default function Projects() {
+const Projects = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -26,7 +26,7 @@ export default function Projects() {
   };
 
   return (
-    <div>
+    <>
       <div className="flex min-h-screen flex-col items-center justify-between">
         <Nav />
         <h1>Projects Route</h1>
@@ -38,6 +38,8 @@ export default function Projects() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </div>
+    </>
   );
-}
+};
+
+export default Projects;
