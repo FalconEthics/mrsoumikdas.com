@@ -32,11 +32,11 @@ export default function Nav() {
 
   return (
     <>
-      <div className="relative w-screen py-5 px-10 flex flex-row justify-between items-center">
+      <div className="relative w-screen py-5 px-10 md:px-40 flex flex-row justify-between items-center overflow-auto">
         <Image src={flatLogo} alt="Soumik Das" />
 
         <div>
-          <div className="flec-row justify-center items-center space-x-4 font-mono hidden md:flex">
+          <div className="flex-row justify-center items-center space-x-4 font-mono hidden md:flex">
             {routes.map((item, index) => {
               return (
                 <button
@@ -66,7 +66,7 @@ export default function Nav() {
             onClick={() => setClicked(!clicked)}
             src={closeBtn}
             alt="Close Menu"
-            className="md:hidden"
+            className="md:hidden z-50"
           />
         )}
         <Image
@@ -81,9 +81,9 @@ export default function Nav() {
             e.stopPropagation();
             setClicked(!clicked);
           }}
-          className="w-screen h-screen backdrop-blur-sm absolute top-0 right-0 z-50 flex justify-center items-start"
+          className="overflow-clip w-screen h-screen backdrop-blur-md fade-in absolute top-0 right-0 z-50 flex justify-center items-start"
         >
-          <div className="p-6 pl-10 pr-0 flex flex-col text-xl w-8/12 shadow-2xl shadow-main rounded-2xl mt-[30%]">
+          <div className="slide-in p-6 pl-10 pr-0 flex flex-col text-xl w-8/12 shadow-2xl shadow-main rounded-2xl mt-[30%] bg-black bg-opacity-80">
             {routes.map((item, index) => {
               return (
                 <Link
