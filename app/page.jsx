@@ -8,18 +8,18 @@ import Carousel from "./components/Carousel";
 import Banner from "./assets/home/banner.avif";
 import Rect from "./assets/home/rect.avif";
 import Line from "./assets/home/line.avif";
-import Skills from "./assets/home/Skills.png";
+import Skills from "./assets/home/Skills.svg";
 import Bg from "./assets/home/bg.avif";
 import About from "./assets/home/about.avif";
 import { BiShowAlt } from "@react-icons/all-files/bi/BiShowAlt";
 import { FaAngleDoubleRight } from "@react-icons/all-files/fa/FaAngleDoubleRight";
 import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
 // for slides
-import Likey from "./assets/home/likey.avif";
-import Keeper from "./assets/home/keeper.avif";
-import Oiram from "./assets/home/oiram.avif";
-import Appy3d from "./assets/home/appy3d.avif";
-import CovidUn from "./assets/home/covid.avif";
+import p2 from "./assets/home/p2.avif";
+import p1 from "./assets/home/p1.avif";
+import p5 from "./assets/home/p5.avif";
+import p4 from "./assets/home/p4.avif";
+import p3 from "./assets/home/p3.avif";
 
 export default function Home() {
   // schema for google bots
@@ -60,7 +60,38 @@ export default function Home() {
     },
   };
 
-  const slides = [Keeper, Likey, CovidUn, Appy3d, Oiram]
+  const slides = [
+    {
+      img: p1,
+      title: "LIKELY",
+      desc: "A social media platform frontend inspired from Twitter and Insta made with Vue.js",
+      url: "https://github.com/FalconEthics/Likely",
+    },
+    {
+      img: p2,
+      title: "Appy3D",
+      desc: "a 3D website that features stunning animations that activate as the userscrolls",
+      url: "https://appy3d-ooesozt5u-falconethics.vercel.app/",
+    },
+    {
+      img: p3,
+      title: "KEEPER-APP",
+      desc: "a quick notes-keeping app with cloud save feature made withReact & Firebase",
+      url: "https://the-keeper-app-fe.web.app/",
+    },
+    {
+      img: p4,
+      title: "COVID-UN",
+      desc: "a one-stop solution for all covid-19 stats & updates made with React Native",
+      url: "https://github.com/FalconEthics/COVID-UN",
+    },
+    {
+      img: p5,
+      title: "OIRAM",
+      desc: "a browser-based survival game inspired by Mario that runs with thehelp of p5.js",
+      url: "https://oiram-falconethics.vercel.app/",
+    },
+  ];
 
   return (
     <>
@@ -101,7 +132,7 @@ export default function Home() {
           </div>
           {/* Skills section */}
           <div className="relative flex flex-col space-y-[8%] py-[8%] bg-dark px-10 md:px-40">
-            <Image src={Skills} alt="sills" />
+            <Image src={Skills} alt="sills" className="w-full" />
             <div className="break-words">
               <h2 className="text-2xl font-bold inline pr-2">
                 I'm a Front-end Developer, based in
@@ -124,8 +155,8 @@ export default function Home() {
             />
           </div>
           {/* My Projects Section */}
-          <div className="z-10 relative flex flex-col space-y-[8%] py-[8%] px-10 md:px-40 justify-center items-center">
-            <div className="text-center">
+          <div className="z-10 w-full h-[60vh] relative overflow-hidden flex flex-col justify-center items-center">
+            <div className="text-center absolute top-[8%]">
               <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
                 My Projects
               </h2>
@@ -136,12 +167,12 @@ export default function Home() {
             <Image
               src={Bg}
               alt="bg"
-              className="z-0 absolute top-[-20%] right-[+20%] scale-50"
+              className="z-0 absolute top-0 right-[+20%] scale-50"
             />
-            <Carousel images={slides}/>
+            <Carousel images={slides} />
             <Link
               href={"/projects"}
-              className="w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+              className="absolute bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
               <BiShowAlt />
               <p>show more</p>
