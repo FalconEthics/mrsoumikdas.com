@@ -33,13 +33,6 @@ export const metadata = {
   },
 };
 
-export default function ProjectsLayout({
-  children,
-}) {
-
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+export default function ProjectsLayout({ children }) {
+  return <section>{children}</section>;
 }

@@ -2,6 +2,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import Carousel from "./components/Carousel";
 
 // importing images
 import Banner from "./assets/home/banner.avif";
@@ -9,10 +10,16 @@ import Rect from "./assets/home/rect.avif";
 import Line from "./assets/home/line.avif";
 import Skills from "./assets/home/Skills.png";
 import Bg from "./assets/home/bg.avif";
-import eye from "./assets/home/mdi_show-outline.avif";
 import About from "./assets/home/about.avif";
-import go from "./assets/home/material-symbols_more-up.avif";
-import contact from "./assets/home/mdi_contact.avif";
+import { BiShowAlt } from "@react-icons/all-files/bi/BiShowAlt";
+import { FaAngleDoubleRight } from "@react-icons/all-files/fa/FaAngleDoubleRight";
+import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
+// for slides
+import Likey from "./assets/home/likey.avif";
+import Keeper from "./assets/home/keeper.avif";
+import Oiram from "./assets/home/oiram.avif";
+import Appy3d from "./assets/home/appy3d.avif";
+import CovidUn from "./assets/home/covid.avif";
 
 export default function Home() {
   // schema for google bots
@@ -52,6 +59,8 @@ export default function Home() {
       "@id": "https://www.mrsoumikdas.com/",
     },
   };
+
+  const slides = [Keeper, Likey, CovidUn, Appy3d, Oiram]
 
   return (
     <>
@@ -129,11 +138,12 @@ export default function Home() {
               alt="bg"
               className="z-0 absolute top-[-20%] right-[+20%] scale-50"
             />
+            <Carousel images={slides}/>
             <Link
               href={"/projects"}
               className="w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
-              <Image src={eye} alt="icon" className="" />
+              <BiShowAlt />
               <p>show more</p>
             </Link>
             <Image
@@ -152,17 +162,17 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-row justify-center items-center space-x-4">
-              <button
-                className="bg-black w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
-              >
-                <Image src={contact} alt="icon" className="text-4xl " />
-                <p className=" text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">Contact</p>
+              <button className="bg-black w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg">
+                <AiOutlineContacts className="text-main" />
+                <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+                  Contact
+                </p>
               </button>
               <Link
                 href={"/about"}
                 className="w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
               >
-                <Image src={go} alt="icon" className="" />
+                <FaAngleDoubleRight />
                 <p>Know more</p>
               </Link>
             </div>
