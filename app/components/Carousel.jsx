@@ -4,9 +4,15 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { AiOutlineDoubleLeft } from "@react-icons/all-files/ai/AiOutlineDoubleLeft";
 import { AiOutlineDoubleRight } from "@react-icons/all-files/ai/AiOutlineDoubleRight";
+import { useLayoutEffect } from "react";
 
 export default function Carousel({ images }) {
   const [midItem, setMidItem] = useState(Math.floor(images.length / 2));
+  const [width, setWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
 
   const goRight = () => {
     if (midItem <= images.length - 1) {
@@ -32,11 +38,11 @@ export default function Carousel({ images }) {
     <>
       <AiOutlineDoubleLeft
         onClick={goLeft}
-        className="absolute text-2xl top-[37%] left-[5%] text-main"
+        className="absolute text-2xl top-[37%] md:top-[43%] left-[5%] text-main"
       />
       <AiOutlineDoubleRight
         onClick={goRight}
-        className="absolute text-2xl top-[37%] right-[5%] text-main"
+        className="absolute text-2xl top-[37%] md:top-[43%] right-[5%] text-main"
       />
       {images.map((image, index) => {
         return (
@@ -48,14 +54,24 @@ export default function Carousel({ images }) {
             }}
             animate={{
               rotate: 0,
-              left: `${(index - midItem) * 80 + 25}vw`,
-              scale: index === midItem ? 1.5 : 0.9,
+              left: `${width < 720
+                  ? (index - midItem) * 80 + 25
+                  : (index - midItem) * 30 + 40
+                }vw`,
+              scale:
+                width < 720
+                  ? index === midItem
+                    ? 1.5
+                    : 0.9
+                  : index === midItem
+                    ? 1.5
+                    : 1,
             }}
             transition={{
               type: "spring",
               sriffness: 260,
             }}
-            className="absolute w-[50%] space-y-4"
+            className="absolute w-[50%] md:w-[20%] space-y-4"
           >
             <Image
               onClick={() => {
@@ -63,7 +79,7 @@ export default function Carousel({ images }) {
               }}
               src={image.img}
               alt="img"
-              className={`w-full ${index === midItem ? "z-40" : "z-0"}`}
+              className={`w-full ${index === midItem ? "z-40" : "z-0 blur-sm"}`}
             />
             <div>
               <p className="font-bold text-sm">{image.title}</p>

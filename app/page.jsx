@@ -99,48 +99,50 @@ export default function Home() {
         <Nav />
         <div>
           {/* Hero section */}
-          <div className="relative flex flex-col space-y-[8%] py-[8%] px-10 md:px-40">
-            <div className="relative w-full">
+          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:space-y-[6%] md:py-[6%] px-10 md:px-[16%]">
+            <div className="relative w-full md:w-1/2">
               <Image
-                className="slide-in relative z-10 w-full h-full"
+                className="slide-in relative z-10 w-full h-full  md:h-auto"
                 src={Banner}
                 alt="Soumik Das"
               />
               <Image
-                className="slide-tilt absolute inset-0 w-full h-full"
+                className="slide-tilt absolute inset-0 w-full  h-full md:h-auto"
                 src={Rect}
                 alt="BG"
               />
             </div>
             <div className="flex flex-col w-full space-y-2">
               <div className="flex flex-row space-x-2">
-                <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
+                <p className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
                   Hey
                 </p>
-                <p className="text-4xl font-bold">It's</p>
+                <p className="text-4xl md:text-6xl font-bold">It's</p>
               </div>
-              <h1 className="text-4xl font-bold">Soumik Das here!</h1>
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+              <h1 className="text-4xl md:text-6xl font-bold">
+                Soumik Das here!
+              </h1>
+              <p className="md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
                 Welcome to my part of the internet!
               </p>
             </div>
             <Image
               src={Line}
               alt="sectiond divider"
-              className="z-10 absolute bottom-[-0.3%] right-[35%]  "
+              className="z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] "
             />
           </div>
           {/* Skills section */}
-          <div className="relative flex flex-col space-y-[8%] py-[8%] bg-dark px-10 md:px-40">
-            <Image src={Skills} alt="sills" className="w-full" />
-            <div className="break-words">
-              <h2 className="text-2xl font-bold inline pr-2">
+          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[6%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
+            <Image src={Skills} alt="sills" className="w-full md:w-[40%]" />
+            <div className="break-words md:w-1/2 md:pr-8">
+              <h2 className="text-2xl md:text-3xl font-bold inline pr-2">
                 I'm a Front-end Developer, based in
               </h2>
-              <p className="text-2xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
+              <p className="text-2xl md:text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
                 INDIA
               </p>
-              <p className="pt-2 break-all text-dim">
+              <p className="pt-2 break-all text-dim md:text-lg ">
                 I love to get beautiful and interactive uis get into life, with
                 proficiency in front end frameworks and tools like: React/React
                 Native, Next.js, Tailwind Css, Framer Motion and etc. I am very
@@ -151,11 +153,11 @@ export default function Home() {
             <Image
               src={Line}
               alt="sectiond divider"
-              className="z-10 absolute bottom-[-0.3%] right-[35%]  "
+              className="z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] "
             />
           </div>
           {/* My Projects Section */}
-          <div className="z-10 w-full h-[60vh] relative overflow-hidden flex flex-col justify-center items-center">
+          <div className="z-10 w-full h-[60vh] md:h-[65vh] relative overflow-hidden flex flex-col justify-center items-center">
             <div className="text-center absolute top-[8%]">
               <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
                 My Projects
@@ -167,7 +169,7 @@ export default function Home() {
             <Image
               src={Bg}
               alt="bg"
-              className="z-0 absolute top-0 right-[+20%] scale-50"
+              className="z-0 absolute top-0 right-[+20%] scale-50 md:left-[10%] md:scale-75"
             />
             <Carousel images={slides} />
             <Link
@@ -180,19 +182,20 @@ export default function Home() {
             <Image
               src={Line}
               alt="sectiond divider"
-              className="z-10 absolute bottom-[-0.3%] right-[35%]  "
+              className="z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%] "
             />
           </div>
           {/* About Section */}
-          <div className="relative flex flex-col space-y-[8%] py-[8%] bg-dark px-10 md:px-40">
-            <Image src={About} alt="sills" />
-            <div className="flex flex-col justify-center items-center">
-              <h2 className="text-2xl font-bold">Wanna know more about</h2>
-              <p className="text-2xl break-all font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+          <div className="relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[3%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
+            <Image src={About} alt="sills" className=" md:w-[45%]"/>
+            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
+              <h2 className="text-2xl md:text-4xl font-bold">Wanna know more about</h2>
+              <p className="text-2xl md:text-4xl break-all font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
                 me and my work?
               </p>
             </div>
-            <div className="flex flex-row justify-center items-center space-x-4">
+            <div className="flex flex-row  justify-center items-center space-x-4 md:justify-start md:space-x-6">
               <button className="bg-black w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg">
                 <AiOutlineContacts className="text-main" />
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
@@ -206,6 +209,7 @@ export default function Home() {
                 <FaAngleDoubleRight />
                 <p>Know more</p>
               </Link>
+            </div>
             </div>
           </div>
         </div>
