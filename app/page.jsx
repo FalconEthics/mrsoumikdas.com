@@ -157,7 +157,7 @@ export default function Home() {
             />
           </div>
           {/* My Projects Section */}
-          <div className="z-10 w-full h-[60vh] md:h-[65vh] relative overflow-hidden flex flex-col justify-center items-center">
+          <div className="z-10 w-full h-[65vh] md:h-[75vh] relative overflow-hidden flex flex-col justify-center items-center">
             <div className="text-center absolute top-[8%]">
               <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
                 My Projects
