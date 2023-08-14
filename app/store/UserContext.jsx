@@ -8,10 +8,13 @@ const UserContextProvider = ({ children }) => {
 
   
   const [clicked, setClicked] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const value = {
     clicked,
     setClicked, 
+    showModal,
+    setShowModal
   };
 
   return (

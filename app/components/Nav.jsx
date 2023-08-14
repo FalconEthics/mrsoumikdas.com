@@ -11,7 +11,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 export default function Nav() {
-  const { clicked, setClicked } = useContext(UserContext);
+  const { clicked, setClicked, showModal, setShowModal } =
+    useContext(UserContext);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -50,7 +51,15 @@ export default function Nav() {
                 </button>
               );
             })}
-            <button className="p-2">Contact</button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowModal(!showModal);
+              }}
+              className="p-2"
+            >
+              Contact
+            </button>
           </div>
         </div>
 
@@ -99,7 +108,16 @@ export default function Nav() {
                 </Link>
               );
             })}
-            <button className="p-4 pb-0 text-start">Contact</button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowModal(!showModal);
+                setClicked(!clicked);
+              }}
+              className="p-4 pb-0 text-start"
+            >
+              Contact
+            </button>
           </div>
         </motion.div>
       )}

@@ -1,3 +1,4 @@
+"use client";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Image from "next/image";
@@ -21,7 +22,13 @@ import p5 from "./assets/home/p5.avif";
 import p4 from "./assets/home/p4.avif";
 import p3 from "./assets/home/p3.avif";
 
+import { useContext } from "react";
+import { UserContext } from "./store/UserContext";
+import Contact from "./components/Contact";
+
 export default function Home() {
+  const { showModal, setShowModal } = useContext(UserContext);
+
   // schema for google bots
   const jsonLd = {
     "@context": "https://schema.org",
@@ -96,6 +103,7 @@ export default function Home() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center overflow-auto">
+        <Contact />
         <Nav />
         <div>
           {/* Hero section */}
@@ -187,29 +195,40 @@ export default function Home() {
           </div>
           {/* About Section */}
           <div className="relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[3%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
-            <Image src={About} alt="sills" className=" md:w-[45%]"/>
+            <Image src={About} alt="sills" className=" md:w-[45%]" />
             <div className="flex flex-col space-y-4">
-            <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
-              <h2 className="text-2xl md:text-4xl font-bold">Wanna know more about</h2>
-              <p className="text-2xl md:text-4xl break-all font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
-                me and my work?
-              </p>
-            </div>
-            <div className="flex flex-row  justify-center items-center space-x-4 md:justify-start md:space-x-6">
-              <button className="bg-black w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg">
-                <AiOutlineContacts className="text-main" />
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
-                  Contact
+              <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
+                <h2 className="text-2xl md:text-4xl font-bold">
+                  Wanna know more about
+                </h2>
+                <p className="text-2xl md:text-4xl break-all font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+                  me and my work?
                 </p>
-              </button>
-              <Link
-                href={"/about"}
-                className="w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
-              >
-                <FaAngleDoubleRight />
-                <p>Know more</p>
-              </Link>
-            </div>
+              </div>
+              <div className="flex flex-row  justify-center items-center space-x-4 md:justify-start md:space-x-6">
+                <button
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth", // Use 'auto' for instant scrolling without smooth animation
+                    });
+                    setShowModal(!showModal);
+                  }}
+                  className="bg-black w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
+                >
+                  <AiOutlineContacts className="text-main" />
+                  <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+                    Contact
+                  </p>
+                </button>
+                <Link
+                  href={"/about"}
+                  className="w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+                >
+                  <FaAngleDoubleRight />
+                  <p>Know more</p>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
