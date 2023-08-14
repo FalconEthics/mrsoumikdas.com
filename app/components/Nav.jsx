@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-
+import { motion } from "framer-motion";
 
 export default function Nav() {
   const { clicked, setClicked } = useContext(UserContext);
@@ -76,12 +76,15 @@ export default function Nav() {
         />
       </div>
       {clicked && (
-        <div
+        <motion.div
           onClick={(e) => {
             e.stopPropagation();
             setClicked(!clicked);
           }}
-          className="overflow-clip w-screen h-screen backdrop-blur-md fade-in absolute top-0 right-0 z-50 flex justify-center items-start"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="overflow-clip w-screen h-screen backdrop-blur-md absolute top-0 right-0 z-50 flex justify-center items-start"
         >
           <div className="slide-in p-6 pl-10 pr-0 flex flex-col text-xl w-8/12 shadow-2xl shadow-main rounded-2xl mt-[30%] bg-black bg-opacity-80">
             {routes.map((item, index) => {
@@ -98,7 +101,7 @@ export default function Nav() {
             })}
             <button className="p-4 pb-0 text-start">Contact</button>
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
