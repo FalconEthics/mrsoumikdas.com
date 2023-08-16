@@ -72,7 +72,7 @@ export default function Home() {
       img: p1,
       title: "LIKELY",
       desc: "A social media platform frontend inspired from Twitter and Insta made with Vue.js",
-      url: "https://github.com/FalconEthics/Likely",
+      url: "https://github.com/FalconEthics/Likey",
     },
     {
       img: p2,
@@ -102,12 +102,12 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center overflow-auto">
+      <main className="flex min-h-screen flex-col items-center overflow-x-clip overflow-y-auto">
         <Contact />
         <Nav />
         <div>
           {/* Hero section */}
-          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:space-y-[6%] md:py-[6%] px-10 md:px-[16%]">
+          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[3%] px-10 md:px-[16%]">
             <div className="relative w-full md:w-1/2">
               <Image
                 className="slide-in relative z-10 w-full h-full  md:h-auto"
@@ -120,7 +120,7 @@ export default function Home() {
                 alt="BG"
               />
             </div>
-            <div className="flex flex-col w-full space-y-2">
+            <div className="flex flex-col w-full space-y-2 h-fit">
               <div className="flex flex-row space-x-2">
                 <p className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
                   Hey
@@ -141,7 +141,7 @@ export default function Home() {
             />
           </div>
           {/* Skills section */}
-          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[6%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
+          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[3%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
             <Image src={Skills} alt="sills" className="w-full md:w-[40%]" />
             <div className="break-words md:w-1/2 md:pr-8">
               <h2 className="text-2xl md:text-3xl font-bold inline pr-2">
@@ -165,7 +165,7 @@ export default function Home() {
             />
           </div>
           {/* My Projects Section */}
-          <div className="z-10 w-full h-[65vh] md:h-[75vh] relative overflow-hidden flex flex-col justify-center items-center">
+          <div className="z-10 w-full h-[65vh] md:h-[70vh] relative overflow-hidden flex flex-col justify-center items-center">
             <div className="text-center absolute top-[8%]">
               <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
                 My Projects
@@ -194,7 +194,7 @@ export default function Home() {
             />
           </div>
           {/* About Section */}
-          <div className="relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[3%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
+          <div className="relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[2%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
             <Image src={About} alt="sills" className=" md:w-[45%]" />
             <div className="flex flex-col space-y-4">
               <div className="flex flex-col justify-center items-center md:justify-start md:items-start">

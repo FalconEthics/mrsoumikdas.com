@@ -33,7 +33,7 @@ export default function Nav() {
 
   return (
     <>
-      <div className="relative w-screen py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-auto">
+      <div className="relative w-screen py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-auto ">
         <Image src={flatLogo} alt="Soumik Das" />
 
         <div>
