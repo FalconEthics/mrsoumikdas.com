@@ -83,7 +83,7 @@ export default function Home() {
     {
       img: p3,
       title: "KEEPER-APP",
-      desc: "a quick notes-keeping app with cloud save feature made withReact & Firebase",
+      desc: "a quick notes-keeping app with cloud save feature made with React & Firebase",
       url: "https://the-keeper-app-fe.web.app/",
     },
     {

@@ -87,7 +87,7 @@ const Projects = () => {
       title: "COVID-UN",
       desc: "a one-stop solution for all covid-19 stats & updates made with React Native",
       repo: "https://github.com/FalconEthics/COVID-UN",
-      url: "https://github.com/FalconEthics/COVID-UN/releases/download/v-1.0.0/COVID-UN.apk",
+      url: "https://github.com/FalconEthics/COVID-UN/releases/tag/v-1.0.0",
     },
     {
       img: oiram,
@@ -135,44 +135,113 @@ const Projects = () => {
       <div className="flex min-h-screen flex-col items-center w-full">
         <Contact />
         <Nav />
-        <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] pt-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[3%] w-full">
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center">
+        <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
+          <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center md:pt-[3%]">
             Preferred Tech Stacks
           </h1>
-          <div className="flex flex-row w-full justify-between px-10 md:px-[16%]">
-            <div className="flex flex-col justify-start space-y-4 items-center w-1/3">
-              <p className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white text-center">
+          <div className="flex flex-row md:flex-col w-full justify-between md:items-start px-10 md:px-[16%] md:hidden">
+            <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
                 Frameworks
-              </p>
-              <div className="flex flex-col justify-start items-center space-y-4 w-full">
+              </h2>
+              <div className="flex flex-col md:flex-row justify-start  items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
                 {skills.Frameworks.map((item, index) => {
-                  return <Image src={item} key={index} className="w-[60%]" />;
-                })}
-              </div>
-            </div>
-            <div className="flex flex-col justify-start space-y-4 items-center w-1/3">
-              <p className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white text-center">
-                Tools
-              </p>
-              <div className="flex flex-col justify-start items-center space-y-4 w-full">
-                {skills.Tools.map((item, index) => {
-                  return width < 720 ? (
-                    index < 5 && (
-                      <Image src={item} key={index} className="w-[60%]" />
-                    )
-                  ) : (
-                    <Image src={item} key={index} className="w-[60%]" />
+                  return (
+                    <Image
+                      src={item}
+                      key={index}
+                      className="w-[60%] md:w-[8%]"
+                      alt="Frameworks i know"
+                    />
                   );
                 })}
               </div>
             </div>
-            <div className="flex flex-col justify-start space-y-4 items-center w-1/3">
-              <p className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white text-center">
+            <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+                Tools
+              </h2>
+              <div className="flex flex-col md:flex-row justify-start  items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
+                {skills.Tools.map((item, index) => {
+                  return (
+                    index < 5 && (
+                      <Image
+                        src={item}
+                        key={index}
+                        className="w-[60%] md:w-[8%]"
+                        alt="Frameworks i know"
+                      />
+                    )
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
                 Languages
-              </p>
-              <div className="flex flex-col justify-start items-center space-y-4 w-full">
+              </h2>
+              <div className="flex flex-col md:flex-row justify-start pl-[1%] items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
                 {skills.Languages.map((item, index) => {
-                  return <Image src={item} key={index} className="w-[60%]" />;
+                  return (
+                    <Image
+                      src={item}
+                      key={index}
+                      className="w-[60%]"
+                      alt="Languages i know"
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className="hidden md:flex flex-row h-full justify-start items-center w-full px-[16%] md:py-[3%]">
+            <div className="h-full flex flex-col justify-between items-start space-y-14">
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+                Frameworks
+              </h2>
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+                Tools
+              </h2>
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+                Languages
+              </h2>
+            </div>
+            <div className="flex flex-col justify-center space-y-4 items-center">
+              <div className="flex flex-col md:flex-row justify-start pl-[1%] items-center space-y-4 md:space-y-0 md:space-x-8 w-full">
+                {skills.Frameworks.map((item, index) => {
+                  return (
+                    <Image
+                      src={item}
+                      key={index}
+                      className="w-[60%] md:w-[8%]"
+                      alt="Frameworks i know"
+                    />
+                  );
+                })}
+              </div>
+              <div className="flex flex-col md:flex-row justify-start pl-[1%] items-center space-y-4 md:space-y-0 md:space-x-8 w-full">
+                {skills.Tools.map((item, index) => {
+                  return (
+                    <Image
+                      src={item}
+                      key={index}
+                      className="w-[60%] md:w-[8%]"
+                      alt="Tools i know"
+                    />
+                  );
+                })}
+              </div>
+              <div className="flex flex-col md:flex-row justify-start pl-[1%] items-center space-y-4 md:space-y-0 md:space-x-8 w-full">
+                {skills.Languages.map((item, index) => {
+                  return (
+                    <Image
+                      src={item}
+                      key={index}
+                      className="w-[60%] md:w-[8%]"
+                      alt="Languages i know"
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -185,16 +254,28 @@ const Projects = () => {
               _
             </p>
           </div>
-          <div className="w-full flex flex-col">
+          <div className="w-full flex flex-col md:pt-[3%] ">
             {projects.map((item, index) => {
               return (
-                <div className="flex flex-col w-full">
-                  <Image src={item.img} key={index} alt="projects" />
-                  <div className={`flex flex-col px-10 md:px-[16%] py-[8%] space-y-2 ${index == projects.length - 1 && 'pb-0' }`}>
-                    <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl">
+                <div
+                  className={`flex flex-col w-full  ${index % 2 == 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
+                >
+                  <Image
+                    src={item.img}
+                    key={index}
+                    alt="my projects"
+                    className="md:w-1/2"
+                  />
+                  <div
+                    className={`flex flex-col px-10 ${index % 2 == 0 ? "md:pr-[16%]" : "md:pl-[16%]"
+                      } py-[8%] md:justify-between space-y-2 md:w-1/2 ${index == projects.length - 1 && ""
+                      }`}
+                  >
+                    <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-3xl">
                       {item.title}
                     </h3>
-                    <p>{item.desc}</p>
+                    <p className="md:text-xl">{item.desc}</p>
                     <div className="flex flex-row items-center justify-start space-x-4">
                       <Link
                         href={item.repo}
@@ -240,16 +321,16 @@ const Projects = () => {
             })}
           </div>
           <div className="flex flex-col justify-center items-center px-10 md:px-[16%] pb-[8%] space-y-6 bg-dark w-full">
-            <Image src={soon} alt="soon" className="w-[80%]"/>
-            <p className="text-sm text-dim text-center">
+            <Image src={soon} alt="soon" className="w-[80%] md:w-[50%]" />
+            <h2 className="text-sm md:text-base md:w-[75%] text-dim text-center">
               I am still working on some of the projects and I don't want to
               present any unfinished works here. So, as soon as I complete them
               I will be adding them here 👍 ~ till then you can check out my
               GitHub profile for all the latest repos:
-            </p>
+            </h2>
             <Link
               href={"https://github.com/FalconEthics"}
-              className="text-sm w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+              className="text-sm md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
               <FaGithubAlt />
               <p>Know more</p>
