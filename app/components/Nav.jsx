@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import flatLogo from "../assets/flatLogo.avif";
-import menuBtn from "../assets/menu bar.svg";
-import closeBtn from "../assets/ep_close-bold.svg";
-import borderBottom from "../assets/Line 4.svg";
+import menuBtn from "../assets/menu bar.avif";
+import closeBtn from "../assets/ep_close-bold.avif";
+import borderBottom from "../assets/Line 4.avif";
 import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import Link from "next/link";

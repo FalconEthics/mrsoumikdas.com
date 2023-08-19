@@ -125,14 +125,14 @@ const Projects = () => {
     {
       img: calc,
       title: "CalcAsm",
-      desc: "a simple calculator that can perform basic arithmetic operations written intel - 8086 Assembly Language",
+      desc: "a simple calculator that can perform basic arithmetic operations written in intel - 8086 Assembly Language",
       repo: "https://github.com/FalconEthics/CALCASM",
     },
   ];
 
   return (
     <>
-      <div className="flex min-h-screen flex-col items-center w-full">
+      <div className="flex min-h-screen flex-col items-center w-full overflow-x-clip overflow-y-auto">
         <Contact />
         <Nav />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
@@ -149,6 +149,8 @@ const Projects = () => {
                   return (
                     <Image
                       src={item}
+                      placeholder="blur"
+                      quality={100}
                       key={index}
                       className="w-[60%] md:w-[8%]"
                       alt="Frameworks i know"
@@ -168,6 +170,8 @@ const Projects = () => {
                       <Image
                         src={item}
                         key={index}
+                        placeholder="blur"
+                        quality={100}
                         className="w-[60%] md:w-[8%]"
                         alt="Frameworks i know"
                       />
@@ -187,6 +191,8 @@ const Projects = () => {
                     <Image
                       src={item}
                       key={index}
+                      placeholder="blur"
+                      quality={100}
                       className="w-[60%]"
                       alt="Languages i know"
                     />
@@ -214,6 +220,8 @@ const Projects = () => {
                     <Image
                       src={item}
                       key={index}
+                      placeholder="blur"
+                      quality={100}
                       className="w-[60%] md:w-[8%]"
                       alt="Frameworks i know"
                     />
@@ -227,6 +235,8 @@ const Projects = () => {
                       src={item}
                       key={index}
                       className="w-[60%] md:w-[8%]"
+                      placeholder="blur"
+                      quality={100}
                       alt="Tools i know"
                     />
                   );
@@ -238,6 +248,8 @@ const Projects = () => {
                     <Image
                       src={item}
                       key={index}
+                      placeholder="blur"
+                      quality={100}
                       className="w-[60%] md:w-[8%]"
                       alt="Languages i know"
                     />
@@ -263,6 +275,8 @@ const Projects = () => {
                 >
                   <Image
                     src={item.img}
+                    placeholder="blur"
+                    quality={100}
                     key={index}
                     alt="my projects"
                     className="md:w-1/2"
@@ -321,7 +335,13 @@ const Projects = () => {
             })}
           </div>
           <div className="flex flex-col justify-center items-center px-10 md:px-[16%] pb-[8%] space-y-6 bg-dark w-full">
-            <Image src={soon} alt="soon" className="w-[80%] md:w-[50%]" />
+            <Image
+              placeholder="blur"
+              quality={100}
+              src={soon}
+              alt="soon"
+              className="w-[80%] md:w-[50%]"
+            />
             <h2 className="text-sm md:text-base md:w-[75%] text-dim text-center">
               I am still working on some of the projects and I don't want to
               present any unfinished works here. So, as soon as I complete them

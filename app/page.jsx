@@ -9,7 +9,7 @@ import Carousel from "./components/Carousel";
 import Banner from "./assets/home/banner.avif";
 import Rect from "./assets/home/rect.avif";
 import Line from "./assets/home/line.avif";
-import Skills from "./assets/home/Skills.svg";
+import Skills from "./assets/home/Skills.avif";
 import Bg from "./assets/home/bg.avif";
 import About from "./assets/home/about.avif";
 import { BiShowAlt } from "@react-icons/all-files/bi/BiShowAlt";
@@ -72,7 +72,7 @@ export default function Home() {
       img: p1,
       title: "LIKELY",
       desc: "A social media platform frontend inspired from Twitter and Insta made with Vue.js",
-      url: "https://github.com/FalconEthics/Likey",
+      url: "https://github.com/FalconEthics/Likely",
     },
     {
       img: p2,
@@ -113,11 +113,14 @@ export default function Home() {
                 className="slide-in relative z-10 w-full h-full  md:h-auto"
                 src={Banner}
                 alt="Soumik Das"
+                quality={100}
+                priority
               />
               <Image
                 className="slide-tilt absolute inset-0 w-full  h-full md:h-auto"
                 src={Rect}
                 alt="BG"
+                priority
               />
             </div>
             <div className="flex flex-col w-full space-y-2 h-fit">
@@ -135,6 +138,8 @@ export default function Home() {
               </p>
             </div>
             <Image
+              placeholder="blur"
+              quality={100}
               src={Line}
               alt="sectiond divider"
               className="z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] "
@@ -142,7 +147,13 @@ export default function Home() {
           </div>
           {/* Skills section */}
           <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[3%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
-            <Image src={Skills} alt="sills" className="w-full md:w-[40%]" />
+            <Image
+              src={Skills}
+              quality={100}
+              priority
+              alt="sills"
+              className="w-full md:w-[40%]"
+            />
             <div className="break-words md:w-1/2 md:pr-8">
               <h2 className="text-2xl md:text-3xl font-bold inline pr-2">
                 I'm a Front-end Developer, based in
@@ -159,6 +170,8 @@ export default function Home() {
               </p>
             </div>
             <Image
+              placeholder="blur"
+              quality={100}
               src={Line}
               alt="sectiond divider"
               className="z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] "
@@ -175,6 +188,8 @@ export default function Home() {
               </p>
             </div>
             <Image
+              placeholder="blur"
+              quality={100}
               src={Bg}
               alt="bg"
               className="z-0 absolute top-0 right-[+20%] scale-50 md:left-[10%] md:scale-75"
@@ -188,6 +203,8 @@ export default function Home() {
               <p>show more</p>
             </Link>
             <Image
+              placeholder="blur"
+              quality={100}
               src={Line}
               alt="sectiond divider"
               className="z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%] "
@@ -195,7 +212,13 @@ export default function Home() {
           </div>
           {/* About Section */}
           <div className="relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[2%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
-            <Image src={About} alt="sills" className=" md:w-[45%]" />
+            <Image
+              src={About}
+              placeholder="blur"
+              quality={100}
+              alt="sills"
+              className=" md:w-[45%]"
+            />
             <div className="flex flex-col space-y-4">
               <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
                 <h2 className="text-2xl md:text-4xl font-bold">

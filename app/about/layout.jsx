@@ -1,3 +1,5 @@
+import UserContextProvider from "../store/UserContext";
+
 export const metadata = {
   title: "Soumik Das | ABOUT",
   description:
@@ -34,5 +36,9 @@ export const metadata = {
 };
 
 export default function AboutLayout({ children }) {
-  return <section>{children}</section>;
+  return (
+    <section>
+      <UserContextProvider>{children}</UserContextProvider>
+    </section>
+  );
 }
