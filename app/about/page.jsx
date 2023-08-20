@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
@@ -20,6 +20,7 @@ import personal from "../assets/about/personalBranding.avif";
 import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
 import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
+import mConnector from "../assets/about/mConnector.avif";
 
 export default function About() {
   const { showModal, setShowModal } = useContext(UserContext);
@@ -90,7 +91,7 @@ export default function About() {
       course: "Central Institute of ",
       uni: "Technology",
       time: "Diploma in CSE - 2019 to 2022",
-      desc: '"I did my Diploma in Computer Science Engineering from Central Institute of Technology, Kokrajhar, Assam, India with a CGPA of 7.6 in 2022."',
+      desc: 'I did my Diploma in Computer Science Engineering from Central Institute of Technology, Kokrajhar, Assam, India with a CGPA of 7.6 in 2022.',
     },
   ];
 
@@ -122,7 +123,7 @@ export default function About() {
             {work.map((item, index) => {
               return (
                 <div
-                  className={`flex flex-col justify-center items-center w-full space-y-[8%] py-[8%] ${index != work.length - 1 ? "pb-[20%]" : ""
+                  className={`relative flex flex-col justify-center items-center w-full space-y-[8%] py-[8%] ${index != work.length - 1 ? "pb-[20%]" : ""
                     }`}
                 >
                   <Image
@@ -146,6 +147,13 @@ export default function About() {
                     <p className="text-dim">{item.desc}</p>
                     <p className="text-dim">{item.summary}</p>
                   </div>
+                  {index != work.length - 1 && <Image
+                      quality={100}
+                      src={mConnector}
+                      alt="sectiond divider"
+                      className="z-10 absolute bottom-[-1.5%] right-[48%]"
+                    />
+                  }
                 </div>
               );
             })}
@@ -169,7 +177,7 @@ export default function About() {
             {education.map((item, index) => {
               return (
                 <div
-                  className={`flex flex-col justify-center items-center w-full space-y-[8%] py-[8%] ${index != education.length - 1 ? "pb-[20%]" : ""
+                  className={`relative flex flex-col justify-center items-center w-full space-y-[8%] py-[8%] ${index != education.length - 1 ? "pb-[20%]" : ""
                     }`}
                 >
                   <Image
@@ -192,6 +200,13 @@ export default function About() {
                     <p className="">{item.time}</p>
                     <p className="text-dim">{item.desc}</p>
                   </div>
+                  {index != education.length - 1 && <Image
+                      quality={100}
+                      src={mConnector}
+                      alt="sectiond divider"
+                      className="z-10 absolute bottom-[-1.5%] right-[48%]"
+                    />
+                  }
                 </div>
               );
             })}
