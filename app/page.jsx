@@ -107,7 +107,7 @@ export default function Home() {
         <Nav />
         <div>
           {/* Hero section */}
-          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[3%] px-10 md:px-[16%]">
+          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[4%] px-10 md:px-[16%]">
             <div className="relative w-full md:w-1/2">
               <Image
                 className="slide-in relative z-10 w-full h-full  md:h-auto"
@@ -146,7 +146,7 @@ export default function Home() {
             />
           </div>
           {/* Skills section */}
-          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[3%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
+          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[4%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
             <Image
               src={Skills}
               quality={100}

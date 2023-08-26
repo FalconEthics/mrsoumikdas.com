@@ -21,6 +21,8 @@ import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
 import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import mConnector from "../assets/about/mConnector.avif";
+import connector from "../assets/about/connector.avif";
+import connector2 from "../assets/about/connector2.avif";
 
 export default function About() {
   const { showModal, setShowModal } = useContext(UserContext);
@@ -91,7 +93,7 @@ export default function About() {
       course: "Central Institute of ",
       uni: "Technology",
       time: "Diploma in CSE - 2019 to 2022",
-      desc: 'I did my Diploma in Computer Science Engineering from Central Institute of Technology, Kokrajhar, Assam, India with a CGPA of 7.6 in 2022.',
+      desc: "I did my Diploma in Computer Science Engineering from Central Institute of Technology, Kokrajhar, Assam, India with a CGPA of 7.6 in 2022.",
     },
   ];
 
@@ -103,38 +105,41 @@ export default function About() {
         <Nav />
         <Contact />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
-          <div className="text-center px-10 md:px-[16%]">
-            <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+          <div className="text-center px-10 md:px-[16%] md:pt-[4%]">
+            <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Know more about me and my Work
             </h1>
             <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
               _
             </p>
           </div>
-          <p className="px-10 md:px-[16%] text-dim break-words text-center">
+          <p className="px-10 md:px-[16%] md:text-lg text-dim break-words text-center py-[2%]">
             "India annually produces 1.5 million engineers every year but I
             believe that am not just another Indian engineer among those
             millions rather I am among the few passionate ones"
           </p>
-          <div className="flex flex-col align-middle w-full relative px-10 md:px-[16%]">
-            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+          <div className="flex flex-col align-middle w-full relative px-10 md:px-[16%] md:pb-[4%] md:space-y-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Work Experiences
             </h2>
             {work.map((item, index) => {
               return (
                 <div
-                  className={`relative flex flex-col justify-center items-center w-full space-y-[8%] py-[8%] ${index != work.length - 1 ? "pb-[20%]" : ""
-                    }`}
+                  className={`relative flex flex-col ${
+                    index % 2 ? "md:flex-row-reverse" : "md:flex-row"
+                  } justify-center md:justify-between items-center w-full space-y-[8%] md:space-y-0 py-[8%] md:py-0 ${
+                    index != work.length - 1 ? "pb-[20%]" : ""
+                  }`}
                 >
                   <Image
                     src={item.img}
                     placeholder="blur"
                     quality={100}
                     key={index}
-                    className="w-[60%] h-64 md:w-[8%] border border-white p-4 py-10 rounded-2xl"
+                    className="w-[60%] h-64 md:w-[22%] md:h-72 border border-white p-4 py-10 rounded-2xl"
                     alt={item.title}
                   />
-                  <div className="flex flex-col text-sm break-word space-y-1">
+                  <div className="flex flex-col text-sm break-word space-y-1 md:w-[43%] break-all">
                     <div className="">
                       <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                         {item.title}
@@ -147,27 +152,34 @@ export default function About() {
                     <p className="text-dim">{item.desc}</p>
                     <p className="text-dim">{item.summary}</p>
                   </div>
-                  {index != work.length - 1 && <Image
+                  {index != work.length - 1 && (
+                    <Image
                       quality={100}
                       src={mConnector}
                       alt="sectiond divider"
-                      className="z-10 absolute bottom-[-1.5%] right-[48%]"
+                      className="z-10 absolute bottom-[-1.5%] right-[48%] md:hidden"
                     />
-                  }
+                  )}
                 </div>
               );
             })}
+            <Image
+              quality={100}
+              src={connector}
+              alt="connector1"
+              className="hidden md:block absolute scale-[80%] top-[5%] left-[34%] z-10"
+            />
             <Image
               placeholder="blur"
               quality={100}
               src={Line}
               alt="sectiond divider"
-              className="z-10 absolute bottom-[-2%] right-[35%]  md:right-[45%] "
+              className="z-10 absolute bottom-0 right-[35%] md:right-[45%]"
             />
           </div>
-          <div className="flex flex-col align-middle w-full py-[8%] relative px-10 md:px-[16%] bg-dark">
+          <div className="flex flex-col align-middle w-full py-[8%] md:pt-[4%] relative px-10 md:px-[16%] bg-dark md:pb-[4%] md:space-y-8">
             <div className="text-center px-10 md:px-[16%]">
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+              <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                 My Academics
               </h2>
               <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
@@ -177,18 +189,21 @@ export default function About() {
             {education.map((item, index) => {
               return (
                 <div
-                  className={`relative flex flex-col justify-center items-center w-full space-y-[8%] py-[8%] ${index != education.length - 1 ? "pb-[20%]" : ""
-                    }`}
+                  className={`relative flex flex-col  ${
+                    index % 2 ? "md:flex-row" : "md:flex-row-reverse"
+                  } justify-center md:justify-between items-center w-full space-y-[8%] md:space-y-0 py-[8%] md:py-0 ${
+                    index != education.length - 1 ? "pb-[20%]" : ""
+                  }`}
                 >
                   <Image
                     src={item.img}
                     placeholder="blur"
                     quality={100}
                     key={index}
-                    className="w-[60%] h-72 md:w-[8%] border border-white p-4 py-10 rounded-2xl"
+                    className="w-[60%] h-72 md:w-[22%] md:h-74 border border-white p-4 py-10 rounded-2xl"
                     alt={item.course}
                   />
-                  <div className="flex flex-col text-sm break-word space-y-1">
+                  <div className="flex flex-col text-sm break-word md:w-[43%] space-y-1">
                     <div className="">
                       <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                         {item.course}
@@ -200,16 +215,23 @@ export default function About() {
                     <p className="">{item.time}</p>
                     <p className="text-dim">{item.desc}</p>
                   </div>
-                  {index != education.length - 1 && <Image
+                  {index != education.length - 1 && (
+                    <Image
                       quality={100}
                       src={mConnector}
                       alt="sectiond divider"
-                      className="z-10 absolute bottom-[-1.5%] right-[48%]"
+                      className="z-10 absolute bottom-[-1.5%] right-[48%] md:hidden"
                     />
-                  }
+                  )}
                 </div>
               );
             })}
+            <Image
+              quality={100}
+              src={connector2}
+              alt="connector2"
+              className="hidden md:block absolute scale-[80%] top-[20%] left-[34%] z-10"
+            />
             <Image
               placeholder="blur"
               quality={100}
@@ -218,34 +240,48 @@ export default function About() {
               className="z-10 absolute bottom-[-0.2%] right-[35%]  md:right-[45%] "
             />
           </div>
-          <div className="flex flex-col align-middle w-full px-10 md:px-[16%]">
+          <div className="flex flex-col align-middle w-full px-10 md:px-[16%] md:pt-[4%]">
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+              <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                 My Certifications
               </h2>
               <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
                 _
               </p>
             </div>
-            <div className="flex flex-col space-y-[8%] pt-[8%] w-full items-center justify-center">
+            <div className="flex flex-col space-y-[8%] pt-[8%] w-full items-center justify-center md:hidden">
               {certificates.map((item, index) => {
                 return (
                   <Image
+                    key={index}
                     placeholder="blur"
                     quality={100}
                     src={item}
-                    key={index}
                     alt=""
                     className="w-[60%] md:w-[8%]"
                   />
                 );
               })}
             </div>
+            <div className="grid-cols-4 grid-rows-2 gap-4 py-[4%] hidden md:grid">
+              {certificates.map((item, index) => {
+                return (
+                  <Image
+                    key={index}
+                    placeholder="blur"
+                    quality={100}
+                    src={item}
+                    alt=""
+                    className={`${index == 0 ? "col-span-2 row-span-2" : ""}`}
+                  />
+                );
+              })}
+            </div>
           </div>
-          <div className="w-full px-10 md:px-[16%]">
-            <div className="p-4 flex flex-col items-center justify-center bg-dark rounded-lg space-y-2">
+          <div className="w-full px-10 md:px-[16%] pb-[2%]">
+            <div className="p-4 md:p-6 flex flex-col md:flex-row md:space-x-4 items-center justify-center bg-dark rounded-lg space-y-2">
               <div className="text-center">
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+                <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                   Contact for more info
                 </h2>
                 <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">

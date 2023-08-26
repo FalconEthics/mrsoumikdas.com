@@ -81,7 +81,7 @@ export default function Nav() {
         <Image
           src={borderBottom}
           alt="border"
-          className="w-screen h-auto absolute bottom-0 right-0"
+          className="w-screen h-1 absolute bottom-0 right-0"
         />
       </div>
       {clicked && (
@@ -100,8 +100,9 @@ export default function Nav() {
               return (
                 <Link
                   key={index}
-                  className={`hover:text-main border-b border-main p-4 ${item.path == pathname && "text-secondary"
-                    } ${index == 0 && "pt-0"}`}
+                  className={`hover:text-main border-b border-main p-4 ${
+                    item.path == pathname && "text-secondary"
+                  } ${index == 0 && "pt-0"}`}
                   href={item.path}
                 >
                   {item.name}
