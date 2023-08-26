@@ -14,6 +14,13 @@ export default function Carousel({ images }) {
     setWidth(window.innerWidth);
   }, []);
 
+  const [w1920, setW] = useState(false);
+
+  useLayoutEffect(() => {
+    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
+    console.log(screen.availWidth);
+  }, []);
+
   const goRight = () => {
     if (midItem <= images.length - 1) {
       if (midItem + 1 != images.length) {
@@ -54,18 +61,19 @@ export default function Carousel({ images }) {
             }}
             animate={{
               rotate: 0,
-              left: `${width < 720
+              left: `${
+                width < 720
                   ? (index - midItem) * 80 + 25
                   : (index - midItem) * 30 + 40
-                }vw`,
+              }vw`,
               scale:
                 width < 720
                   ? index === midItem
                     ? 1.5
                     : 0.9
                   : index === midItem
-                    ? 1.5
-                    : 1,
+                  ? 1.5
+                  : 1,
             }}
             transition={{
               type: "spring",

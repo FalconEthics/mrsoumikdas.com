@@ -22,7 +22,7 @@ import p5 from "./assets/home/p5.avif";
 import p4 from "./assets/home/p4.avif";
 import p3 from "./assets/home/p3.avif";
 
-import { useContext } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 import { UserContext } from "./store/UserContext";
 import Contact from "./components/Contact";
 
@@ -100,14 +100,27 @@ export default function Home() {
     },
   ];
 
+  const [w1920, setW] = useState(false);
+
+  useLayoutEffect(() => {
+    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
+    console.log(screen.availWidth);
+  }, []);
+
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center overflow-x-clip overflow-y-auto">
+      <main
+        className={`flex min-h-screen flex-col items-center overflow-x-clip overflow-y-auto`}
+      >
         <Contact />
         <Nav />
         <div>
           {/* Hero section */}
-          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[4%] px-10 md:px-[16%]">
+          <div
+            className={`relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[4%] px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            }`}
+          >
             <div className="relative w-full md:w-1/2">
               <Image
                 className="slide-in relative z-10 w-full h-full  md:h-auto"
@@ -146,7 +159,11 @@ export default function Home() {
             />
           </div>
           {/* Skills section */}
-          <div className="relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[4%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
+          <div
+            className={`relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[4%] bg-dark px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            } md:space-y-0 md:justify-between md:items-center`}
+          >
             <Image
               src={Skills}
               quality={100}
@@ -178,7 +195,11 @@ export default function Home() {
             />
           </div>
           {/* My Projects Section */}
-          <div className="z-10 w-full h-[65vh] md:h-[70vh] relative overflow-hidden flex flex-col justify-center items-center">
+          <div
+            className={`z-10 w-full h-[65vh] md:h-[70vh] relative overflow-hidden flex flex-col justify-center items-center ${
+              w1920 && "md:h-[75vh]"
+            }`}
+          >
             <div className="text-center absolute top-[8%]">
               <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
                 My Projects
@@ -211,7 +232,11 @@ export default function Home() {
             />
           </div>
           {/* About Section */}
-          <div className="relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[2%] bg-dark px-10 md:px-[16%] md:space-y-0 md:justify-between md:items-center">
+          <div
+            className={`relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[2%] bg-dark px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            } md:space-y-0 md:justify-between md:items-center`}
+          >
             <Image
               src={About}
               placeholder="blur"
@@ -221,7 +246,11 @@ export default function Home() {
             />
             <div className="flex flex-col space-y-4">
               <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
-                <h2 className="text-2xl md:text-4xl font-bold">
+                <h2
+                  className={`text-2xl md:text-4xl font-bold ${
+                    w1920 && "md:text-5xl"
+                  }`}
+                >
                   Wanna know more about
                 </h2>
                 <p className="text-2xl md:text-4xl break-all font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">

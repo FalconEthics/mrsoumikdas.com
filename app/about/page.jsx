@@ -18,7 +18,7 @@ import londonApp from "../assets/about/londonApp.avif";
 import personal from "../assets/about/personalBranding.avif";
 //icons
 import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
-import { useContext } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 import { UserContext } from "../store/UserContext";
 import mConnector from "../assets/about/mConnector.avif";
 import connector from "../assets/about/connector.avif";
@@ -99,13 +99,24 @@ export default function About() {
 
   const certificates = [cs50, ai4, personal, londonApp, bharat];
 
+  const [w1920, setW] = useState(false);
+
+  useLayoutEffect(() => {
+    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
+    console.log(screen.availWidth);
+  }, []);
+
   return (
     <div>
       <div className="flex w-full min-h-screen flex-col items-center overflow-x-clip overflow-y-auto">
         <Nav />
         <Contact />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
-          <div className="text-center px-10 md:px-[16%] md:pt-[4%]">
+          <div
+            className={`text-center px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            } md:pt-[4%]`}
+          >
             <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Know more about me and my Work
             </h1>
@@ -113,12 +124,20 @@ export default function About() {
               _
             </p>
           </div>
-          <p className="px-10 md:px-[16%] md:text-lg text-dim break-words text-center py-[2%]">
+          <p
+            className={`px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            } md:text-lg text-dim break-words text-center py-[2%]`}
+          >
             "India annually produces 1.5 million engineers every year but I
             believe that am not just another Indian engineer among those
             millions rather I am among the few passionate ones"
           </p>
-          <div className="flex flex-col align-middle w-full relative px-10 md:px-[16%] md:pb-[4%] md:space-y-8">
+          <div
+            className={`flex flex-col align-middle w-full relative px-10 md:px-[16%] md:pb-[4%] md:space-y-8 ${
+              w1920 && "md:px-[20%]"
+            }`}
+          >
             <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Work Experiences
             </h2>
@@ -139,12 +158,12 @@ export default function About() {
                     className="w-[60%] h-64 md:w-[22%] md:h-72 border border-white p-4 py-10 rounded-2xl"
                     alt={item.title}
                   />
-                  <div className="flex flex-col text-sm break-word space-y-1 md:w-[43%] break-all">
+                  <div className="flex flex-col text-sm md:text-base break-word space-y-1 md:w-[43%] break-all">
                     <div className="">
-                      <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+                      <h3 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                         {item.title}
                       </h3>
-                      <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-lg from-main to-secondary text-center">
+                      <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-lg md:text-2xl from-main to-secondary text-center">
                         {item.role}
                       </p>
                     </div>
@@ -167,7 +186,9 @@ export default function About() {
               quality={100}
               src={connector}
               alt="connector1"
-              className="hidden md:block absolute scale-[80%] top-[5%] left-[34%] z-10"
+              className={`hidden md:block absolute scale-[80%] top-[5%] left-[34%] z-10 ${
+                w1920 && "left-[38%]"
+              }`}
             />
             <Image
               placeholder="blur"
@@ -177,8 +198,16 @@ export default function About() {
               className="z-10 absolute bottom-0 right-[35%] md:right-[45%]"
             />
           </div>
-          <div className="flex flex-col align-middle w-full py-[8%] md:pt-[4%] relative px-10 md:px-[16%] bg-dark md:pb-[4%] md:space-y-8">
-            <div className="text-center px-10 md:px-[16%]">
+          <div
+            className={`flex flex-col align-middle w-full py-[8%] md:pt-[4%] relative px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            } bg-dark md:pb-[4%] md:space-y-8`}
+          >
+            <div
+              className={`text-center px-10 md:px-[16%] ${
+                w1920 && "md:px-[20%]"
+              }`}
+            >
               <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                 My Academics
               </h2>
@@ -203,12 +232,12 @@ export default function About() {
                     className="w-[60%] h-72 md:w-[22%] md:h-74 border border-white p-4 py-10 rounded-2xl"
                     alt={item.course}
                   />
-                  <div className="flex flex-col text-sm break-word md:w-[43%] space-y-1">
+                  <div className="flex flex-col text-sm md:text-base break-word md:w-[43%] space-y-1">
                     <div className="">
-                      <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+                      <h3 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                         {item.course}
                       </h3>
-                      <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-lg from-main to-secondary text-center">
+                      <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-lg md:text-2xl from-main to-secondary text-center">
                         {item.uni}
                       </p>
                     </div>
@@ -230,7 +259,9 @@ export default function About() {
               quality={100}
               src={connector2}
               alt="connector2"
-              className="hidden md:block absolute scale-[80%] top-[20%] left-[34%] z-10"
+              className={`hidden md:block absolute scale-[80%] top-[20%] left-[34%] z-10 ${
+                w1920 && "left-[38%]"
+              }`}
             />
             <Image
               placeholder="blur"
@@ -240,7 +271,11 @@ export default function About() {
               className="z-10 absolute bottom-[-0.2%] right-[35%]  md:right-[45%] "
             />
           </div>
-          <div className="flex flex-col align-middle w-full px-10 md:px-[16%] md:pt-[4%]">
+          <div
+            className={`flex flex-col align-middle w-full px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            } md:pt-[4%]`}
+          >
             <div className="text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                 My Certifications
@@ -257,7 +292,7 @@ export default function About() {
                     placeholder="blur"
                     quality={100}
                     src={item}
-                    alt=""
+                    alt="certificate img"
                     className="w-[60%] md:w-[8%]"
                   />
                 );
@@ -271,14 +306,20 @@ export default function About() {
                     placeholder="blur"
                     quality={100}
                     src={item}
-                    alt=""
-                    className={`${index == 0 ? "col-span-2 row-span-2" : ""}`}
+                    alt="certificate img"
+                    className={`${index == 0 ? "col-span-2 row-span-2" : ""} ${
+                      w1920 && "w-full"
+                    }`}
                   />
                 );
               })}
             </div>
           </div>
-          <div className="w-full px-10 md:px-[16%] pb-[2%]">
+          <div
+            className={`w-full px-10 md:px-[16%] ${
+              w1920 && "md:px-[20%]"
+            } pb-[2%]`}
+          >
             <div className="p-4 md:p-6 flex flex-col md:flex-row md:space-x-4 items-center justify-center bg-dark rounded-lg space-y-2">
               <div className="text-center">
                 <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">

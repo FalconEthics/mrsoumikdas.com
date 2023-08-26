@@ -4,7 +4,7 @@ import flatLogo from "../assets/flatLogo.avif";
 import menuBtn from "../assets/menu bar.avif";
 import closeBtn from "../assets/ep_close-bold.avif";
 import borderBottom from "../assets/Line 4.avif";
-import { useContext } from "react";
+import { useContext, useState, useLayoutEffect } from "react";
 import { UserContext } from "../store/UserContext";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -31,9 +31,20 @@ export default function Nav() {
     },
   ];
 
+  const [w1920, setW] = useState(false);
+
+  useLayoutEffect(() => {
+    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
+    console.log(screen.availWidth);
+  }, []);
+
   return (
     <>
-      <div className="relative w-screen py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-auto ">
+      <div
+        className={`relative w-screen py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-auto ${
+          w1920 && pathname !== "/projects" && "md:px-[20%]"
+        }`}
+      >
         <Image src={flatLogo} alt="Soumik Das" />
 
         <div>

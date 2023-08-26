@@ -270,8 +270,9 @@ const Projects = () => {
             {projects.map((item, index) => {
               return (
                 <div
-                  className={`flex flex-col w-full  ${index % 2 == 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
+                  className={`flex flex-col w-full  ${
+                    index % 2 == 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
                 >
                   <Image
                     src={item.img}
@@ -282,9 +283,11 @@ const Projects = () => {
                     className="md:w-1/2"
                   />
                   <div
-                    className={`flex flex-col px-10 ${index % 2 == 0 ? "md:pr-[16%]" : "md:pl-[16%]"
-                      } py-[8%] md:justify-between space-y-2 md:w-1/2 ${index == projects.length - 1 && ""
-                      }`}
+                    className={`flex flex-col px-10 ${
+                      index % 2 == 0 ? "md:pr-[16%]" : "md:pl-[16%]"
+                    } py-[8%] md:justify-between space-y-2 md:w-1/2 ${
+                      index == projects.length - 1 && ""
+                    }`}
                   >
                     <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-3xl">
                       {item.title}
@@ -319,12 +322,12 @@ const Projects = () => {
                             {item.img == keeper || item.img == likely
                               ? "OPEN WEB-APP"
                               : item.img == covid
-                                ? "DOWNLOAD APK"
-                                : item.img == oiram
-                                  ? "PLAY GAME!"
-                                  : item.img == apply
-                                    ? "OPEN WEBSITE"
-                                    : ""}
+                              ? "DOWNLOAD APK"
+                              : item.img == oiram
+                              ? "PLAY GAME!"
+                              : item.img == apply
+                              ? "OPEN WEBSITE"
+                              : ""}
                           </p>
                         </Link>
                       )}

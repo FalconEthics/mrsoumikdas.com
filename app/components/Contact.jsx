@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 import { UserContext } from "../store/UserContext";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -22,6 +22,12 @@ export default function Contact() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  const [w1920, setW] = useState(false);
+
+  useLayoutEffect(() => {
+    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
+    console.log(screen.availWidth);
+  }, []);
 
   return (
     <>
@@ -36,8 +42,16 @@ export default function Contact() {
           exit={{ opacity: 0 }}
           className="absolute overflow-clip w-screen h-screen backdrop-blur-md top-0 right-0 z-50 flex justify-center items-start"
         >
-          <div className="slide-in p-4 flex flex-col space-y-5 md:flex-row-reverse md:space-y-0 md:space-x-5 text-xl w-10/12 md:w-6/12 shadow-2xl shadow-main rounded-2xl mt-[30%] md:mt-[15%] md:p-10  md:h-6/12 bg-black bg-opacity-80 justify-center items-center">
-            <Lottie options={defaultOptions} style={{width: '50%'}} className={"w-full md:w-6/12 md:justify-center md:items-center"} />
+          <div
+            className={`slide-in p-4 flex flex-col space-y-5 md:flex-row-reverse md:space-y-0 md:space-x-5 text-xl w-10/12 md:w-6/12 shadow-2xl shadow-main rounded-2xl mt-[30%] md:mt-[15%] ${
+              w1920 && "md:mt-[11%]"
+            } md:p-10  md:h-6/12 bg-black bg-opacity-80 justify-center items-center`}
+          >
+            <Lottie
+              options={defaultOptions}
+              style={{ width: "50%" }}
+              className={"w-full md:w-6/12 md:justify-center md:items-center"}
+            />
             <div className="text-center md:text-start space-y-2 md:w-6/12  md:flex md:flex-col md:justify-between md:items-start">
               <div className="font-black text-3xl md:text-4xl mb-6 flex flex-row space-x-2 justify-center items-center md:items-start md:justify-start">
                 <p>Contact</p>
@@ -71,8 +85,12 @@ export default function Contact() {
               </Link>
               <div className="flex flex-col justify-center items-center pt-3 md:pt-5 md:justify-start md:flex-row ">
                 <p className="hidden md:block text-base">or</p>
-                <Image src={line} alt="Line" className="md:hidden"/>
-                <Image src={line2} alt='line2' className="hidden md:block mt-1"/>
+                <Image src={line} alt="Line" className="md:hidden" />
+                <Image
+                  src={line2}
+                  alt="line2"
+                  className="hidden md:block mt-1"
+                />
                 <div className="flex flex-row space-x-3 pt-3 pb-8 text-2xl md:p-0 md:pl-3">
                   <Link href={"https://twitter.com/Mr_Soumik_Das"}>
                     <AiFillInstagram />
