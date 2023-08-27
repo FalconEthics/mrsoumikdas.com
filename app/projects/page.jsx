@@ -132,9 +132,9 @@ const Projects = () => {
     },
     {
       img: likely,
-      title: "Likely",
+      title: "Likey",
       desc: "A social media platform frontend inspired from Twitter and Insta made with Vue.js",
-      repo: "https://github.com/FalconEthics/Likely",
+      repo: "https://github.com/FalconEthics/Likey",
       url: "https://likey-falconethics.vercel.app/",
     },
     {
@@ -348,6 +348,8 @@ const Projects = () => {
                       className="flex flex-row items-center justify-start space-x-4"
                     >
                       <Link
+                        passHref
+                        passHref
                         href={item.repo}
                         className={
                           item.url
@@ -368,6 +370,7 @@ const Projects = () => {
                       </Link>
                       {item.url && (
                         <Link
+                          passHref
                           href={item.url}
                           className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                         >
@@ -412,6 +415,7 @@ const Projects = () => {
               GitHub profile for all the latest repos:
             </h2>
             <Link
+              passHref
               href={"https://github.com/FalconEthics"}
               className="text-sm hover:scale-90 shadow-lg md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >

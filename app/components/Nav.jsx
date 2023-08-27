@@ -144,6 +144,7 @@ export default function Nav() {
             {routes.map((item, index) => {
               return (
                 <Link
+                  passHref
                   key={index}
                   className={`hover:text-main border-b border-main p-4 ${
                     item.path == pathname && "text-secondary"

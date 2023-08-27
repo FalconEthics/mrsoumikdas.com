@@ -83,6 +83,7 @@ export default function Contact() {
               {/* Render phone number */}
               <p className="text-dim text-sm">Phone</p>
               <Link
+                passHref
                 href={"tel:+91-98540-27242"}
                 className="flex flex-row space-x-2 w-full md:mt-0 justify-center items-center font-medium text-base md:text-lg md:items-start md:justify-start hover:text-xl"
               >
@@ -94,6 +95,7 @@ export default function Contact() {
               {/* Render email */}
               <p className="text-dim text-sm">Email</p>
               <Link
+                passHref
                 className="font-medium text-base md:text-lg hover:text-xl"
                 href={"mailto:mail2soumikdas@gmail.com"}
               >
@@ -102,6 +104,7 @@ export default function Contact() {
               {/* Render LinkedIn */}
               <p className="text-dim text-sm">Linked-In</p>
               <Link
+                passHref
                 className="w-full font-medium text-base md:text-lg hover:text-xl"
                 href={"https://www.linkedin.com/in/soumik-das-profile/"}
               >
@@ -117,13 +120,16 @@ export default function Contact() {
                   className="hidden md:block mt-1"
                 />
                 <div className="flex flex-row space-x-3 pt-3 pb-8 text-2xl md:p-0 md:pl-3">
-                  <Link href={"https://twitter.com/Mr_Soumik_Das"}>
+                  <Link passHref href={"https://twitter.com/Mr_Soumik_Das"}>
                     <AiFillInstagram className="hover:text-4xl" />
                   </Link>
-                  <Link href={"https://discord.gg/qkcm8qGP8b"}>
+                  <Link passHref href={"https://discord.gg/qkcm8qGP8b"}>
                     <AiFillTwitterCircle className="hover:text-4xl" />
                   </Link>
-                  <Link href={"https://www.instagram.com/itz.raaj.das/"}>
+                  <Link
+                    passHref
+                    href={"https://www.instagram.com/itz.raaj.das/"}
+                  >
                     <FaDiscord className="hover:text-4xl" />
                   </Link>
                 </div>

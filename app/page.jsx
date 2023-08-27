@@ -261,6 +261,7 @@ export default function Home() {
             {/* imports the carousel component from the components folder. */}
             <Carousel images={slides} />
             <Link
+              passHref
               href={"/projects"}
               className="absolute hover:scale-90 bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
@@ -328,6 +329,7 @@ export default function Home() {
                   </p>
                 </button>
                 <Link
+                  passHref
                   href={"/about"}
                   className="w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                 >
