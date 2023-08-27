@@ -238,7 +238,6 @@ const Projects = () => {
           <motion.div
             initial={slideIn}
             whileInView={slideOut}
-            viewport={{ once: true, amount: 0.8 }}
             className="hidden md:flex flex-row h-full justify-start items-center w-full px-[16%] md:py-[3%]"
           >
             <div className="h-full flex flex-col justify-between items-start space-y-14">
@@ -346,7 +345,6 @@ const Projects = () => {
                     <motion.div
                       initial={slideIn}
                       whileInView={slideOut}
-                      viewport={{ once: true, amount: 0.8 }}
                       className="flex flex-row items-center justify-start space-x-4"
                     >
                       <Link
@@ -397,7 +395,6 @@ const Projects = () => {
             <motion.div
               initial={fadeIn}
               whileInView={fadeOut}
-              viewport={{ once: true, amount: 0.8 }}
               className="w-[80%] md:w-[50%]"
             >
               <Image

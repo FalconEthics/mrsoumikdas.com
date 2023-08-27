@@ -183,7 +183,6 @@ export default function About() {
           <motion.div
             initial={fadeIn}
             whileInView={fadeOut}
-            viewport={{ once: true, amount: 0.8 }}
             className={`text-center px-10 md:px-[16%] ${
               w1920 && "md:px-[20%]"
             } md:pt-[4%]`}
@@ -224,7 +223,6 @@ export default function About() {
                   <motion.div
                     initial={index % 2 ? slideIn : slide}
                     whileInView={slideOut}
-                    viewport={{ once: true, amount: 0.8 }}
                     className="w-[60%] hover:shadow-xl hover:shadow-secondary h-64 md:w-[22%] md:h-72 border border-white p-4 py-10 rounded-2xl"
                   >
                     <Image
@@ -242,7 +240,6 @@ export default function About() {
                   <motion.div
                     initial={index % 2 ? slide : slideIn}
                     whileInView={slideOut}
-                    viewport={{ once: true, amount: 0.8 }}
                     className="flex flex-col text-sm md:text-base break-word space-y-1 md:w-[43%] break-all"
                   >
                     <div className="">
@@ -311,7 +308,6 @@ export default function About() {
                   <motion.div
                     initial={index % 2 ? slide : slideIn}
                     whileInView={slideOut}
-                    viewport={{ once: true, amount: 0.8 }}
                     className={`w-[60%] h-72 hover:shadow-xl hover:shadow-secondary md:w-[22%] ${
                       w1920 ? "md:h-80" : "md:h-74"
                     } border border-white p-4 py-10 rounded-2xl`}
@@ -331,7 +327,6 @@ export default function About() {
                   <motion.div
                     initial={index % 2 ? slideIn : slide}
                     whileInView={slideOut}
-                    viewport={{ once: true, amount: 0.8 }}
                     className="flex flex-col text-sm md:text-base break-word md:w-[43%] space-y-1"
                   >
                     <div className="">
@@ -403,7 +398,6 @@ export default function About() {
                   <motion.div
                     initial={scaleIn}
                     whileInView={scaleOut}
-                    viewport={{ once: true, amount: 0.8 }}
                     className={`${index == 0 ? "col-span-2 row-span-2" : ""} ${
                       w1920 && "w-full"
                     }`}

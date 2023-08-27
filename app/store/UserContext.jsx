@@ -7,7 +7,7 @@
 
 "use client";
 
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useLayoutEffect } from "react";
 
 /**
  * The UserContext object that contains state variables and animation objects.
@@ -41,19 +41,23 @@ const UserContextProvider = ({ children }) => {
   const [clicked, setClicked] = useState(false);
   // this state is used to determine whether a modal should be shown
   const [showModal, setShowModal] = useState(false);
+  // this state is used to determine it's mobile or not
+  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // console.log(showModal);
-  }, [showModal]);
+    setIsMobile(window.innerWidth < 768);
+    console.log(isMobile);
+  }, [isMobile]);
 
   // Animation objects
   const slideIn = {
-    x: 300,
+    x: isMobile ? 0 : 300,
     opacity: 0,
   };
 
   const slide = {
-    x: -300,
+    x: isMobile ? -0 : -300,
     opacity: 0,
   };
 
@@ -67,7 +71,7 @@ const UserContextProvider = ({ children }) => {
   };
 
   const slideTilt = {
-    x: 300,
+    x: isMobile ? 0 : 300,
     opacity: 0,
   };
 
@@ -93,7 +97,7 @@ const UserContextProvider = ({ children }) => {
     },
   };
   const offscreen = {
-    y: -300,
+    y: isMobile ? -0 : -300,
     opacity: 0,
   };
   const onscreen = {

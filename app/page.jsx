@@ -30,7 +30,7 @@ import p5 from "./assets/home/p5.avif";
 import p4 from "./assets/home/p4.avif";
 import p3 from "./assets/home/p3.avif";
 
-import { useContext, useLayoutEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./store/UserContext";
 import dynamic from "next/dynamic";
 
@@ -129,9 +129,9 @@ export default function Home() {
   const [w1920, setW] = useState(false);
 
   // Use layout effect to set the state variable when the component mounts.
-  useLayoutEffect(() => {
+  useEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    // console.log(screen.availWidth);
+    // console.log(window.innerWidth);
   }, []);
 
   // Return the JSX code for the home page.
@@ -154,7 +154,6 @@ export default function Home() {
               <motion.div
                 initial={slideIn}
                 whileInView={slideOut}
-                viewport={{ once: true, amount: 0.8 }}
                 className="relative z-10 w-full h-full md:h-auto drop-shadow-lg"
               >
                 <Image
@@ -168,7 +167,6 @@ export default function Home() {
               <motion.div
                 initial={slideTilt}
                 whileInView={slideTiltOut}
-                viewport={{ once: true, amount: 0.8 }}
                 className="absolute inset-0 w-full  h-full md:h-auto"
               >
                 <Image className="w-full h-full" src={Rect} alt="BG" priority />
@@ -205,7 +203,6 @@ export default function Home() {
             <motion.div
               initial={scaleIn}
               whileInView={scaleOut}
-              viewport={{ once: true, amount: 0.8 }}
               className="w-full md:w-[40%] scale-in"
             >
               <Image
@@ -287,7 +284,6 @@ export default function Home() {
             <motion.div
               initial={offscreen}
               whileInView={onscreen}
-              viewport={{ once: true, amount: 0.8 }}
               className="md:w-[45%]"
             >
               <Image
@@ -301,7 +297,6 @@ export default function Home() {
             <motion.div
               initial={slideIn}
               whileInView={slideOut}
-              viewport={{ once: true, amount: 0.8 }}
               className="flex flex-col space-y-4"
             >
               <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
