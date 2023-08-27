@@ -74,6 +74,7 @@ export default function About() {
     scaleOut,
     fadeIn,
     fadeOut,
+    isMobile,
   } = useContext(UserContext);
 
   /**
@@ -221,8 +222,8 @@ export default function About() {
                   }`}
                 >
                   <motion.div
-                    initial={index % 2 ? slideIn : slide}
-                    whileInView={slideOut}
+                    initial={isMobile ? (index % 2 ? slideIn : slide) : fadeIn}
+                    whileInView={isMobile ? slideOut : fadeOut}
                     className="w-[60%] hover:shadow-xl hover:shadow-secondary h-64 md:w-[22%] md:h-72 border border-white p-4 py-10 rounded-2xl"
                   >
                     <Image
@@ -306,8 +307,8 @@ export default function About() {
                   }`}
                 >
                   <motion.div
-                    initial={index % 2 ? slide : slideIn}
-                    whileInView={slideOut}
+                    initial={isMobile ? (index % 2 ? slide : slideIn) : fadeIn}
+                    whileInView={isMobile ? slideOut : fadeOut}
                     className={`w-[60%] h-72 hover:shadow-xl hover:shadow-secondary md:w-[22%] ${
                       w1920 ? "md:h-80" : "md:h-74"
                     } border border-white p-4 py-10 rounded-2xl`}
@@ -381,14 +382,20 @@ export default function About() {
             <div className="flex flex-col space-y-[8%] pt-[8%] w-full items-center justify-center md:hidden">
               {certificates.map((item, index) => {
                 return (
-                  <Image
-                    key={index}
-                    placeholder="blur"
-                    quality={100}
-                    src={item}
-                    alt="certificate img"
+                  <motion.div
+                    initial={scaleIn}
+                    whileInView={scaleOut}
                     className="w-[60%] md:w-[8%]"
-                  />
+                  >
+                    <Image
+                      key={index}
+                      placeholder="blur"
+                      quality={100}
+                      src={item}
+                      alt="certificate img"
+                      className="w-full"
+                    />
+                  </motion.div>
                 );
               })}
             </div>
