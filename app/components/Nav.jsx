@@ -145,6 +145,7 @@ export default function Nav() {
               return (
                 <Link
                   passHref
+                  rel="noopener noreferrer"
                   key={index}
                   className={`hover:text-main border-b border-main p-4 ${
                     item.path == pathname && "text-secondary"

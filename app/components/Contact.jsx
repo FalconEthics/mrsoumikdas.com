@@ -84,6 +84,7 @@ export default function Contact() {
               <p className="text-dim text-sm">Phone</p>
               <Link
                 passHref
+                rel="noopener noreferrer"
                 href={"tel:+91-98540-27242"}
                 className="flex flex-row space-x-2 w-full md:mt-0 justify-center items-center font-medium text-base md:text-lg md:items-start md:justify-start hover:text-xl"
               >
@@ -96,6 +97,7 @@ export default function Contact() {
               <p className="text-dim text-sm">Email</p>
               <Link
                 passHref
+                rel="noopener noreferrer"
                 className="font-medium text-base md:text-lg hover:text-xl"
                 href={"mailto:mail2soumikdas@gmail.com"}
               >
@@ -105,6 +107,7 @@ export default function Contact() {
               <p className="text-dim text-sm">Linked-In</p>
               <Link
                 passHref
+                rel="noopener noreferrer"
                 className="w-full font-medium text-base md:text-lg hover:text-xl"
                 href={"https://www.linkedin.com/in/soumik-das-profile/"}
               >
@@ -120,14 +123,23 @@ export default function Contact() {
                   className="hidden md:block mt-1"
                 />
                 <div className="flex flex-row space-x-3 pt-3 pb-8 text-2xl md:p-0 md:pl-3">
-                  <Link passHref href={"https://twitter.com/Mr_Soumik_Das"}>
+                  <Link
+                    passHref
+                    rel="noopener noreferrer"
+                    href={"https://twitter.com/Mr_Soumik_Das"}
+                  >
                     <AiFillInstagram className="hover:text-4xl" />
                   </Link>
-                  <Link passHref href={"https://discord.gg/qkcm8qGP8b"}>
+                  <Link
+                    passHref
+                    rel="noopener noreferrer"
+                    href={"https://discord.gg/qkcm8qGP8b"}
+                  >
                     <AiFillTwitterCircle className="hover:text-4xl" />
                   </Link>
                   <Link
                     passHref
+                    rel="noopener noreferrer"
                     href={"https://www.instagram.com/itz.raaj.das/"}
                   >
                     <FaDiscord className="hover:text-4xl" />

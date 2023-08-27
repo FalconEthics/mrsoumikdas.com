@@ -346,6 +346,7 @@ const Projects = () => {
                     >
                       <Link
                         passHref
+                        rel="noopener noreferrer"
                         href={item.repo}
                         className={
                           item.url
@@ -367,6 +368,7 @@ const Projects = () => {
                       {item.url && (
                         <Link
                           passHref
+                          rel="noopener noreferrer"
                           href={item.url}
                           className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                         >
@@ -412,6 +414,7 @@ const Projects = () => {
             </h2>
             <Link
               passHref
+              rel="noopener noreferrer"
               href={"https://github.com/FalconEthics"}
               className="text-sm hover:scale-90 shadow-lg md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >

@@ -262,6 +262,7 @@ export default function Home() {
             <Carousel images={slides} />
             <Link
               passHref
+              rel="noopener noreferrer"
               href={"/projects"}
               className="absolute hover:scale-90 bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
@@ -330,6 +331,7 @@ export default function Home() {
                 </button>
                 <Link
                   passHref
+                  rel="noopener noreferrer"
                   href={"/about"}
                   className="w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                 >
