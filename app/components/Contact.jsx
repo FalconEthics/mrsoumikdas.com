@@ -43,7 +43,7 @@ export default function Contact() {
   // Use useLayoutEffect to set w1920 state on component mount
   useLayoutEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    console.log(screen.availWidth);
+    // console.log(screen.availWidth);
   }, []);
 
   // Render Contact component
@@ -58,7 +58,6 @@ export default function Contact() {
           }}
           initial={offscreen}
           animate={onscreen}
-          exit={{ opacity: 0 }}
           className="absolute overflow-clip w-screen h-screen backdrop-blur-md top-0 right-0 z-50 flex justify-center items-start"
         >
           <div
@@ -75,10 +74,7 @@ export default function Contact() {
             />
             <div className="text-center md:text-start space-y-2 md:w-6/12  md:flex md:flex-col md:justify-between md:items-start">
               {/* Render Contact title */}
-              <div
-                data-cursor-exclusion
-                className="font-black text-3xl md:text-4xl mb-6 flex flex-row space-x-2 justify-center items-center md:items-start md:justify-start"
-              >
+              <div className="font-black text-3xl md:text-4xl mb-6 flex flex-row space-x-2 justify-center items-center md:items-start md:justify-start">
                 <p>Contact</p>
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
                   Me
@@ -87,7 +83,6 @@ export default function Contact() {
               {/* Render phone number */}
               <p className="text-dim text-sm">Phone</p>
               <Link
-                data-cursor-exclusion
                 href={"tel:+91-98540-27242"}
                 className="flex flex-row space-x-2 w-full md:mt-0 justify-center items-center font-medium text-base md:text-lg md:items-start md:justify-start hover:text-xl"
               >
@@ -99,7 +94,6 @@ export default function Contact() {
               {/* Render email */}
               <p className="text-dim text-sm">Email</p>
               <Link
-                data-cursor-exclusion
                 className="font-medium text-base md:text-lg hover:text-xl"
                 href={"mailto:mail2soumikdas@gmail.com"}
               >
@@ -108,16 +102,12 @@ export default function Contact() {
               {/* Render LinkedIn */}
               <p className="text-dim text-sm">Linked-In</p>
               <Link
-                data-cursor-exclusion
                 className="w-full font-medium text-base md:text-lg hover:text-xl"
                 href={"https://www.linkedin.com/in/soumik-das-profile/"}
               >
                 linkedin.com/in/soumik-das-profile
               </Link>
-              <div
-                data-cursor-exclusion
-                className="flex flex-col justify-center items-center pt-3 md:pt-5 md:justify-start md:flex-row "
-              >
+              <div className="flex flex-col justify-center items-center pt-3 md:pt-5 md:justify-start md:flex-row ">
                 {/* Render social media icons */}
                 <p className="hidden md:block text-base">or</p>
                 <Image src={line} alt="Line" className="md:hidden" />
@@ -126,10 +116,7 @@ export default function Contact() {
                   alt="line2"
                   className="hidden md:block mt-1"
                 />
-                <div
-                  data-cursor-exclusion
-                  className="flex flex-row space-x-3 pt-3 pb-8 text-2xl md:p-0 md:pl-3"
-                >
+                <div className="flex flex-row space-x-3 pt-3 pb-8 text-2xl md:p-0 md:pl-3">
                   <Link href={"https://twitter.com/Mr_Soumik_Das"}>
                     <AiFillInstagram className="hover:text-4xl" />
                   </Link>

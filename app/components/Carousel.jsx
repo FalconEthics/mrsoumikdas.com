@@ -27,7 +27,7 @@ export default function Carousel({ images }) {
 
   useLayoutEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    console.log(screen.availWidth);
+    // console.log(screen.availWidth);
   }, []);
 
   // this function is used to move the carousel to the right
@@ -96,7 +96,6 @@ export default function Carousel({ images }) {
             className="absolute w-[50%] md:w-[20%] space-y-4"
           >
             <Image
-              data-cursor-exclusion
               onClick={() => {
                 window.open(image.url, "_blank");
               }}
@@ -106,7 +105,7 @@ export default function Carousel({ images }) {
                 index === midItem ? "z-40" : "z-0 blur-sm"
               } drop-shadow-xl shadow-whtie`}
             />
-            <div data-cursor-exclusion>
+            <div>
               <p className="font-bold text-sm">{image.title}</p>
               <p className="text-dim text-xs break-all">{image.desc}</p>
             </div>

@@ -131,7 +131,7 @@ export default function Home() {
   // Use layout effect to set the state variable when the component mounts.
   useLayoutEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    console.log(screen.availWidth);
+    // console.log(screen.availWidth);
   }, []);
 
   // Return the JSX code for the home page.
@@ -150,16 +150,12 @@ export default function Home() {
               w1920 && "md:px-[20%]"
             }`}
           >
-            <div
-              data-cursor-exclusion
-              data-cursor-size="80px"
-              className="relative w-full md:w-1/2"
-            >
+            <div className="relative w-full md:w-1/2">
               <motion.div
                 initial={slideIn}
                 whileInView={slideOut}
                 viewport={{ once: true, amount: 0.8 }}
-                className="relative z-10 w-full h-full  md:h-auto drop-shadow-lg"
+                className="relative z-10 w-full h-full md:h-auto drop-shadow-lg"
               >
                 <Image
                   src={Banner}
@@ -178,37 +174,17 @@ export default function Home() {
                 <Image className="w-full h-full" src={Rect} alt="BG" priority />
               </motion.div>
             </div>
-            <div
-              data-cursor-exclusion
-              className="flex flex-col w-full space-y-2 h-fit"
-            >
+            <div className="flex flex-col w-full space-y-2 h-fit">
               <div className="flex flex-row space-x-2">
-                <p
-                  data-cursor-exclusion
-                  data-cursor-size="100px"
-                  className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary"
-                >
+                <p className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
                   Hey
                 </p>
-                <p
-                  data-cursor-exclusion
-                  data-cursor-size="100px"
-                  className="text-4xl md:text-6xl font-bold"
-                >
-                  It's
-                </p>
+                <p className="text-4xl md:text-6xl font-bold">It's</p>
               </div>
-              <h1
-                data-cursor-exclusion
-                data-cursor-size="100px"
-                className="text-4xl md:text-6xl font-bold"
-              >
+              <h1 className="text-4xl md:text-6xl font-bold">
                 Soumik Das here
               </h1>
-              <h2
-                data-cursor-exclusion
-                className="md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white"
-              >
+              <h2 className="md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
                 Welcome to my part of the internet!
               </h2>
             </div>
@@ -233,7 +209,6 @@ export default function Home() {
               className="w-full md:w-[40%] scale-in"
             >
               <Image
-                data-cursor-exclusion
                 src={Skills}
                 quality={100}
                 priority
@@ -242,23 +217,13 @@ export default function Home() {
               />
             </motion.div>
             <div className="break-words md:w-1/2 md:pr-8">
-              <h2
-                data-cursor-exclusion
-                data-cursor-size="80px"
-                className="text-2xl md:text-3xl font-bold inline pr-2"
-              >
+              <h2 className="text-2xl md:text-3xl font-bold inline pr-2">
                 I'm a Front-end Developer, based in
               </h2>
-              <p
-                data-cursor-exclusion
-                className="text-2xl md:text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary"
-              >
+              <p className="text-2xl md:text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
                 INDIA
               </p>
-              <p
-                data-cursor-exclusion
-                className="pt-2 break-all text-dim md:text-lg "
-              >
+              <p className="pt-2 break-all text-dim md:text-lg ">
                 I love to get beautiful and interactive designs get into life,
                 with proficiency in front end frameworks and tools like:
                 React/React Native, Next.js, Tailwind Css, Framer Motion and
@@ -282,10 +247,7 @@ export default function Home() {
             }`}
           >
             <div className="text-center absolute top-[8%]">
-              <h2
-                data-cursor-exclusion
-                className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800"
-              >
+              <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
                 My Projects
               </h2>
               <p className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
@@ -305,7 +267,7 @@ export default function Home() {
               href={"/projects"}
               className="absolute hover:scale-90 bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
-              <BiShowAlt data-cursor-exclusion />
+              <BiShowAlt />
               <p>show more</p>
             </Link>
             <Image
@@ -329,7 +291,6 @@ export default function Home() {
               className="md:w-[45%]"
             >
               <Image
-                data-cursor-exclusion
                 src={About}
                 placeholder="blur"
                 quality={100}
@@ -343,11 +304,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.8 }}
               className="flex flex-col space-y-4"
             >
-              <div
-                data-cursor-exclusion
-                data-cursor-size="100px"
-                className="flex flex-col justify-center items-center md:justify-start md:items-start"
-              >
+              <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
                 <h2
                   className={` text-2xl md:text-4xl font-bold ${
                     w1920 && "md:text-5xl"
@@ -361,7 +318,6 @@ export default function Home() {
               </div>
               <div className="flex flex-row  justify-center items-center space-x-4 md:justify-start md:space-x-6">
                 <button
-                  data-cursor-exclusion
                   onClick={() => {
                     window.scrollTo({
                       top: 0,
@@ -377,7 +333,6 @@ export default function Home() {
                   </p>
                 </button>
                 <Link
-                  data-cursor-exclusion
                   href={"/about"}
                   className="w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                 >

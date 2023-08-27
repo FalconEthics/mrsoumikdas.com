@@ -57,7 +57,7 @@ export default function Nav() {
   // Check if the screen width is 1920 on mount.
   useLayoutEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    console.log(screen.availWidth);
+    // console.log(screen.availWidth);
   }, []);
 
   return (
@@ -69,7 +69,7 @@ export default function Nav() {
         }`}
       >
         {/* The website logo */}
-        <Image data-cursor-exclusion src={flatLogo} alt="Soumik Das" />
+        <Image src={flatLogo} alt="Soumik Das" />
 
         <div>
           {/* The navigation links */}
@@ -77,7 +77,6 @@ export default function Nav() {
             {routes.map((item, index) => {
               return (
                 <button
-                  data-cursor-exclusion
                   key={index}
                   className={`p-2 hover:scale-90 ${
                     item.path == pathname && "text-secondary"
@@ -92,7 +91,6 @@ export default function Nav() {
             })}
             {/* The contact button */}
             <button
-              data-cursor-exclusion
               onClick={(e) => {
                 e.stopPropagation();
                 setShowModal(true);

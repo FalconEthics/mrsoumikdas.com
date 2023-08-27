@@ -172,7 +172,7 @@ export default function About() {
 
   useLayoutEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    console.log(screen.availWidth);
+    // console.log(screen.availWidth);
   }, []);
 
   return (
@@ -188,11 +188,7 @@ export default function About() {
               w1920 && "md:px-[20%]"
             } md:pt-[4%]`}
           >
-            <h1
-              data-cursor-exclusion
-              data-cursor-size="80px"
-              className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
-            >
+            <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Know more about me and my Work
             </h1>
             <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
@@ -200,7 +196,6 @@ export default function About() {
             </p>
           </motion.div>
           <h2
-            data-cursor-exclusion
             className={`px-10 md:px-[16%] ${
               w1920 && "md:px-[20%]"
             } md:text-lg text-dim break-words text-center py-[2%]`}
@@ -214,11 +209,7 @@ export default function About() {
               w1920 && "md:px-[20%]"
             }`}
           >
-            <h2
-              data-cursor-exclusion
-              data-cursor-size="80px"
-              className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
-            >
+            <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Work Experiences
             </h2>
             {work.map((item, index) => {
@@ -237,8 +228,6 @@ export default function About() {
                     className="w-[60%] hover:shadow-xl hover:shadow-secondary h-64 md:w-[22%] md:h-72 border border-white p-4 py-10 rounded-2xl"
                   >
                     <Image
-                      data-cursor-exclusion
-                      data-cursor-size="80px"
                       src={item.img}
                       placeholder="blur"
                       quality={100}
@@ -254,7 +243,6 @@ export default function About() {
                     initial={index % 2 ? slide : slideIn}
                     whileInView={slideOut}
                     viewport={{ once: true, amount: 0.8 }}
-                    data-cursor-exclusion
                     className="flex flex-col text-sm md:text-base break-word space-y-1 md:w-[43%] break-all"
                   >
                     <div className="">
@@ -304,11 +292,7 @@ export default function About() {
                 w1920 && "md:px-[20%]"
               }`}
             >
-              <h2
-                data-cursor-exclusion
-                data-cursor-size="80px"
-                className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
-              >
+              <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                 My Academics
               </h2>
               <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
@@ -333,8 +317,6 @@ export default function About() {
                     } border border-white p-4 py-10 rounded-2xl`}
                   >
                     <Image
-                      data-cursor-exclusion
-                      data-cursor-size="80px"
                       src={item.img}
                       placeholder="blur"
                       quality={100}
@@ -350,7 +332,6 @@ export default function About() {
                     initial={index % 2 ? slideIn : slide}
                     whileInView={slideOut}
                     viewport={{ once: true, amount: 0.8 }}
-                    data-cursor-exclusion
                     className="flex flex-col text-sm md:text-base break-word md:w-[43%] space-y-1"
                   >
                     <div className="">
@@ -395,11 +376,7 @@ export default function About() {
             } md:pt-[4%]`}
           >
             <div className="text-center">
-              <h2
-                data-cursor-exclusion
-                data-cursor-size="80px"
-                className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
-              >
+              <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                 My Certifications
               </h2>
               <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
@@ -410,7 +387,6 @@ export default function About() {
               {certificates.map((item, index) => {
                 return (
                   <Image
-                    data-cursor-exclusion
                     key={index}
                     placeholder="blur"
                     quality={100}
@@ -433,7 +409,6 @@ export default function About() {
                     }`}
                   >
                     <Image
-                      data-cursor-exclusion
                       key={index}
                       placeholder="blur"
                       quality={100}
@@ -453,10 +428,7 @@ export default function About() {
           >
             <div className="p-4 md:p-6 flex flex-col md:flex-row md:space-x-4 items-center justify-center bg-dark rounded-lg space-y-2">
               <div className="text-center">
-                <h2
-                  data-cursor-exclusion
-                  className="text-2xl shadow-xl  md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
-                >
+                <h2 className="text-2xl shadow-xl  md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                   Contact for more info
                 </h2>
                 <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
@@ -464,7 +436,6 @@ export default function About() {
                 </p>
               </div>
               <button
-                data-cursor-exclusion
                 onClick={() => {
                   window.scrollTo({
                     top: 0,
