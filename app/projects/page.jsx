@@ -326,9 +326,6 @@ const Projects = () => {
                       key={index}
                       alt="my projects"
                       className={`w-full`}
-                      onClick={() => {
-                        window.open(item.url ? item.url : item.repo, "_blank");
-                      }}
                     />
                   </motion.div>
                   <div
@@ -348,7 +345,6 @@ const Projects = () => {
                       className="flex flex-row items-center justify-start space-x-4"
                     >
                       <Link
-                        passHref
                         passHref
                         href={item.repo}
                         className={
