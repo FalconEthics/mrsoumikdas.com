@@ -15,7 +15,7 @@ export const metadata = {
     title: "Soumik Das | ABOUT",
     description:
       "Know more about me and my Work, India annually produces 1.5 million engineers every year but I believe that am not just another Indian engineer among those millions rather I am among the few passionate ones.",
-    url: "https://www.mrsoumikdas.com/about",
+    url: "https://mrsoumikdas.com/about",
     siteName: "Portfolio Site - ABOUT",
     images: [
       {

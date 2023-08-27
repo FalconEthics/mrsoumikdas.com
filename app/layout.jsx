@@ -1,14 +1,13 @@
 import "./globals.css";
 import { Space_Grotesk } from "next/font/google";
 import UserContextProvider from "./store/UserContext";
-import Contact from "./components/Contact";
 
 const inter = Space_Grotesk({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Soumik Das | Frontend Web Developer",
   description:
-    "I love to get beautiful and interactive uis get into life, with proficiency in front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
+    "I love to get beautiful and interactive designs get into life, with proficiency in front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
   keywords: [
     "soumik",
     "soumik das",
@@ -19,21 +18,21 @@ export const metadata = {
     "web developer",
     "react",
     "react 18",
-    " react developer",
-    " nextjs developer",
-    " frontend dev",
-    " react dev",
-    " web dev",
-    " react native developer",
-    " frontend portfolio",
-    " frontend developer portfolio",
-    " react dev portfolio",
-    " 3d portfolio",
+    "react developer",
+    "nextjs developer",
+    "frontend dev",
+    "react dev",
+    "web dev",
+    "react native developer",
+    "frontend portfolio",
+    "frontend developer portfolio",
+    "react dev portfolio",
+    "3d portfolio",
   ],
   colorScheme: "dark",
   creator: "Soumik Das",
   publisher: "Soumik Das",
-  metadataBase: new URL("https://www.mrsoumikdas.com/"),
+  metadataBase: new URL("https://mrsoumikdas.com/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -44,8 +43,8 @@ export const metadata = {
   openGraph: {
     title: "Soumik Das | Frontend Web Developer",
     description:
-      "I love to get beautiful and interactive uis get into life, with proficiency in front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
-    url: "https://www.mrsoumikdas.com/",
+      "I love to get beautiful and interactive designs get into life, with proficiency in front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
+    url: "https://mrsoumikdas.com/",
     siteName: "Portfolio Site",
     images: [
       {
@@ -68,7 +67,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{ cursor: "crosshair" }}>
         <UserContextProvider>{children}</UserContextProvider>
       </body>
     </html>

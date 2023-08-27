@@ -82,14 +82,17 @@ export default function Carousel({ images }) {
             className="absolute w-[50%] md:w-[20%] space-y-4"
           >
             <Image
+              data-cursor-exclusion
               onClick={() => {
                 window.open(image.url, "_blank");
               }}
               src={image.img}
               alt="img"
-              className={`w-full ${index === midItem ? "z-40" : "z-0 blur-sm"}`}
+              className={`w-full ${
+                index === midItem ? "z-40" : "z-0 blur-sm"
+              } drop-shadow-xl shadow-whtie`}
             />
-            <div>
+            <div data-cursor-exclusion>
               <p className="font-bold text-sm">{image.title}</p>
               <p className="text-dim text-xs break-all">{image.desc}</p>
             </div>

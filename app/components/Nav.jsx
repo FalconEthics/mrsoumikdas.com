@@ -45,15 +45,18 @@ export default function Nav() {
           w1920 && pathname !== "/projects" && "md:px-[20%]"
         }`}
       >
-        <Image src={flatLogo} alt="Soumik Das" />
+        <Image data-cursor-exclusion src={flatLogo} alt="Soumik Das" />
 
         <div>
-          <div className="flex-row justify-center items-center space-x-4 font-mono hidden md:flex">
+          <div className="flex-row justify-center md:text-lg items-center space-x-4 font-mono hidden md:flex">
             {routes.map((item, index) => {
               return (
                 <button
+                  data-cursor-exclusion
                   key={index}
-                  className={`p-2 ${item.path == pathname && "text-secondary"}`}
+                  className={`p-2 hover:scale-90 ${
+                    item.path == pathname && "text-secondary"
+                  }`}
                   onClick={() => {
                     router.push(item.path);
                   }}
@@ -63,11 +66,12 @@ export default function Nav() {
               );
             })}
             <button
+              data-cursor-exclusion
               onClick={(e) => {
                 e.stopPropagation();
                 setShowModal(!showModal);
               }}
-              className="p-2"
+              className="p-2 hover:scale-90"
             >
               Contact
             </button>

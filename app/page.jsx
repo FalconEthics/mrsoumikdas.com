@@ -4,7 +4,9 @@ import Footer from "./components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import Carousel from "./components/Carousel";
-
+import { Cursor } from "react-creative-cursor";
+import "react-creative-cursor/dist/styles.css";
+import { motion } from "framer-motion";
 // importing images
 import Banner from "./assets/home/banner.avif";
 import Rect from "./assets/home/rect.avif";
@@ -34,9 +36,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Soumik Das",
-    url: "https://www.mrsoumikdas.com/",
-    image: "https://www.mrsoumikdas.com/assets/logo.avif",
-    jobTitle: "React Developer",
+    url: "https://mrsoumikdas.com/",
+    image: "https://mrsoumikdas.com/assets/logo.avif",
+    jobTitle: "Frontend Developer",
     worksFor: {
       "@type": "Organization",
       name: "Tripsy Games",
@@ -63,16 +65,16 @@ export default function Home() {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.mrsoumikdas.com/",
+      "@id": "https://mrsoumikdas.com/",
     },
   };
 
   const slides = [
     {
       img: p1,
-      title: "LIKELY",
+      title: "LIKEY",
       desc: "A social media platform frontend inspired from Twitter and Insta made with Vue.js",
-      url: "https://github.com/FalconEthics/Likely",
+      url: "https://likey-falconethics.vercel.app/",
     },
     {
       img: p2,
@@ -100,6 +102,33 @@ export default function Home() {
     },
   ];
 
+  const offscreen = {
+    y: -300,
+    opacity: 0,
+  };
+  const onscreen = {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "ease-in",
+      duration: 0.8,
+    },
+  };
+
+  const slideIn = {
+    x: 300,
+    opacity: 0,
+  };
+
+  const slideOut = {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "ease-in",
+      duration: 0.8,
+    },
+  };
+
   const [w1920, setW] = useState(false);
 
   useLayoutEffect(() => {
@@ -109,7 +138,9 @@ export default function Home() {
 
   return (
     <>
+      <Cursor isGelly={true} />
       <main
+        data-cursor-color="#ffffff"
         className={`flex min-h-screen flex-col items-center overflow-x-clip overflow-y-auto`}
       >
         <Contact />
@@ -121,9 +152,13 @@ export default function Home() {
               w1920 && "md:px-[20%]"
             }`}
           >
-            <div className="relative w-full md:w-1/2">
+            <div
+              data-cursor-exclusion
+              data-cursor-size="80px"
+              className="relative w-full md:w-1/2"
+            >
               <Image
-                className="slide-in relative z-10 w-full h-full  md:h-auto"
+                className="slide-in relative z-10 w-full h-full  md:h-auto drop-shadow-lg"
                 src={Banner}
                 alt="Soumik Das"
                 quality={100}
@@ -136,26 +171,46 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className="flex flex-col w-full space-y-2 h-fit">
+            <div
+              data-cursor-exclusion
+              className="flex flex-col w-full space-y-2 h-fit"
+            >
               <div className="flex flex-row space-x-2">
-                <p className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
+                <p
+                  data-cursor-exclusion
+                  data-cursor-size="100px"
+                  className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary"
+                >
                   Hey
                 </p>
-                <p className="text-4xl md:text-6xl font-bold">It's</p>
+                <p
+                  data-cursor-exclusion
+                  data-cursor-size="100px"
+                  className="text-4xl md:text-6xl font-bold"
+                >
+                  It's
+                </p>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold">
-                Soumik Das here!
+              <h1
+                data-cursor-exclusion
+                data-cursor-size="100px"
+                className="text-4xl md:text-6xl font-bold"
+              >
+                Soumik Das here
               </h1>
-              <p className="md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+              <h2
+                data-cursor-exclusion
+                className="md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white"
+              >
                 Welcome to my part of the internet!
-              </p>
+              </h2>
             </div>
             <Image
-              placeholder="blur"
-              quality={100}
               src={Line}
               alt="sectiond divider"
-              className="z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] "
+              className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] ${
+                w1920 && "md:right-[46.5%]"
+              }`}
             />
           </div>
           {/* Skills section */}
@@ -165,33 +220,45 @@ export default function Home() {
             } md:space-y-0 md:justify-between md:items-center`}
           >
             <Image
+              data-cursor-exclusion
               src={Skills}
               quality={100}
               priority
               alt="sills"
-              className="w-full md:w-[40%]"
+              className="w-full md:w-[40%] scale-in"
             />
             <div className="break-words md:w-1/2 md:pr-8">
-              <h2 className="text-2xl md:text-3xl font-bold inline pr-2">
+              <h2
+                data-cursor-exclusion
+                data-cursor-size="80px"
+                className="text-2xl md:text-3xl font-bold inline pr-2"
+              >
                 I'm a Front-end Developer, based in
               </h2>
-              <p className="text-2xl md:text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
+              <p
+                data-cursor-exclusion
+                className="text-2xl md:text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary"
+              >
                 INDIA
               </p>
-              <p className="pt-2 break-all text-dim md:text-lg ">
-                I love to get beautiful and interactive uis get into life, with
-                proficiency in front end frameworks and tools like: React/React
-                Native, Next.js, Tailwind Css, Framer Motion and etc. I am very
-                passionate about what i do and so have keen interest in learning
-                new and trending technologies, be that a framework or a tool!
+              <p
+                data-cursor-exclusion
+                className="pt-2 break-all text-dim md:text-lg "
+              >
+                I love to get beautiful and interactive designs get into life,
+                with proficiency in front end frameworks and tools like:
+                React/React Native, Next.js, Tailwind Css, Framer Motion and
+                etc. I am very passionate about what i do and so have keen
+                interest in learning new and trending technologies, be that a
+                framework or a tool!
               </p>
             </div>
             <Image
-              placeholder="blur"
-              quality={100}
               src={Line}
               alt="sectiond divider"
-              className="z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] "
+              className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] ${
+                w1920 && "md:right-[46.5%]"
+              }`}
             />
           </div>
           {/* My Projects Section */}
@@ -201,7 +268,10 @@ export default function Home() {
             }`}
           >
             <div className="text-center absolute top-[8%]">
-              <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
+              <h2
+                data-cursor-exclusion
+                className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800"
+              >
                 My Projects
               </h2>
               <p className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
@@ -218,17 +288,17 @@ export default function Home() {
             <Carousel images={slides} />
             <Link
               href={"/projects"}
-              className="absolute bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+              className="absolute hover:scale-90 bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
-              <BiShowAlt />
+              <BiShowAlt data-cursor-exclusion />
               <p>show more</p>
             </Link>
             <Image
-              placeholder="blur"
-              quality={100}
               src={Line}
               alt="sectiond divider"
-              className="z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%] "
+              className={`z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%] ${
+                w1920 && "md:right-[46.5%]"
+              }`}
             />
           </div>
           {/* About Section */}
@@ -237,17 +307,34 @@ export default function Home() {
               w1920 && "md:px-[20%]"
             } md:space-y-0 md:justify-between md:items-center`}
           >
-            <Image
-              src={About}
-              placeholder="blur"
-              quality={100}
-              alt="sills"
-              className=" md:w-[45%]"
-            />
-            <div className="flex flex-col space-y-4">
-              <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
+            <motion.div
+              initial={offscreen}
+              whileInView={onscreen}
+              viewport={{ once: true, amount: 0.8 }}
+              className="md:w-[45%]"
+            >
+              <Image
+                data-cursor-exclusion
+                src={About}
+                placeholder="blur"
+                quality={100}
+                alt="sills"
+                className="w-full"
+              />
+            </motion.div>
+            <motion.div
+              initial={slideIn}
+              whileInView={slideOut}
+              viewport={{ once: true, amount: 0.8 }}
+              className="flex flex-col space-y-4"
+            >
+              <div
+                data-cursor-exclusion
+                data-cursor-size="100px"
+                className="flex flex-col justify-center items-center md:justify-start md:items-start"
+              >
                 <h2
-                  className={`text-2xl md:text-4xl font-bold ${
+                  className={` text-2xl md:text-4xl font-bold ${
                     w1920 && "md:text-5xl"
                   }`}
                 >
@@ -259,6 +346,7 @@ export default function Home() {
               </div>
               <div className="flex flex-row  justify-center items-center space-x-4 md:justify-start md:space-x-6">
                 <button
+                  data-cursor-exclusion
                   onClick={() => {
                     window.scrollTo({
                       top: 0,
@@ -266,7 +354,7 @@ export default function Home() {
                     });
                     setShowModal(!showModal);
                   }}
-                  className="bg-black w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
+                  className="bg-black hover:scale-90 w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
                 >
                   <AiOutlineContacts className="text-main" />
                   <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
@@ -274,14 +362,15 @@ export default function Home() {
                   </p>
                 </button>
                 <Link
+                  data-cursor-exclusion
                   href={"/about"}
-                  className="w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+                  className="w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                 >
                   <FaAngleDoubleRight />
                   <p>Know more</p>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         <Footer />

@@ -5,9 +5,12 @@ import Link from "next/link";
 import { useState, useLayoutEffect } from "react";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { FaGithubAlt } from "@react-icons/all-files/fa/FaGithubAlt";
+import { Cursor } from "react-creative-cursor";
+import "react-creative-cursor/dist/styles.css";
+import { motion } from "framer-motion";
 //Frameworks
 import react from "../assets/projects/Rectangle 29.avif";
-import motion from "../assets/projects/Rectangle 30.avif";
+import motionImg from "../assets/projects/Rectangle 30.avif";
 import rn from "../assets/projects/Rectangle 31.avif";
 import expo from "../assets/projects/Rectangle 32.avif";
 import next from "../assets/projects/Rectangle 44.avif";
@@ -53,7 +56,7 @@ const Projects = () => {
         "@type": "ListItem",
         position: 1,
         item: {
-          "@id": "https://www.mrsoumikdas.com/",
+          "@id": "https://mrsoumikdas.com/",
           name: "Home",
         },
       },
@@ -61,7 +64,7 @@ const Projects = () => {
         "@type": "ListItem",
         position: 2,
         item: {
-          "@id": "https://www.mrsoumikdas.com/projects",
+          "@id": "https://mrsoumikdas.com/projects",
           name: "Projects",
         },
       },
@@ -69,7 +72,7 @@ const Projects = () => {
   };
 
   const skills = {
-    Frameworks: [react, motion, rn, expo, next],
+    Frameworks: [react, motionImg, rn, expo, next],
     Tools: [tailwind, git, firebase, ad, seo, docker, vercel, linux],
     Languages: [js, c, asm],
   };
@@ -130,24 +133,68 @@ const Projects = () => {
     },
   ];
 
+  const slideIn = {
+    x: 300,
+    opacity: 0,
+  };
+
+  const slide = {
+    x: -300,
+    opacity: 0,
+  };
+
+  const slideOut = {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "ease-in",
+      duration: 0.8,
+    },
+  };
+
+  const scaleIn = {
+    scale: 0,
+  };
+
+  const scaleOut = {
+    scale: 1,
+    transition: {
+      type: "ease-in",
+      duration: 0.8,
+    },
+  };
+
   return (
     <>
-      <div className="flex min-h-screen flex-col items-center w-full overflow-x-clip overflow-y-auto">
+      <Cursor isGelly={true} />
+      <div
+        data-cursor-color="#ffffff"
+        className="flex min-h-screen flex-col items-center w-full overflow-x-clip overflow-y-auto"
+      >
         <Contact />
         <Nav />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
-          <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center md:pt-[3%]">
+          <h1
+            data-cursor-size="80px"
+            data-cursor-exclusion
+            className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center md:pt-[3%]"
+          >
             Preferred Tech Stacks
           </h1>
           <div className="flex flex-row md:flex-col w-full justify-between md:items-start px-10 md:px-[16%] md:hidden">
             <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+              <h2
+                data-cursor-size="80px"
+                data-cursor-exclusion
+                className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4"
+              >
                 Frameworks
               </h2>
               <div className="flex flex-col md:flex-row justify-start  items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
                 {skills.Frameworks.map((item, index) => {
                   return (
                     <Image
+                      data-cursor-exclusion
                       src={item}
                       placeholder="blur"
                       quality={100}
@@ -160,7 +207,11 @@ const Projects = () => {
               </div>
             </div>
             <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+              <h2
+                data-cursor-size="80px"
+                data-cursor-exclusion
+                className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4"
+              >
                 Tools
               </h2>
               <div className="flex flex-col md:flex-row justify-start  items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
@@ -168,6 +219,7 @@ const Projects = () => {
                   return (
                     index < 5 && (
                       <Image
+                        data-cursor-exclusion
                         src={item}
                         key={index}
                         placeholder="blur"
@@ -182,13 +234,18 @@ const Projects = () => {
             </div>
 
             <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+              <h2
+                data-cursor-size="80px"
+                data-cursor-exclusion
+                className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4"
+              >
                 Languages
               </h2>
               <div className="flex flex-col md:flex-row justify-start pl-[1%] items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
                 {skills.Languages.map((item, index) => {
                   return (
                     <Image
+                      data-cursor-exclusion
                       src={item}
                       key={index}
                       placeholder="blur"
@@ -201,15 +258,32 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div className="hidden md:flex flex-row h-full justify-start items-center w-full px-[16%] md:py-[3%]">
+          <motion.div
+            initial={slideIn}
+            whileInView={slideOut}
+            viewport={{ once: true, amount: 0.8 }}
+            className="hidden md:flex flex-row h-full justify-start items-center w-full px-[16%] md:py-[3%]"
+          >
             <div className="h-full flex flex-col justify-between items-start space-y-14">
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+              <h2
+                data-cursor-size="80px"
+                data-cursor-exclusion
+                className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4"
+              >
                 Frameworks
               </h2>
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+              <h2
+                data-cursor-size="80px"
+                data-cursor-exclusion
+                className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4"
+              >
                 Tools
               </h2>
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+              <h2
+                data-cursor-size="80px"
+                data-cursor-exclusion
+                className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4"
+              >
                 Languages
               </h2>
             </div>
@@ -218,6 +292,7 @@ const Projects = () => {
                 {skills.Frameworks.map((item, index) => {
                   return (
                     <Image
+                      data-cursor-exclusion
                       src={item}
                       key={index}
                       placeholder="blur"
@@ -232,6 +307,7 @@ const Projects = () => {
                 {skills.Tools.map((item, index) => {
                   return (
                     <Image
+                      data-cursor-exclusion
                       src={item}
                       key={index}
                       className="w-[60%] md:w-[8%]"
@@ -246,6 +322,7 @@ const Projects = () => {
                 {skills.Languages.map((item, index) => {
                   return (
                     <Image
+                      data-cursor-exclusion
                       src={item}
                       key={index}
                       placeholder="blur"
@@ -257,9 +334,13 @@ const Projects = () => {
                 })}
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className="text-center px-10 md:px-[16%]">
-            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+            <h2
+              data-cursor-size="80px"
+              data-cursor-exclusion
+              className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
+            >
               My Projects
             </h2>
             <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
@@ -274,14 +355,24 @@ const Projects = () => {
                     index % 2 == 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
-                  <Image
-                    src={item.img}
-                    placeholder="blur"
-                    quality={100}
-                    key={index}
-                    alt="my projects"
-                    className="md:w-1/2"
-                  />
+                  <motion.div
+                    initial={index % 2 ? slide : slideIn}
+                    whileInView={slideOut}
+                    viewport={{ once: true }}
+                    className={`md:w-1/2`}
+                  >
+                    <Image
+                      src={item.img}
+                      placeholder="blur"
+                      quality={100}
+                      key={index}
+                      alt="my projects"
+                      className={`w-full`}
+                      onClick={() => {
+                        window.open(item.url ? item.url : item.repo, "_blank");
+                      }}
+                    />
+                  </motion.div>
                   <div
                     className={`flex flex-col px-10 ${
                       index % 2 == 0 ? "md:pr-[16%]" : "md:pl-[16%]"
@@ -289,17 +380,29 @@ const Projects = () => {
                       index == projects.length - 1 && ""
                     }`}
                   >
-                    <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-3xl">
+                    <h3
+                      data-cursor-exclusion
+                      data-cursor-size="80px"
+                      className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-3xl"
+                    >
                       {item.title}
                     </h3>
-                    <p className="md:text-xl">{item.desc}</p>
-                    <div className="flex flex-row items-center justify-start space-x-4">
+                    <p data-cursor-exclusion className="md:text-xl">
+                      {item.desc}
+                    </p>
+                    <motion.div
+                      initial={scaleIn}
+                      whileInView={scaleOut}
+                      viewport={{ once: true, amount: 0.8 }}
+                      className="flex flex-row items-center justify-start space-x-4"
+                    >
                       <Link
+                        data-cursor-exclusion
                         href={item.repo}
                         className={
                           item.url
-                            ? "bg-black w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
-                            : "w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+                            ? "bg-black w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
+                            : "w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                         }
                       >
                         <AiFillGithub />
@@ -315,8 +418,9 @@ const Projects = () => {
                       </Link>
                       {item.url && (
                         <Link
+                          data-cursor-exclusion
                           href={item.url}
-                          className="w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+                          className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                         >
                           <p className="text-white">
                             {item.img == keeper || item.img == likely
@@ -331,29 +435,42 @@ const Projects = () => {
                           </p>
                         </Link>
                       )}
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               );
             })}
           </div>
-          <div className="flex flex-col justify-center items-center px-10 md:px-[16%] pb-[8%] space-y-6 bg-dark w-full">
-            <Image
-              placeholder="blur"
-              quality={100}
-              src={soon}
-              alt="soon"
+          <div className="flex flex-col justify-center items-center px-10 md:px-[16%] pb-[5%] space-y-6 bg-dark w-full">
+            <motion.div
+              initial={scaleIn}
+              whileInView={scaleOut}
+              viewport={{ once: true, amount: 0.8 }}
               className="w-[80%] md:w-[50%]"
-            />
-            <h2 className="text-sm md:text-base md:w-[75%] text-dim text-center">
+            >
+              <Image
+                data-cursor-size="80px"
+                data-cursor-exclusion
+                placeholder="blur"
+                quality={100}
+                src={soon}
+                alt="soon"
+                className="w-full"
+              />
+            </motion.div>
+            <h2
+              data-cursor-exclusion
+              className="text-sm md:text-base md:w-[75%] text-dim text-center"
+            >
               I am still working on some of the projects and I don't want to
               present any unfinished works here. So, as soon as I complete them
               I will be adding them here 👍 ~ till then you can check out my
               GitHub profile for all the latest repos:
             </h2>
             <Link
+              data-cursor-exclusion
               href={"https://github.com/FalconEthics"}
-              className="text-sm md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+              className="text-sm hover:scale-90 shadow-lg md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
               <FaGithubAlt />
               <p>Know more</p>

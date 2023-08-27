@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: "Soumik Das | PROJECTS",
     description: "Explore some of the best projects of mine with source code!",
-    url: "https://www.mrsoumikdas.com/projects",
+    url: "https://mrsoumikdas.com/projects",
     siteName: "Portfolio Site - PROJECTS",
     images: [
       {
