@@ -1,9 +1,30 @@
 import "./globals.css";
 import { Space_Grotesk } from "next/font/google";
 import UserContextProvider from "./store/UserContext";
+import Nav from "./components/Nav";
 
+// Define font subset and display type
 const inter = Space_Grotesk({ subsets: ["latin"], display: "swap" });
 
+/**
+ * Metadata object containing information about the website
+ * @typedef {Object} Metadata
+ * @property {string} title - The title of the website
+ * @property {string} description - The description of the website
+ * @property {string[]} keywords - An array of keywords related to the website
+ * @property {string} colorScheme - The color scheme of the website
+ * @property {string} creator - The creator of the website
+ * @property {string} publisher - The publisher of the website
+ * @property {URL} metadataBase - The base URL of the website's metadata
+ * @property {Object} alternates - An object containing alternate URLs for the website
+ * @property {string} robots - The robots meta tag for the website
+ * @property {Object} openGraph - An object containing Open Graph metadata for the website
+ */
+
+/**
+ * The metadata object for the website
+ * @type {Metadata}
+ */
 export const metadata = {
   title: "Soumik Das | Frontend Web Developer",
   description:
@@ -64,11 +85,20 @@ export const metadata = {
   },
 };
 
+/**
+ * The root layout component for the website
+ * @param {Object} props - The props for the component
+ * @param {React.ReactNode} props.children - The child components to render
+ * @returns {JSX.Element} - The root layout component
+ */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className} style={{ cursor: "crosshair" }}>
-        <UserContextProvider>{children}</UserContextProvider>
+        <UserContextProvider>
+          <Nav />
+          {children}
+        </UserContextProvider>
       </body>
     </html>
   );

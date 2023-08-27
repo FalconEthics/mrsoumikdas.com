@@ -1,3 +1,9 @@
+/**
+ * Navigation component for the website.
+ * @module Nav
+ * @default
+ */
+
 "use client";
 import Image from "next/image";
 import flatLogo from "../assets/flatLogo.avif";
@@ -10,12 +16,26 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
+/**
+ * @typedef {Object} Route
+ * @property {string} name - The name of the route.
+ * @property {string} path - The path of the route.
+ */
+
+/**
+ * The navigation component.
+ * @returns {JSX.Element} The navigation component.
+ */
 export default function Nav() {
+  // Get the clicked state and setClicked function from the UserContext.
   const { clicked, setClicked, showModal, setShowModal } =
     useContext(UserContext);
+
+  // Get the current pathname and router from Next.js.
   const pathname = usePathname();
   const router = useRouter();
 
+  // Define the routes for the navigation.
   const routes = [
     {
       name: "Home",
@@ -31,8 +51,10 @@ export default function Nav() {
     },
   ];
 
+  // State to check if the screen width is 1920.
   const [w1920, setW] = useState(false);
 
+  // Check if the screen width is 1920 on mount.
   useLayoutEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
     console.log(screen.availWidth);
@@ -40,14 +62,17 @@ export default function Nav() {
 
   return (
     <>
+      {/* The navigation bar */}
       <div
         className={`relative w-screen py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-auto ${
           w1920 && pathname !== "/projects" && "md:px-[20%]"
         }`}
       >
+        {/* The website logo */}
         <Image data-cursor-exclusion src={flatLogo} alt="Soumik Das" />
 
         <div>
+          {/* The navigation links */}
           <div className="flex-row justify-center md:text-lg items-center space-x-4 font-mono hidden md:flex">
             {routes.map((item, index) => {
               return (
@@ -65,11 +90,12 @@ export default function Nav() {
                 </button>
               );
             })}
+            {/* The contact button */}
             <button
               data-cursor-exclusion
               onClick={(e) => {
                 e.stopPropagation();
-                setShowModal(!showModal);
+                setShowModal(true);
               }}
               className="p-2 hover:scale-90"
             >
@@ -78,6 +104,7 @@ export default function Nav() {
           </div>
         </div>
 
+        {/* The menu button */}
         {!clicked ? (
           <Image
             onClick={() => setClicked(!clicked)}
@@ -86,6 +113,7 @@ export default function Nav() {
             className="md:hidden"
           />
         ) : (
+          // The close button
           <Image
             onClick={() => setClicked(!clicked)}
             src={closeBtn}
@@ -93,12 +121,15 @@ export default function Nav() {
             className="md:hidden z-50"
           />
         )}
+        {/* The bottom border */}
         <Image
           src={borderBottom}
           alt="border"
           className="w-screen h-1 absolute bottom-0 right-0"
         />
       </div>
+
+      {/* The mobile menu */}
       {clicked && (
         <motion.div
           onClick={(e) => {
@@ -111,6 +142,7 @@ export default function Nav() {
           className="overflow-clip w-screen h-screen backdrop-blur-md absolute top-0 right-0 z-50 flex justify-center items-start"
         >
           <div className="slide-in p-6 pl-10 pr-0 flex flex-col text-xl w-8/12 shadow-2xl shadow-main rounded-2xl mt-[30%] bg-black bg-opacity-80">
+            {/* The mobile navigation links */}
             {routes.map((item, index) => {
               return (
                 <Link
@@ -124,6 +156,7 @@ export default function Nav() {
                 </Link>
               );
             })}
+            {/* The mobile contact button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();

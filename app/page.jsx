@@ -1,12 +1,17 @@
+/**
+ * This module exports a React component that renders the home page of the website.
+ * @module
+ */
+
 "use client";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
+import Contact from "./components/Contact";
 import Image from "next/image";
 import Link from "next/link";
-import Carousel from "./components/Carousel";
-import { Cursor } from "react-creative-cursor";
-import "react-creative-cursor/dist/styles.css";
+const Carousel = dynamic(() => import("./components/Carousel"));
 import { motion } from "framer-motion";
+import PageTrasition from "./components/PageTrasition";
+
 // importing images
 import Banner from "./assets/home/banner.avif";
 import Rect from "./assets/home/rect.avif";
@@ -17,6 +22,7 @@ import About from "./assets/home/about.avif";
 import { BiShowAlt } from "@react-icons/all-files/bi/BiShowAlt";
 import { FaAngleDoubleRight } from "@react-icons/all-files/fa/FaAngleDoubleRight";
 import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
+
 // for slides
 import p2 from "./assets/home/p2.avif";
 import p1 from "./assets/home/p1.avif";
@@ -26,10 +32,26 @@ import p3 from "./assets/home/p3.avif";
 
 import { useContext, useLayoutEffect, useState } from "react";
 import { UserContext } from "./store/UserContext";
-import Contact from "./components/Contact";
+import dynamic from "next/dynamic";
 
+/**
+ * A React component that renders the home page of the website.
+ * @returns {JSX.Element} The JSX code for the home page.
+ */
 export default function Home() {
-  const { showModal, setShowModal } = useContext(UserContext);
+  // Get the context from the UserContext provider.
+  const {
+    showModal,
+    setShowModal,
+    slideIn,
+    slideOut,
+    scaleIn,
+    scaleOut,
+    offscreen,
+    onscreen,
+    slideTilt,
+    slideTiltOut,
+  } = useContext(UserContext);
 
   // schema for google bots
   const jsonLd = {
@@ -69,6 +91,7 @@ export default function Home() {
     },
   };
 
+  // Define an array of slides for the carousel.
   const slides = [
     {
       img: p1,
@@ -102,49 +125,24 @@ export default function Home() {
     },
   ];
 
-  const offscreen = {
-    y: -300,
-    opacity: 0,
-  };
-  const onscreen = {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "ease-in",
-      duration: 0.8,
-    },
-  };
-
-  const slideIn = {
-    x: 300,
-    opacity: 0,
-  };
-
-  const slideOut = {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "ease-in",
-      duration: 0.8,
-    },
-  };
-
+  // State variable to keep track of screen width.
   const [w1920, setW] = useState(false);
 
+  // Use layout effect to set the state variable when the component mounts.
   useLayoutEffect(() => {
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
     console.log(screen.availWidth);
   }, []);
 
+  // Return the JSX code for the home page.
   return (
-    <>
-      <Cursor isGelly={true} />
+    <PageTrasition>
+      {/* Imports the cursor component from the react-creative-cursor package. */}
       <main
-        data-cursor-color="#ffffff"
         className={`flex min-h-screen flex-col items-center overflow-x-clip overflow-y-auto`}
       >
+        {/* Imports the contact modal*/}
         <Contact />
-        <Nav />
         <div>
           {/* Hero section */}
           <div
@@ -157,19 +155,28 @@ export default function Home() {
               data-cursor-size="80px"
               className="relative w-full md:w-1/2"
             >
-              <Image
-                className="slide-in relative z-10 w-full h-full  md:h-auto drop-shadow-lg"
-                src={Banner}
-                alt="Soumik Das"
-                quality={100}
-                priority
-              />
-              <Image
-                className="slide-tilt absolute inset-0 w-full  h-full md:h-auto"
-                src={Rect}
-                alt="BG"
-                priority
-              />
+              <motion.div
+                initial={slideIn}
+                whileInView={slideOut}
+                viewport={{ once: true, amount: 0.8 }}
+                className="relative z-10 w-full h-full  md:h-auto drop-shadow-lg"
+              >
+                <Image
+                  src={Banner}
+                  className="w-full h-full"
+                  alt="Soumik Das"
+                  quality={100}
+                  priority
+                />
+              </motion.div>
+              <motion.div
+                initial={slideTilt}
+                whileInView={slideTiltOut}
+                viewport={{ once: true, amount: 0.8 }}
+                className="absolute inset-0 w-full  h-full md:h-auto"
+              >
+                <Image className="w-full h-full" src={Rect} alt="BG" priority />
+              </motion.div>
             </div>
             <div
               data-cursor-exclusion
@@ -219,14 +226,21 @@ export default function Home() {
               w1920 && "md:px-[20%]"
             } md:space-y-0 md:justify-between md:items-center`}
           >
-            <Image
-              data-cursor-exclusion
-              src={Skills}
-              quality={100}
-              priority
-              alt="sills"
+            <motion.div
+              initial={scaleIn}
+              whileInView={scaleOut}
+              viewport={{ once: true, amount: 0.8 }}
               className="w-full md:w-[40%] scale-in"
-            />
+            >
+              <Image
+                data-cursor-exclusion
+                src={Skills}
+                quality={100}
+                priority
+                alt="sills"
+                className="w-full"
+              />
+            </motion.div>
             <div className="break-words md:w-1/2 md:pr-8">
               <h2
                 data-cursor-exclusion
@@ -285,6 +299,7 @@ export default function Home() {
               alt="bg"
               className="z-0 absolute top-0 right-[+20%] scale-50 md:left-[10%] md:scale-75"
             />
+            {/* imports the carousel component from the components folder. */}
             <Carousel images={slides} />
             <Link
               href={"/projects"}
@@ -352,7 +367,7 @@ export default function Home() {
                       top: 0,
                       behavior: "smooth", // Use 'auto' for instant scrolling without smooth animation
                     });
-                    setShowModal(!showModal);
+                    setShowModal(true);
                   }}
                   className="bg-black hover:scale-90 w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
                 >
@@ -381,6 +396,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </>
+    </PageTrasition>
   );
 }

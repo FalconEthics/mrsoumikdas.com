@@ -1,3 +1,11 @@
+/**
+ * A carousel component that displays a list of images with titles and descriptions.
+ * @param {Object[]} images - An array of objects containing image data.
+ * @param {string} images[].img - The URL of the image.
+ * @param {string} images[].title - The title of the image.
+ * @param {string} images[].desc - The description of the image.
+ * @returns {JSX.Element} - A React component that displays a carousel of images.
+ */
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -7,6 +15,7 @@ import { AiOutlineDoubleRight } from "@react-icons/all-files/ai/AiOutlineDoubleR
 import { useLayoutEffect } from "react";
 
 export default function Carousel({ images }) {
+  // this state is used to determine which image is in the middle
   const [midItem, setMidItem] = useState(Math.floor(images.length / 2));
   const [width, setWidth] = useState(0);
 
@@ -21,6 +30,7 @@ export default function Carousel({ images }) {
     console.log(screen.availWidth);
   }, []);
 
+  // this function is used to move the carousel to the right
   const goRight = () => {
     if (midItem <= images.length - 1) {
       if (midItem + 1 != images.length) {
@@ -31,6 +41,7 @@ export default function Carousel({ images }) {
     }
   };
 
+  // this function is used to move the carousel to the left
   const goLeft = () => {
     if (midItem >= 0) {
       if (midItem != 0) {
@@ -62,16 +73,19 @@ export default function Carousel({ images }) {
             animate={{
               rotate: 0,
               left: `${
+                // if the screen width is less than 720px, the carousel will be displayed in a vertical manner
                 width < 720
                   ? (index - midItem) * 80 + 25
                   : (index - midItem) * 30 + 40
               }vw`,
               scale:
                 width < 720
-                  ? index === midItem
+                  ? // if the screen width is less than 720px, the carousel will be displayed in a vertical manner
+                    index === midItem
                     ? 1.5
                     : 0.9
-                  : index === midItem
+                  : // if the screen width is greater than 720px, the carousel will be displayed in a horizontal manner
+                  index === midItem
                   ? 1.5
                   : 1,
             }}

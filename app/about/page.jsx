@@ -1,10 +1,16 @@
+/**
+ * FILEPATH: /mnt/sdb2/CODING/Projects/mrsoumikdas.com/app/about/page.jsx
+ * @module About
+ * @desc This module exports the About component, which displays information about the developer and their work experience, education, and certifications.
+ */
+
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
 import Contact from "../components/Contact";
 import Image from "next/image";
 import Line from "../assets/home/line.avif";
 import { motion } from "framer-motion";
+import PageTrasition from "../components/PageTrasition";
 //images
 import tripsy from "../assets/about/tripsy.avif";
 import traceworks from "../assets/about/traceworks.avif";
@@ -24,12 +30,55 @@ import { UserContext } from "../store/UserContext";
 import mConnector from "../assets/about/mConnector.avif";
 import connector from "../assets/about/connector.avif";
 import connector2 from "../assets/about/connector2.avif";
-import { Cursor } from "react-creative-cursor";
-import "react-creative-cursor/dist/styles.css";
+import dynamic from "next/dynamic";
 
+/**
+ * @typedef {Object} WorkExperience
+ * @property {string} img - The image of the company logo.
+ * @property {string} title - The job title of the developer.
+ * @property {string} role - The role of the developer.
+ * @property {string} time - The duration of the job.
+ * @property {string} desc - The job description.
+ * @property {string} summary - A summary of the developer's responsibilities.
+ * @property {string} url - The URL of the company's website.
+ */
+
+/**
+ * @typedef {Object} Education
+ * @property {string} img - The image of the university logo.
+ * @property {string} course - The name of the course.
+ * @property {string} uni - The name of the university.
+ * @property {string} time - The duration of the course.
+ * @property {string} desc - The course description.
+ * @property {string} url - The URL of the university's website.
+ */
+
+/**
+ * @typedef {Object} Certificate
+ * @property {string} img - The image of the certificate.
+ */
+
+/**
+ * @function About
+ * @desc The About component displays information about the developer and their work experience, education, and certifications.
+ * @returns {JSX.Element} The About component.
+ */
 export default function About() {
-  const { showModal, setShowModal } = useContext(UserContext);
+  const {
+    showModal,
+    setShowModal,
+    slideIn,
+    slideOut,
+    slide,
+    scaleIn,
+    scaleOut,
+    fadeIn,
+    fadeOut,
+  } = useContext(UserContext);
 
+  /**
+   * @constant {Object} jsonLd - The JSON-LD object for the breadcrumb list.
+   */
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -53,6 +102,9 @@ export default function About() {
     ],
   };
 
+  /**
+   * @constant {WorkExperience[]} work - The array of work experience objects.
+   */
   const work = [
     {
       img: tripsy,
@@ -86,6 +138,9 @@ export default function About() {
     },
   ];
 
+  /**
+   * @constant {Education[]} education - The array of education objects.
+   */
   const education = [
     {
       img: uol,
@@ -105,8 +160,14 @@ export default function About() {
     },
   ];
 
+  /**
+   * @constant {Certificate[]} certificates - The array of certificate objects.
+   */
   const certificates = [cs50, ai4, personal, londonApp, bharat];
 
+  /**
+   * @constant {boolean} w1920 - A boolean value indicating whether the screen width is 1920 pixels.
+   */
   const [w1920, setW] = useState(false);
 
   useLayoutEffect(() => {
@@ -114,48 +175,15 @@ export default function About() {
     console.log(screen.availWidth);
   }, []);
 
-  const slideIn = {
-    x: 300,
-    opacity: 0,
-  };
-
-  const slide = {
-    x: -300,
-    opacity: 0,
-  };
-
-  const slideOut = {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "ease-in",
-      duration: 0.8,
-    },
-  };
-
-  const scaleIn = {
-    scale: 0,
-  };
-
-  const scaleOut = {
-    scale: 1,
-    transition: {
-      type: "ease-in",
-      duration: 0.8,
-    },
-  };
-
   return (
-    <div>
-      <Cursor isGelly={true} />
-      <div
-        data-cursor-color="#ffffff"
-        className="flex w-full min-h-screen flex-col items-center overflow-x-clip overflow-y-auto"
-      >
-        <Nav />
+    <PageTrasition>
+      <div className="flex w-full min-h-screen flex-col items-center overflow-x-clip overflow-y-auto">
         <Contact />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
-          <div
+          <motion.div
+            initial={fadeIn}
+            whileInView={fadeOut}
+            viewport={{ once: true, amount: 0.8 }}
             className={`text-center px-10 md:px-[16%] ${
               w1920 && "md:px-[20%]"
             } md:pt-[4%]`}
@@ -163,14 +191,14 @@ export default function About() {
             <h1
               data-cursor-exclusion
               data-cursor-size="80px"
-              className="fade-in text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
+              className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline"
             >
               Know more about me and my Work
             </h1>
             <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
               _
             </p>
-          </div>
+          </motion.div>
           <h2
             data-cursor-exclusion
             className={`px-10 md:px-[16%] ${
@@ -442,7 +470,7 @@ export default function About() {
                     top: 0,
                     behavior: "smooth", // Use 'auto' for instant scrolling without smooth animation
                   });
-                  setShowModal(!showModal);
+                  setShowModal(true);
                 }}
                 className="bg-black w-fit hover:scale-90 flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg text-sm"
               >
@@ -462,6 +490,6 @@ export default function About() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </div>
+    </PageTrasition>
   );
 }

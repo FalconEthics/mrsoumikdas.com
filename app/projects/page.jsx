@@ -1,13 +1,18 @@
+/**
+ * FILEPATH: /mnt/sdb2/CODING/Projects/mrsoumikdas.com/app/projects/page.jsx
+ * @module Projects
+ */
+
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
+import Contact from "../components/Contact";
 import Link from "next/link";
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useContext } from "react";
+import { UserContext } from "../store/UserContext";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { FaGithubAlt } from "@react-icons/all-files/fa/FaGithubAlt";
-import { Cursor } from "react-creative-cursor";
-import "react-creative-cursor/dist/styles.css";
 import { motion } from "framer-motion";
+import PageTrasition from "../components/PageTrasition";
 //Frameworks
 import react from "../assets/projects/Rectangle 29.avif";
 import motionImg from "../assets/projects/Rectangle 30.avif";
@@ -28,7 +33,6 @@ import js from "../assets/projects/Rectangle 41.avif";
 import c from "../assets/projects/Rectangle 43.avif";
 import asm from "../assets/projects/Rectangle 45.avif";
 import Image from "next/image";
-import Contact from "../components/Contact";
 //projects
 import keeper from "../assets/projects/Group 17.avif";
 import covid from "../assets/projects/Rectangle 22.avif";
@@ -40,14 +44,25 @@ import tri from "../assets/projects/Rectangle 27.avif";
 import calc from "../assets/projects/Rectangle 28.avif";
 //coming soon img
 import soon from "../assets/projects/Group 16.avif";
+import dynamic from "next/dynamic";
 
+/**
+ * Projects component
+ * @returns {JSX.Element} Projects component
+ */
 const Projects = () => {
+  // this state is used to determine the width of the screen to apply responsive design to very specific screen sizes
   const [width, setWidth] = useState(0);
 
   useLayoutEffect(() => {
+    // this function is used to set the width of the screen
     setWidth(window.innerWidth);
   }, []);
 
+  /**
+   * JSON-LD schema for breadcrumb list
+   * @type {Object}
+   */
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -71,13 +86,22 @@ const Projects = () => {
     ],
   };
 
+  /**
+   * Object containing skills and their corresponding images
+   * @type {Object}
+   */
   const skills = {
     Frameworks: [react, motionImg, rn, expo, next],
     Tools: [tailwind, git, firebase, ad, seo, docker, vercel, linux],
     Languages: [js, c, asm],
   };
 
+  /**
+   * Array of project objects
+   * @type {Array}
+   */
   const projects = [
+    // this object contains the details of all the projects
     {
       img: keeper,
       title: "Keeper-App",
@@ -133,46 +157,17 @@ const Projects = () => {
     },
   ];
 
-  const slideIn = {
-    x: 300,
-    opacity: 0,
-  };
-
-  const slide = {
-    x: -300,
-    opacity: 0,
-  };
-
-  const slideOut = {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "ease-in",
-      duration: 0.8,
-    },
-  };
-
-  const scaleIn = {
-    scale: 0,
-  };
-
-  const scaleOut = {
-    scale: 1,
-    transition: {
-      type: "ease-in",
-      duration: 0.8,
-    },
-  };
+  // import the animation objects from the UserContext
+  const { slideIn, slideOut, slide, scaleIn, scaleOut, fadeIn, fadeOut } =
+    useContext(UserContext);
 
   return (
-    <>
-      <Cursor isGelly={true} />
-      <div
-        data-cursor-color="#ffffff"
-        className="flex min-h-screen flex-col items-center w-full overflow-x-clip overflow-y-auto"
-      >
+    <PageTrasition>
+      {/* incerts the custom cursor from react-creative-cursor */}
+      <div className="flex min-h-screen flex-col items-center w-full overflow-x-clip overflow-y-auto">
+        {/* Incerts the contact modal */}
         <Contact />
-        <Nav />
+        {/* Tools Section  */}
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
           <h1
             data-cursor-size="80px"
@@ -181,6 +176,7 @@ const Projects = () => {
           >
             Preferred Tech Stacks
           </h1>
+          {/* Tech Stack section for mobile */}
           <div className="flex flex-row md:flex-col w-full justify-between md:items-start px-10 md:px-[16%] md:hidden">
             <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
               <h2
@@ -232,7 +228,6 @@ const Projects = () => {
                 })}
               </div>
             </div>
-
             <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
               <h2
                 data-cursor-size="80px"
@@ -258,6 +253,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          {/* Tech Stack section for desktop */}
           <motion.div
             initial={slideIn}
             whileInView={slideOut}
@@ -335,6 +331,7 @@ const Projects = () => {
               </div>
             </div>
           </motion.div>
+          {/* Projects showcase section  */}
           <div className="text-center px-10 md:px-[16%]">
             <h2
               data-cursor-size="80px"
@@ -391,8 +388,8 @@ const Projects = () => {
                       {item.desc}
                     </p>
                     <motion.div
-                      initial={scaleIn}
-                      whileInView={scaleOut}
+                      initial={slideIn}
+                      whileInView={slideOut}
                       viewport={{ once: true, amount: 0.8 }}
                       className="flex flex-row items-center justify-start space-x-4"
                     >
@@ -441,10 +438,11 @@ const Projects = () => {
               );
             })}
           </div>
+          {/* Coming soon section */}
           <div className="flex flex-col justify-center items-center px-10 md:px-[16%] pb-[5%] space-y-6 bg-dark w-full">
             <motion.div
-              initial={scaleIn}
-              whileInView={scaleOut}
+              initial={fadeIn}
+              whileInView={fadeOut}
               viewport={{ once: true, amount: 0.8 }}
               className="w-[80%] md:w-[50%]"
             >
@@ -485,7 +483,7 @@ const Projects = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </>
+    </PageTrasition>
   );
 };
 

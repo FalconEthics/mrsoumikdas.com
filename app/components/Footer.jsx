@@ -1,3 +1,7 @@
+/**
+ * Footer component that displays the copyright information.
+ * @returns {JSX.Element} The JSX element for the Footer component.
+ */
 export default function Footer() {
   return (
     <div
