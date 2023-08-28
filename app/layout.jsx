@@ -66,20 +66,7 @@ export const metadata = {
     description:
       "I love to get beautiful and interactive designs get into life, with proficiency in front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
     url: "https://mrsoumikdas.com/",
-    siteName: "Portfolio Site",
-    images: [
-      {
-        url: "/logo.avif",
-        width: 800,
-        height: 800,
-      },
-      {
-        url: "/logoFlat.avif",
-        width: 1000,
-        height: 300,
-        alt: "Soumik Das",
-      },
-    ],
+    siteName: "Soumik's Portfolio Site",
     locale: "en_US",
     type: "website",
   },
