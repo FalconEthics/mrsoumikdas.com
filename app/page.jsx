@@ -8,7 +8,7 @@ const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
 import Contact from "./components/Contact";
 import Image from "next/image";
 import Link from "next/link";
-const Carousel = dynamic(() => import("./components/Carousel"));
+import Carousel from "./components/Carousel";
 import { motion } from "framer-motion";
 import PageTrasition from "./components/PageTrasition";
 
@@ -51,6 +51,7 @@ export default function Home(ref) {
     onscreen,
     slideTilt,
     slideTiltOut,
+    isMobile,
     w1920,
   } = useContext(UserContext);
 
@@ -251,7 +252,12 @@ export default function Home(ref) {
               className="z-0 absolute top-0 right-[+20%] scale-50 md:left-[10%] md:scale-75"
             />
             {/* imports the carousel component from the components folder. */}
-            <Carousel images={slides} />
+            <div className="md:hidden relative w-full flex flex-col justify-center items-center z-10 h-[28vh]">
+              <Carousel images={slides} width={true} />
+            </div>
+            <div className="hidden md:flex relative w-full flex-col justify-center items-center z-10 h-[28vh]">
+              <Carousel images={slides} width={false} />
+            </div>
             <Link
               passHref
               rel="noopener noreferrer"
