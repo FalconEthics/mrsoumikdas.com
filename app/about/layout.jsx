@@ -1,5 +1,3 @@
-import UserContextProvider from "../store/UserContext";
-
 /**
  * Metadata object containing information about the page for SEO purposes.
  * @typedef {Object} Metadata
@@ -66,9 +64,5 @@ export const metadata = {
  * @returns {JSX.Element} - The AboutLayout component.
  */
 export default function AboutLayout({ children }) {
-  return (
-    <section>
-      <UserContextProvider>{children}</UserContextProvider>
-    </section>
-  );
+  return <section>{children}</section>;
 }

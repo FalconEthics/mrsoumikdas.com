@@ -30,7 +30,7 @@ import p5 from "./assets/home/p5.avif";
 import p4 from "./assets/home/p4.avif";
 import p3 from "./assets/home/p3.avif";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "./store/UserContext";
 import dynamic from "next/dynamic";
 
@@ -38,7 +38,7 @@ import dynamic from "next/dynamic";
  * A React component that renders the home page of the website.
  * @returns {JSX.Element} The JSX code for the home page.
  */
-export default function Home() {
+export default function Home(ref) {
   // Get the context from the UserContext provider.
   const {
     showModal,
@@ -51,6 +51,7 @@ export default function Home() {
     onscreen,
     slideTilt,
     slideTiltOut,
+    w1920,
   } = useContext(UserContext);
 
   // schema for google bots
@@ -125,24 +126,15 @@ export default function Home() {
     },
   ];
 
-  // State variable to keep track of screen width.
-  const [w1920, setW] = useState(false);
-
-  // Use layout effect to set the state variable when the component mounts.
-  useEffect(() => {
-    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    // console.log(window.innerWidth);
-  }, []);
-
   // Return the JSX code for the home page.
   return (
-    <PageTrasition>
+    <PageTrasition ref={ref}>
       {/* Imports the cursor component from the react-creative-cursor package. */}
       <main
         className={`flex min-h-screen flex-col items-center overflow-x-clip overflow-y-auto`}
       >
         {/* Imports the contact modal*/}
-        <Contact />
+        <Contact showModal={showModal} setShowModal={setShowModal} />
         <div>
           {/* Hero section */}
           <div
@@ -320,7 +312,7 @@ export default function Home() {
                       top: 0,
                       behavior: "smooth", // Use 'auto' for instant scrolling without smooth animation
                     });
-                    setShowModal(true);
+                    setShowModal(!showModal);
                   }}
                   className="bg-black hover:scale-90 w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
                 >

@@ -6,8 +6,7 @@
 "use client";
 const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
 import Contact from "../components/Contact";
-import Link from "next/link";
-import { useState, useLayoutEffect, useContext } from "react";
+import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { FaGithubAlt } from "@react-icons/all-files/fa/FaGithubAlt";
@@ -50,15 +49,7 @@ import dynamic from "next/dynamic";
  * Projects component
  * @returns {JSX.Element} Projects component
  */
-const Projects = () => {
-  // this state is used to determine the width of the screen to apply responsive design to very specific screen sizes
-  const [width, setWidth] = useState(0);
-
-  useLayoutEffect(() => {
-    // this function is used to set the width of the screen
-    setWidth(window.innerWidth);
-  }, []);
-
+const Projects = (ref) => {
   /**
    * JSON-LD schema for breadcrumb list
    * @type {Object}
@@ -158,15 +149,15 @@ const Projects = () => {
   ];
 
   // import the animation objects from the UserContext
-  const { slideIn, slideOut, slide, scaleIn, scaleOut, fadeIn, fadeOut } =
+  const { showModal, setShowModal, slideIn, slideOut, slide, fadeIn, fadeOut } =
     useContext(UserContext);
 
   return (
-    <PageTrasition>
+    <PageTrasition ref={ref}>
       {/* incerts the custom cursor from react-creative-cursor */}
       <div className="flex min-h-screen flex-col items-center w-full overflow-x-clip overflow-y-auto">
         {/* Incerts the contact modal */}
-        <Contact />
+        <Contact showModal={showModal} setShowModal={setShowModal} />
         {/* Tools Section  */}
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
           <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center md:pt-[3%]">
@@ -309,6 +300,7 @@ const Projects = () => {
             {projects.map((item, index) => {
               return (
                 <div
+                  key={index}
                   className={`flex flex-col w-full  ${
                     index % 2 == 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
@@ -344,10 +336,10 @@ const Projects = () => {
                       whileInView={slideOut}
                       className="flex flex-row items-center justify-start space-x-4"
                     >
-                      <Link
-                        passHref
-                        rel="noopener noreferrer"
-                        href={item.repo}
+                      <button
+                        onClick={() => {
+                          window.open(item.repo, "_blank");
+                        }}
                         className={
                           item.url
                             ? "bg-black w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
@@ -364,12 +356,12 @@ const Projects = () => {
                         >
                           REPOSITORY
                         </p>
-                      </Link>
+                      </button>
                       {item.url && (
-                        <Link
-                          passHref
-                          rel="noopener noreferrer"
-                          href={item.url}
+                        <button
+                          onClick={() => {
+                            window.open(item.url, "_blank");
+                          }}
                           className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                         >
                           <p className="text-white">
@@ -383,7 +375,7 @@ const Projects = () => {
                               ? "OPEN WEBSITE"
                               : ""}
                           </p>
-                        </Link>
+                        </button>
                       )}
                     </motion.div>
                   </div>
@@ -412,15 +404,15 @@ const Projects = () => {
               I will be adding them here 👍 ~ till then you can check out my
               GitHub profile for all the latest repos:
             </h2>
-            <Link
-              passHref
-              rel="noopener noreferrer"
-              href={"https://github.com/FalconEthics"}
+            <button
+              onClick={() => {
+                window.open("https://github.com/FalconEthics", "_blank");
+              }}
               className="text-sm hover:scale-90 shadow-lg md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
             >
               <FaGithubAlt />
               <p>Know more</p>
-            </Link>
+            </button>
           </div>
         </div>
         <Footer />

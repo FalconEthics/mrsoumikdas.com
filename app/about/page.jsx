@@ -25,7 +25,7 @@ import londonApp from "../assets/about/londonApp.avif";
 import personal from "../assets/about/personalBranding.avif";
 //icons
 import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
-import { useContext, useLayoutEffect, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import mConnector from "../assets/about/mConnector.avif";
 import connector from "../assets/about/connector.avif";
@@ -63,7 +63,7 @@ import dynamic from "next/dynamic";
  * @desc The About component displays information about the developer and their work experience, education, and certifications.
  * @returns {JSX.Element} The About component.
  */
-export default function About() {
+export default function About(ref) {
   const {
     showModal,
     setShowModal,
@@ -75,6 +75,7 @@ export default function About() {
     fadeIn,
     fadeOut,
     isMobile,
+    w1920,
   } = useContext(UserContext);
 
   /**
@@ -166,20 +167,10 @@ export default function About() {
    */
   const certificates = [cs50, ai4, personal, londonApp, bharat];
 
-  /**
-   * @constant {boolean} w1920 - A boolean value indicating whether the screen width is 1920 pixels.
-   */
-  const [w1920, setW] = useState(false);
-
-  useLayoutEffect(() => {
-    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    // console.log(screen.availWidth);
-  }, []);
-
   return (
-    <PageTrasition>
-      <div className="flex w-full min-h-screen flex-col items-center overflow-x-clip overflow-y-auto">
-        <Contact />
+    <PageTrasition ref={ref}>
+      <main className="flex w-full min-h-screen flex-col items-center overflow-x-clip overflow-y-auto">
+        <Contact showModal={showModal} setShowModal={setShowModal} />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
           <motion.div
             initial={fadeIn}
@@ -215,6 +206,7 @@ export default function About() {
             {work.map((item, index) => {
               return (
                 <div
+                  key={index}
                   className={`relative flex flex-col ${
                     index % 2 ? "md:flex-row-reverse" : "md:flex-row"
                   } justify-center md:justify-between items-center w-full space-y-[8%] md:space-y-0 py-[8%] md:py-0 ${
@@ -300,6 +292,7 @@ export default function About() {
             {education.map((item, index) => {
               return (
                 <div
+                  key={index}
                   className={`relative flex flex-col  ${
                     index % 2 ? "md:flex-row" : "md:flex-row-reverse"
                   } justify-center md:justify-between items-center w-full space-y-[8%] md:space-y-0 py-[8%] md:py-0 ${
@@ -383,6 +376,7 @@ export default function About() {
               {certificates.map((item, index) => {
                 return (
                   <motion.div
+                    key={index}
                     initial={scaleIn}
                     whileInView={scaleOut}
                     className="w-[60%] md:w-[8%]"
@@ -403,6 +397,7 @@ export default function About() {
               {certificates.map((item, index) => {
                 return (
                   <motion.div
+                    key={index}
                     initial={scaleIn}
                     whileInView={scaleOut}
                     className={`${index == 0 ? "col-span-2 row-span-2" : ""} ${
@@ -442,7 +437,7 @@ export default function About() {
                     top: 0,
                     behavior: "smooth", // Use 'auto' for instant scrolling without smooth animation
                   });
-                  setShowModal(true);
+                  setShowModal(!showModal);
                 }}
                 className="bg-black w-fit hover:scale-90 flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg text-sm"
               >
@@ -455,7 +450,7 @@ export default function About() {
           </div>
         </div>
         <Footer />
-      </div>
+      </main>
 
       {/* schema for bots */}
       <script

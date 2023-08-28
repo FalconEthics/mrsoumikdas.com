@@ -8,9 +8,8 @@
 import Image from "next/image";
 import flatLogo from "../assets/flatLogo.avif";
 import menuBtn from "../assets/menu bar.avif";
-import closeBtn from "../assets/ep_close-bold.avif";
 import borderBottom from "../assets/Line 4.avif";
-import { useContext, useState, useLayoutEffect } from "react";
+import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -28,7 +27,7 @@ import { motion } from "framer-motion";
  */
 export default function Nav() {
   // Get the clicked state and setClicked function from the UserContext.
-  const { clicked, setClicked, showModal, setShowModal } =
+  const { clicked, setClicked, showModal, setShowModal, w1920 } =
     useContext(UserContext);
 
   // Get the current pathname and router from Next.js.
@@ -51,19 +50,13 @@ export default function Nav() {
     },
   ];
 
-  // State to check if the screen width is 1920.
-  const [w1920, setW] = useState(false);
-
-  // Check if the screen width is 1920 on mount.
-  useLayoutEffect(() => {
-    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    // console.log(screen.availWidth);
-  }, []);
-
   return (
     <>
       {/* The navigation bar */}
       <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
         className={`relative w-screen py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-auto ${
           w1920 && pathname !== "/projects" && "md:px-[20%]"
         }`}
@@ -93,7 +86,7 @@ export default function Nav() {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setShowModal(true);
+                setShowModal(!showModal);
               }}
               className="p-2 hover:scale-90"
             >
@@ -103,22 +96,12 @@ export default function Nav() {
         </div>
 
         {/* The menu button */}
-        {!clicked ? (
-          <Image
-            onClick={() => setClicked(!clicked)}
-            src={menuBtn}
-            alt="Menu"
-            className="md:hidden"
-          />
-        ) : (
-          // The close button
-          <Image
-            onClick={() => setClicked(!clicked)}
-            src={closeBtn}
-            alt="Close Menu"
-            className="md:hidden z-50"
-          />
-        )}
+        <Image
+          onClick={() => setClicked(!clicked)}
+          src={menuBtn}
+          alt="Menu"
+          className="md:hidden"
+        />
         {/* The bottom border */}
         <Image
           src={borderBottom}

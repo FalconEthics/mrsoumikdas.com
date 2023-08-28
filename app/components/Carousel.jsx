@@ -23,13 +23,6 @@ export default function Carousel({ images }) {
     setWidth(window.innerWidth);
   }, []);
 
-  const [w1920, setW] = useState(false);
-
-  useLayoutEffect(() => {
-    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
-    // console.log(screen.availWidth);
-  }, []);
-
   // this function is used to move the carousel to the right
   const goRight = () => {
     if (midItem <= images.length - 1) {

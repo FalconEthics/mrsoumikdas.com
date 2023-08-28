@@ -43,13 +43,18 @@ const UserContextProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
   // this state is used to determine it's mobile or not
   const [isMobile, setIsMobile] = useState(false);
+  // this state is used to determine the screen size is 1920 or not - to appy some very specific fixes
+  const [w1920, setW] = useState(false);
+
+  // useLayoutEffect(() => {
+  //   console.log("clicked: " + clicked);
+  //   console.log("showmodal: " + showModal);
+  // }, [showModal, clicked]);
 
   useLayoutEffect(() => {
-    // console.log(showModal);
     setIsMobile(window.innerWidth < 768);
-    console.log(isMobile);
-    console.log(window.innerWidth);
-  }, [isMobile]);
+    setW(screen.availWidth == 1920 || screen.availHeight == 1440);
+  }, []);
 
   // Animation objects
   const slideIn = {
@@ -139,6 +144,8 @@ const UserContextProvider = ({ children }) => {
     fadeIn,
     fadeOut,
     isMobile,
+    w1920,
+    setW,
   };
 
   return (
