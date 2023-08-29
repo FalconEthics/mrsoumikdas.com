@@ -36,7 +36,7 @@ export default function Contact({ showModal, setShowModal }) {
           }}
           initial={offscreen}
           animate={onscreen}
-          className="absolute overflow-clip w-screen h-screen backdrop-blur-md top-0 right-0 z-50 flex justify-center items-start"
+          className="absolute overflow-x-hidden w-full h-screen backdrop-blur-md top-0 right-0 z-50 flex justify-center items-start"
         >
           <div
             className={`p-4 flex flex-col space-y-5 md:flex-row-reverse md:space-y-0 md:space-x-5 text-xl w-10/12 md:w-6/12 shadow-2xl shadow-main rounded-2xl mt-[10%] 

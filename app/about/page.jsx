@@ -11,6 +11,7 @@ import Image from "next/image";
 import Line from "../assets/home/line.avif";
 import { motion } from "framer-motion";
 import PageTrasition from "../components/PageTrasition";
+import { isMobile } from "react-device-detect";
 //images
 import tripsy from "../assets/about/tripsy.avif";
 import traceworks from "../assets/about/traceworks.avif";
@@ -74,7 +75,6 @@ export default function About(ref) {
     scaleOut,
     fadeIn,
     fadeOut,
-    isMobile,
     w1920,
   } = useContext(UserContext);
 
@@ -169,7 +169,7 @@ export default function About(ref) {
 
   return (
     <PageTrasition ref={ref}>
-      <main className="flex w-full min-h-screen flex-col items-center overflow-x-clip overflow-y-auto">
+      <main className="flex w-full min-h-screen flex-col items-center overflow-x-hidden overflow-y-auto">
         <Contact showModal={showModal} setShowModal={setShowModal} />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
           <motion.div
@@ -214,8 +214,9 @@ export default function About(ref) {
                   }`}
                 >
                   <motion.div
-                    initial={isMobile ? (index % 2 ? slideIn : slide) : fadeIn}
-                    whileInView={isMobile ? slideOut : fadeOut}
+                    initial={fadeIn}
+                    whileInView={fadeOut}
+                    viewport={{ once: true, threshold: 0.5 }}
                     className="w-[60%] hover:shadow-xl hover:shadow-secondary h-64 md:w-[22%] md:h-72 border border-white p-4 py-10 rounded-2xl"
                   >
                     <Image
@@ -233,6 +234,7 @@ export default function About(ref) {
                   <motion.div
                     initial={index % 2 ? slide : slideIn}
                     whileInView={slideOut}
+                    viewport={{ once: true, threshold: 0.5 }}
                     className="flex flex-col text-sm md:text-base break-word space-y-1 md:w-[43%] break-all"
                   >
                     <div className="">
@@ -300,8 +302,9 @@ export default function About(ref) {
                   }`}
                 >
                   <motion.div
-                    initial={isMobile ? (index % 2 ? slide : slideIn) : fadeIn}
-                    whileInView={isMobile ? slideOut : fadeOut}
+                    initial={fadeIn}
+                    whileInView={fadeOut}
+                    viewport={{ once: true, threshold: 0.5 }}
                     className={`w-[60%] h-72 hover:shadow-xl hover:shadow-secondary md:w-[22%] ${
                       w1920 ? "md:h-80" : "md:h-74"
                     } border border-white p-4 py-10 rounded-2xl`}
@@ -321,6 +324,7 @@ export default function About(ref) {
                   <motion.div
                     initial={index % 2 ? slideIn : slide}
                     whileInView={slideOut}
+                    viewport={{ once: true, threshold: 0.5 }}
                     className="flex flex-col text-sm md:text-base break-word md:w-[43%] space-y-1"
                   >
                     <div className="">
@@ -379,6 +383,7 @@ export default function About(ref) {
                     key={index}
                     initial={scaleIn}
                     whileInView={scaleOut}
+                    viewport={{ once: true, threshold: 0.5 }}
                     className="w-[60%] md:w-[8%]"
                   >
                     <Image
@@ -400,6 +405,7 @@ export default function About(ref) {
                     key={index}
                     initial={scaleIn}
                     whileInView={scaleOut}
+                    viewport={{ once: true, threshold: 0.5 }}
                     className={`${index == 0 ? "col-span-2 row-span-2" : ""} ${
                       w1920 && "w-full"
                     }`}

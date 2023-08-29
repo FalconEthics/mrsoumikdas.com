@@ -11,6 +11,7 @@ import Link from "next/link";
 import Carousel from "./components/Carousel";
 import { motion } from "framer-motion";
 import PageTrasition from "./components/PageTrasition";
+import { isMobile } from "react-device-detect";
 
 // importing images
 import Banner from "./assets/home/banner.avif";
@@ -51,7 +52,6 @@ export default function Home(ref) {
     onscreen,
     slideTilt,
     slideTiltOut,
-    isMobile,
     w1920,
   } = useContext(UserContext);
 
@@ -132,7 +132,7 @@ export default function Home(ref) {
     <PageTrasition ref={ref}>
       {/* Imports the cursor component from the react-creative-cursor package. */}
       <main
-        className={`flex min-h-screen flex-col items-center overflow-x-clip overflow-y-auto`}
+        className={`flex min-h-screen flex-col w-full items-center overflow-x-hidden overflow-y-auto`}
       >
         {/* Imports the contact modal*/}
         <Contact showModal={showModal} setShowModal={setShowModal} />
@@ -147,6 +147,7 @@ export default function Home(ref) {
               <motion.div
                 initial={slideIn}
                 whileInView={slideOut}
+                viewport={{ once: true, threshold: 0.5 }}
                 className="relative z-10 w-full h-full md:h-auto drop-shadow-lg"
               >
                 <Image
@@ -160,6 +161,7 @@ export default function Home(ref) {
               <motion.div
                 initial={slideTilt}
                 whileInView={slideTiltOut}
+                viewport={{ once: true, threshold: 0.5 }}
                 className="absolute inset-0 w-full  h-full md:h-auto"
               >
                 <Image className="w-full h-full" src={Rect} alt="BG" priority />
@@ -196,6 +198,7 @@ export default function Home(ref) {
             <motion.div
               initial={scaleIn}
               whileInView={scaleOut}
+              viewport={{ once: true, threshold: 0.5 }}
               className="w-full md:w-[40%] scale-in"
             >
               <Image
@@ -232,7 +235,7 @@ export default function Home(ref) {
           </div>
           {/* My Projects Section */}
           <div
-            className={`z-10 w-full h-[65vh] md:h-[70vh] relative overflow-hidden flex flex-col justify-center items-center ${
+            className={`z-10 w-full h-[65vh] md:h-[70vh] relative overflow-x-hidden flex flex-col justify-center items-center ${
               w1920 && "md:h-[75vh]"
             }`}
           >
@@ -284,6 +287,7 @@ export default function Home(ref) {
             <motion.div
               initial={offscreen}
               whileInView={onscreen}
+              viewport={{ once: true, threshold: 0.5 }}
               className="md:w-[45%]"
             >
               <Image
@@ -297,9 +301,10 @@ export default function Home(ref) {
             <motion.div
               initial={slideIn}
               whileInView={slideOut}
+              viewport={{ once: true, threshold: 0.5 }}
               className="flex flex-col space-y-4"
             >
-              <div className="flex flex-col justify-center items-center md:justify-start md:items-start">
+              <div className="flex flex-col justify-start items-start md:justify-start md:items-start">
                 <h2
                   className={` text-2xl md:text-4xl font-bold ${
                     w1920 && "md:text-5xl"
@@ -311,7 +316,7 @@ export default function Home(ref) {
                   me and my work?
                 </p>
               </div>
-              <div className="flex flex-row  justify-center items-center space-x-4 md:justify-start md:space-x-6">
+              <div className="flex flex-row  justify-start items-start space-x-4 md:justify-start md:space-x-6">
                 <button
                   onClick={() => {
                     window.scrollTo({

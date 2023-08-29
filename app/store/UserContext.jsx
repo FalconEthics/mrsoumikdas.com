@@ -41,8 +41,6 @@ const UserContextProvider = ({ children }) => {
   const [clicked, setClicked] = useState(false);
   // this state is used to determine whether a modal should be shown
   const [showModal, setShowModal] = useState(false);
-  // this state is used to determine it's mobile or not
-  const [isMobile, setIsMobile] = useState(false);
   // this state is used to determine the screen size is 1920 or not - to appy some very specific fixes
   const [w1920, setW] = useState(false);
 
@@ -52,7 +50,6 @@ const UserContextProvider = ({ children }) => {
   // }, [showModal, clicked]);
 
   useLayoutEffect(() => {
-    setIsMobile(window.innerWidth < 768);
     setW(screen.availWidth == 1920 || screen.availHeight == 1440);
   }, []);
 
@@ -143,7 +140,6 @@ const UserContextProvider = ({ children }) => {
     slideTiltOut,
     fadeIn,
     fadeOut,
-    isMobile,
     w1920,
     setW,
   };

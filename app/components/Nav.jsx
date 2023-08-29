@@ -57,7 +57,7 @@ export default function Nav() {
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className={`relative w-screen py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-auto ${
+        className={`relative w-full py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-x-hidden overflow-y-auto ${
           w1920 && pathname !== "/projects" && "md:px-[20%]"
         }`}
       >
@@ -106,7 +106,7 @@ export default function Nav() {
         <Image
           src={borderBottom}
           alt="border"
-          className="w-screen h-1 absolute bottom-0 right-0"
+          className="w-full h-1 absolute bottom-0 right-0"
         />
       </div>
 
@@ -120,7 +120,7 @@ export default function Nav() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="overflow-clip w-screen h-screen backdrop-blur-md absolute top-0 right-0 z-50 flex justify-center items-start"
+          className="overflow-x-hidden w-full h-screen backdrop-blur-md absolute top-0 right-0 z-50 flex justify-center items-start"
         >
           <div className="slide-in p-6 pl-10 pr-0 flex flex-col text-xl w-8/12 shadow-2xl shadow-main rounded-2xl mt-[30%] bg-black bg-opacity-80">
             {/* The mobile navigation links */}

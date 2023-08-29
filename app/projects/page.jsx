@@ -12,6 +12,7 @@ import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { FaGithubAlt } from "@react-icons/all-files/fa/FaGithubAlt";
 import { motion } from "framer-motion";
 import PageTrasition from "../components/PageTrasition";
+import { isMobile } from "react-device-detect";
 //Frameworks
 import react from "../assets/projects/Rectangle 29.avif";
 import motionImg from "../assets/projects/Rectangle 30.avif";
@@ -155,7 +156,7 @@ const Projects = (ref) => {
   return (
     <PageTrasition ref={ref}>
       {/* incerts the custom cursor from react-creative-cursor */}
-      <div className="flex min-h-screen flex-col items-center w-full overflow-x-clip overflow-y-auto">
+      <div className="flex min-h-screen flex-col items-center w-full overflow-x-hidden overflow-y-auto">
         {/* Incerts the contact modal */}
         <Contact showModal={showModal} setShowModal={setShowModal} />
         {/* Tools Section  */}
@@ -229,6 +230,7 @@ const Projects = (ref) => {
           <motion.div
             initial={slideIn}
             whileInView={slideOut}
+            viewport={{ once: true, threshold: 0.5 }}
             className="hidden md:flex flex-row h-full justify-start items-center w-full px-[16%] md:py-[3%]"
           >
             <div className="h-full flex flex-col justify-between items-start space-y-14">
@@ -308,7 +310,7 @@ const Projects = (ref) => {
                   <motion.div
                     initial={index % 2 ? slide : slideIn}
                     whileInView={slideOut}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, threshold: 0.5 }}
                     className={`md:w-1/2`}
                   >
                     <Image
@@ -334,6 +336,7 @@ const Projects = (ref) => {
                     <motion.div
                       initial={slideIn}
                       whileInView={slideOut}
+                      viewport={{ once: true, threshold: 0.5 }}
                       className="flex flex-row items-center justify-start space-x-4"
                     >
                       <button
@@ -388,6 +391,7 @@ const Projects = (ref) => {
             <motion.div
               initial={fadeIn}
               whileInView={fadeOut}
+              viewport={{ once: true, threshold: 0.5 }}
               className="w-[80%] md:w-[50%]"
             >
               <Image
