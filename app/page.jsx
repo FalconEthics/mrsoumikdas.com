@@ -205,7 +205,7 @@ export default function Home(ref) {
             <Image
               src={Line}
               alt="sectiond divider"
-              className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] `}
+              className={`z-10 absolute bottom-[-0.3%] right-[32%] md:right-[35%] lg:right-[44.5%]`}
             />
           </div>
           {/* Skills section */}
@@ -246,7 +246,7 @@ export default function Home(ref) {
               <Image
                 src={Line}
                 alt="sectiond divider"
-                className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%]`}
+                className={`z-10 absolute bottom-[-0.3%] right-[35%] md:right-[45%] lg:right-[44.5%]`}
               />
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function Home(ref) {
               <Image
                 src={Line}
                 alt="sectiond divider"
-                className={`z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%]`}
+                className={`z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%] lg:right-[45.5%]`}
               />
             </div>
           </div>
