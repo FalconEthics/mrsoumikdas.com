@@ -48,20 +48,20 @@ export default function Contact({ showModal, setShowModal }) {
             />
             <div className="text-center md:text-start space-y-2 md:w-1/2  md:flex md:flex-col md:justify-between md:items-start">
               {/* Render Contact title */}
-              <div className="font-black text-3xl md:text-4xl mb-6 flex flex-row space-x-2 justify-center items-center md:items-start md:justify-start">
+              <div className="font-black text-3xl md:text-4xl lg:text-5xl mb-6 flex flex-row space-x-2 justify-center items-center md:items-start md:justify-start">
                 <p>Contact</p>
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
                   Me
                 </p>
               </div>
               {/* Render phone number */}
-              <p className="text-dim text-sm">Phone</p>
+              <p className="text-dim text-sm lg:text-base">Phone</p>
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   window.open("tel:+91-98540-27242", "_blank");
                 }}
-                className="flex flex-row space-x-2 w-full md:mt-0 justify-center items-center font-medium text-base md:text-lg md:items-start md:justify-start hover:text-xl"
+                className="flex flex-row space-x-2 lg:w-fit w-full md:mt-0 justify-center items-center font-medium text-base md:text-lg lg:text-xl lg:hover:text-2xl md:items-start md:justify-start hover:text-xl"
               >
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
                   +91
@@ -69,9 +69,9 @@ export default function Contact({ showModal, setShowModal }) {
                 <p>9854027242</p>
               </button>
               {/* Render email */}
-              <p className="text-dim text-sm">Email</p>
+              <p className="text-dim text-sm lg:text-base">Email</p>
               <button
-                className="font-medium text-base md:text-lg hover:text-xl"
+                className="lg:w-fit font-medium text-base md:text-lg lg:text-xl lg:hover:text-2xl hover:text-xl"
                 onClick={(e) => {
                   e.stopPropagation();
                   window.open("mailto:mail2soumikdas@gmail.com", "_blank");
@@ -80,9 +80,9 @@ export default function Contact({ showModal, setShowModal }) {
                 mail2soumikdas@gmail.com
               </button>
               {/* Render LinkedIn */}
-              <p className="text-dim text-sm">Linked-In</p>
+              <p className="text-dim text-sm lg:text-base">Linked-In</p>
               <button
-                className="w-full font-medium text-base md:text-lg hover:text-xl text-start"
+                className="lg:w-fit w-full font-medium text-base md:text-lg lg:text-xl lg:hover:text-2xl hover:text-xl text-start"
                 onClick={(e) => {
                   e.stopPropagation();
                   window.open(
@@ -95,14 +95,14 @@ export default function Contact({ showModal, setShowModal }) {
               </button>
               <div className="flex flex-col justify-center items-center pt-3 md:pt-5 md:justify-start md:flex-row ">
                 {/* Render social media icons */}
-                <p className="hidden md:block text-base">or</p>
+                <p className="hidden md:block text-base lg:text-lg">or</p>
                 <Image src={line} alt="Line" className="md:hidden" />
                 <Image
                   src={line2}
                   alt="line2"
                   className="hidden md:block mt-1"
                 />
-                <div className="flex flex-row space-x-3 pt-3 pb-8 text-2xl md:p-0 md:pl-3">
+                <div className="flex flex-row space-x-3 pt-3 pb-8 text-2xl lg:text-3xl md:p-0 md:pl-3">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -112,7 +112,7 @@ export default function Contact({ showModal, setShowModal }) {
                       );
                     }}
                   >
-                    <AiFillInstagram className="hover:text-4xl" />
+                    <AiFillInstagram className="hover:text-4xl lg:hover:text-5xl" />
                   </button>
                   <button
                     onClick={(e) => {
@@ -120,7 +120,7 @@ export default function Contact({ showModal, setShowModal }) {
                       window.open("https://discord.gg/qkcm8qGP8b", "_blank");
                     }}
                   >
-                    <AiFillTwitterCircle className="hover:text-4xl" />
+                    <AiFillTwitterCircle className="hover:text-4xl lg:hover:text-5xl" />
                   </button>
                   <button
                     onClick={(e) => {
@@ -131,7 +131,7 @@ export default function Contact({ showModal, setShowModal }) {
                       );
                     }}
                   >
-                    <FaDiscord className="hover:text-4xl" />
+                    <FaDiscord className="hover:text-4xl lg:hover:text-5xl" />
                   </button>
                 </div>
               </div>
