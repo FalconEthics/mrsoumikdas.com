@@ -22,7 +22,7 @@ import { FaDiscord } from "@react-icons/all-files/fa/FaDiscord";
  */
 export default function Contact({ showModal, setShowModal }) {
   // Get showModal and setShowModal from UserContext
-  const { offscreen, onscreen, w1920 } = useContext(UserContext);
+  const { offscreen, onscreen } = useContext(UserContext);
 
   // Render Contact component
   return (
@@ -36,19 +36,17 @@ export default function Contact({ showModal, setShowModal }) {
           }}
           initial={offscreen}
           animate={onscreen}
-          className="absolute overflow-x-hidden w-full h-screen backdrop-blur-md top-0 right-0 z-50 flex justify-center items-start"
+          className="absolute overflow-hidden w-full h-screen backdrop-blur-md top-0 right-0 z-50 flex justify-center items-start"
         >
           <div
-            className={`p-4 flex flex-col space-y-5 md:flex-row-reverse md:space-y-0 md:space-x-5 text-xl w-10/12 md:w-6/12 shadow-2xl shadow-main rounded-2xl mt-[10%] 
-            md:mt-[15%] ${
-              w1920 && "md:mt-[9%]"
-            } md:p-10  md:h-6/12 bg-black bg-opacity-80 justify-center items-center`}
+            className={`p-4 flex flex-col space-y-5 md:flex-row-reverse md:space-y-0 md:space-x-5 text-xl w-10/12 lg:w-7/12 shadow-2xl shadow-main rounded-2xl mt-[10%] 
+            md:mt-[15%] lg:mt-[10%] md:p-10  md:h-6/12 bg-black bg-opacity-80 justify-center items-center`}
           >
             <Image
               src={orbit}
               className={"w-10/12 md:w-6/12 md:justify-center md:items-center"}
             />
-            <div className="text-center md:text-start space-y-2 md:w-6/12  md:flex md:flex-col md:justify-between md:items-start">
+            <div className="text-center md:text-start space-y-2 md:w-1/2  md:flex md:flex-col md:justify-between md:items-start">
               {/* Render Contact title */}
               <div className="font-black text-3xl md:text-4xl mb-6 flex flex-row space-x-2 justify-center items-center md:items-start md:justify-start">
                 <p>Contact</p>

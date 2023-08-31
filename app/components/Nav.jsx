@@ -27,7 +27,7 @@ import { motion } from "framer-motion";
  */
 export default function Nav() {
   // Get the clicked state and setClicked function from the UserContext.
-  const { clicked, setClicked, showModal, setShowModal, w1920 } =
+  const { clicked, setClicked, showModal, setShowModal } =
     useContext(UserContext);
 
   // Get the current pathname and router from Next.js.
@@ -51,15 +51,13 @@ export default function Nav() {
   ];
 
   return (
-    <>
+    <div className="lg:flex lg:flex-col lg:items-center w-full relative">
       {/* The navigation bar */}
       <div
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className={`relative w-full py-5 md:py-6 px-10 md:px-[16%] flex flex-row justify-between items-center overflow-x-hidden overflow-y-auto ${
-          w1920 && pathname !== "/projects" && "md:px-[20%]"
-        }`}
+        className={`relative w-full lg:w-[1150px] py-5 md:py-6 px-10  flex flex-row justify-between items-center overflow-x-hidden overflow-y-auto`}
       >
         {/* The website logo */}
         <Image src={flatLogo} alt="Soumik Das" />
@@ -103,12 +101,12 @@ export default function Nav() {
           className="md:hidden"
         />
         {/* The bottom border */}
-        <Image
-          src={borderBottom}
-          alt="border"
-          className="w-full h-1 absolute bottom-0 right-0"
-        />
       </div>
+      <Image
+        src={borderBottom}
+        alt="border"
+        className="w-full lg:w-screen h-1 absolute bottom-0 right-0"
+      />
 
       {/* The mobile menu */}
       {clicked && (
@@ -153,6 +151,6 @@ export default function Nav() {
           </div>
         </motion.div>
       )}
-    </>
+    </div>
   );
 }

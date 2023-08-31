@@ -75,7 +75,6 @@ export default function About(ref) {
     scaleOut,
     fadeIn,
     fadeOut,
-    w1920,
   } = useContext(UserContext);
 
   /**
@@ -169,15 +168,13 @@ export default function About(ref) {
 
   return (
     <PageTrasition ref={ref}>
-      <main className="flex w-full min-h-screen flex-col items-center overflow-x-hidden overflow-y-auto">
+      <main className="flex w-screen min-h-screen flex-col items-center overflow-x-hidden overflow-y-auto">
         <Contact showModal={showModal} setShowModal={setShowModal} />
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
           <motion.div
             initial={fadeIn}
             whileInView={fadeOut}
-            className={`text-center px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            } md:pt-[4%]`}
+            className={`text-center px-10 md:pt-[4%] lg:w-[1150px]`}
           >
             <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Know more about me and my Work
@@ -187,18 +184,14 @@ export default function About(ref) {
             </p>
           </motion.div>
           <h2
-            className={`px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            } md:text-lg text-dim break-words text-center py-[2%]`}
+            className={`px-10  md:text-lg text-dim break-words text-center py-[2%] lg:w-[1150px]`}
           >
             "India annually produces 1.5 million engineers every year but I
             believe that am not just another Indian engineer among those
             millions rather I am among the few passionate ones"
           </h2>
           <div
-            className={`flex flex-col align-middle w-full relative px-10 md:px-[16%] md:pb-[4%] md:space-y-8 ${
-              w1920 && "md:px-[20%]"
-            }`}
+            className={`flex flex-col align-middle w-full lg:w-[1150px] relative px-10 md:pb-[8%] md:space-y-8`}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               Work Experiences
@@ -210,14 +203,14 @@ export default function About(ref) {
                   className={`relative flex flex-col ${
                     index % 2 ? "md:flex-row-reverse" : "md:flex-row"
                   } justify-center md:justify-between items-center w-full space-y-[8%] md:space-y-0 py-[8%] md:py-0 ${
-                    index != work.length - 1 ? "pb-[20%]" : ""
+                    index != work.length - 1 && "pb-[20%]"
                   }`}
                 >
                   <motion.div
                     initial={fadeIn}
                     whileInView={fadeOut}
                     viewport={{ once: true, threshold: 0.5 }}
-                    className="w-[60%] hover:shadow-xl hover:shadow-secondary h-64 md:w-[22%] md:h-72 border border-white p-4 py-10 rounded-2xl"
+                    className="w-48 h-64 lg:h-80 md:w-[200px] lg:w-[250px] hover:shadow-xl hover:shadow-secondary border border-white p-4 py-10 rounded-2xl"
                   >
                     <Image
                       src={item.img}
@@ -235,13 +228,13 @@ export default function About(ref) {
                     initial={index % 2 ? slide : slideIn}
                     whileInView={slideOut}
                     viewport={{ once: true, threshold: 0.5 }}
-                    className="flex flex-col text-sm md:text-base break-word space-y-1 md:w-[43%] break-all"
+                    className="flex flex-col text-sm lg:text-base break-word space-y-1 break-all md:w-96 lg:w-[450px]"
                   >
                     <div className="">
-                      <h3 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+                      <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
                         {item.title}
                       </h3>
-                      <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-lg md:text-2xl from-main to-secondary text-center">
+                      <p className="inline font-bold lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r text-lg md:text-xl from-main to-secondary text-center">
                         {item.role}
                       </p>
                     </div>
@@ -264,9 +257,7 @@ export default function About(ref) {
               quality={100}
               src={connector}
               alt="connector1"
-              className={`hidden md:block absolute scale-[80%] top-[5%] left-[34%] z-10 ${
-                w1920 && "left-[38%]"
-              }`}
+              className={`hidden lg:block absolute scale-[80%] top-[8%] left-[30%] z-10`}
             />
             <Image
               src={Line}
@@ -274,99 +265,89 @@ export default function About(ref) {
               className="z-10 absolute bottom-0 right-[35%] md:right-[45%]"
             />
           </div>
-          <div
-            className={`flex flex-col align-middle w-full py-[8%] md:pt-[4%] relative px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            } bg-dark md:pb-[4%] md:space-y-8`}
-          >
+          <div className="w-screen bg-dark lg:flex lg:flex-col lg:items-center">
             <div
-              className={`text-center px-10 md:px-[16%] ${
-                w1920 && "md:px-[20%]"
-              }`}
+              className={`flex flex-col align-middle w-full lg:w-[1150px] py-[8%] md:pt-[4%] relative px-10 md:pb-[8%] md:space-y-8`}
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
-                My Academics
-              </h2>
-              <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
-                _
-              </p>
+              <div className={`text-center px-10`}>
+                <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+                  My Academics
+                </h2>
+                <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-3xl from-main to-secondary text-center">
+                  _
+                </p>
+              </div>
+              {education.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`relative flex flex-col  ${
+                      index % 2 ? "md:flex-row" : "md:flex-row-reverse"
+                    } justify-center md:justify-between items-center w-full space-y-[8%] md:space-y-0 py-[8%] md:py-0 ${
+                      index != education.length - 1 ? "pb-[20%]" : ""
+                    }`}
+                  >
+                    <motion.div
+                      initial={fadeIn}
+                      whileInView={fadeOut}
+                      viewport={{ once: true, threshold: 0.5 }}
+                      className={`w-48 h-72 lg:h-[340px] md:w-[210px] lg:w-[250px] hover:shadow-xl hover:shadow-secondary border border-white p-4 py-10 rounded-2xl`}
+                    >
+                      <Image
+                        src={item.img}
+                        placeholder="blur"
+                        quality={100}
+                        key={index}
+                        alt={item.course}
+                        className="w-full h-full"
+                        onClick={() => {
+                          window.open(item.url, "_blank");
+                        }}
+                      />
+                    </motion.div>
+                    <motion.div
+                      initial={index % 2 ? slideIn : slide}
+                      whileInView={slideOut}
+                      viewport={{ once: true, threshold: 0.5 }}
+                      className="flex flex-col text-sm lg:text-base md:text-base break-word space-y-1 md:w-96 lg:w-[450px]"
+                    >
+                      <div className="">
+                        <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
+                          {item.course}
+                        </h3>
+                        <p className="inline font-bold lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r text-lg md:text-xl from-main to-secondary text-center">
+                          {item.uni}
+                        </p>
+                      </div>
+                      <p className="">{item.time}</p>
+                      <p className="text-dim">{item.desc}</p>
+                    </motion.div>
+                    {index != education.length - 1 && (
+                      <Image
+                        quality={100}
+                        src={mConnector}
+                        alt="sectiond divider"
+                        className="z-10 absolute bottom-[-1.5%] right-[48%] md:hidden"
+                      />
+                    )}
+                  </div>
+                );
+              })}
+              <Image
+                quality={100}
+                src={connector2}
+                alt="connector2"
+                className={`hidden lg:block absolute scale-[80%] top-[24%] left-[30%] z-10`}
+              />
+              <Image
+                src={Line}
+                alt="sectiond divider"
+                className="z-10 absolute bottom-[-0.2%] right-[35%]  md:right-[45%] "
+              />
             </div>
-            {education.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`relative flex flex-col  ${
-                    index % 2 ? "md:flex-row" : "md:flex-row-reverse"
-                  } justify-center md:justify-between items-center w-full space-y-[8%] md:space-y-0 py-[8%] md:py-0 ${
-                    index != education.length - 1 ? "pb-[20%]" : ""
-                  }`}
-                >
-                  <motion.div
-                    initial={fadeIn}
-                    whileInView={fadeOut}
-                    viewport={{ once: true, threshold: 0.5 }}
-                    className={`w-[60%] h-72 hover:shadow-xl hover:shadow-secondary md:w-[22%] ${
-                      w1920 ? "md:h-80" : "md:h-74"
-                    } border border-white p-4 py-10 rounded-2xl`}
-                  >
-                    <Image
-                      src={item.img}
-                      placeholder="blur"
-                      quality={100}
-                      key={index}
-                      alt={item.course}
-                      className="w-full h-full"
-                      onClick={() => {
-                        window.open(item.url, "_blank");
-                      }}
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={index % 2 ? slideIn : slide}
-                    whileInView={slideOut}
-                    viewport={{ once: true, threshold: 0.5 }}
-                    className="flex flex-col text-sm md:text-base break-word md:w-[43%] space-y-1"
-                  >
-                    <div className="">
-                      <h3 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
-                        {item.course}
-                      </h3>
-                      <p className="inline font-bold text-transparent bg-clip-text bg-gradient-to-r text-lg md:text-2xl from-main to-secondary text-center">
-                        {item.uni}
-                      </p>
-                    </div>
-                    <p className="">{item.time}</p>
-                    <p className="text-dim">{item.desc}</p>
-                  </motion.div>
-                  {index != education.length - 1 && (
-                    <Image
-                      quality={100}
-                      src={mConnector}
-                      alt="sectiond divider"
-                      className="z-10 absolute bottom-[-1.5%] right-[48%] md:hidden"
-                    />
-                  )}
-                </div>
-              );
-            })}
-            <Image
-              quality={100}
-              src={connector2}
-              alt="connector2"
-              className={`hidden md:block absolute scale-[80%] top-[20%] left-[34%] z-10 ${
-                w1920 && "left-[38%]"
-              }`}
-            />
-            <Image
-              src={Line}
-              alt="sectiond divider"
-              className="z-10 absolute bottom-[-0.2%] right-[35%]  md:right-[45%] "
-            />
           </div>
           <div
-            className={`flex flex-col align-middle w-full px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            } md:pt-[4%]`}
+            className={`flex flex-col align-middle w-full lg:w-[1150px] px-10  md:pt-[4%]`}
           >
             <div className="text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
@@ -384,7 +365,7 @@ export default function About(ref) {
                     initial={scaleIn}
                     whileInView={scaleOut}
                     viewport={{ once: true, threshold: 0.5 }}
-                    className="w-[60%] md:w-[8%]"
+                    className="w-48 h-48"
                   >
                     <Image
                       key={index}
@@ -406,9 +387,7 @@ export default function About(ref) {
                     initial={scaleIn}
                     whileInView={scaleOut}
                     viewport={{ once: true, threshold: 0.5 }}
-                    className={`${index == 0 ? "col-span-2 row-span-2" : ""} ${
-                      w1920 && "w-full"
-                    }`}
+                    className={`${index == 0 ? "col-span-2 row-span-2" : ""}`}
                   >
                     <Image
                       key={index}
@@ -423,11 +402,7 @@ export default function About(ref) {
               })}
             </div>
           </div>
-          <div
-            className={`w-full px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            } pb-[2%]`}
-          >
+          <div className={`w-full lg:w-[1150px] px-10 pb-[2%]`}>
             <div className="p-4 md:p-6 flex flex-col md:flex-row md:space-x-4 items-center justify-center bg-dark rounded-lg space-y-2">
               <div className="text-center">
                 <h2 className="text-2xl shadow-xl  md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">

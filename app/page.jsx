@@ -52,7 +52,6 @@ export default function Home(ref) {
     onscreen,
     slideTilt,
     slideTiltOut,
-    w1920,
   } = useContext(UserContext);
 
   // schema for google bots
@@ -136,14 +135,12 @@ export default function Home(ref) {
       >
         {/* Imports the contact modal*/}
         <Contact showModal={showModal} setShowModal={setShowModal} />
-        <div>
+        <div className="lg:flex lg:flex-col lg:items-center">
           {/* Hero section */}
           <div
-            className={`relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[4%] px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            }`}
+            className={`relative lg:w-[1150px] flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:justify-between md:items-center md:space-y-[0%] md:py-[4%] px-10 `}
           >
-            <div className="relative w-full md:w-1/2">
+            <div className="relative w-full md:w-1/3 hidden lg:block">
               <motion.div
                 initial={slideIn}
                 whileInView={slideOut}
@@ -162,187 +159,204 @@ export default function Home(ref) {
                 initial={slideTilt}
                 whileInView={slideTiltOut}
                 viewport={{ once: true, threshold: 0.5 }}
-                className="absolute inset-0 w-full  h-full md:h-auto"
+                className="absolute inset-0 w-full h-full md:h-auto"
               >
                 <Image className="w-full h-full" src={Rect} alt="BG" priority />
               </motion.div>
             </div>
-            <div className="flex flex-col w-full space-y-2 h-fit">
+            <div className="relative w-full md:w-1/3 lg:hidden block">
+              <motion.div
+                // initial={slideIn}
+                // whileInView={slideOut}
+                // viewport={{ once: true, threshold: 0.5 }}
+                className="relative z-10 w-full h-full md:h-auto drop-shadow-lg"
+              >
+                <Image
+                  src={Banner}
+                  className="w-full h-full"
+                  alt="Soumik Das"
+                  quality={100}
+                  priority
+                />
+              </motion.div>
+              <motion.div
+                // initial={slideTilt}
+                // whileInView={slideTiltOut}
+                // viewport={{ once: true, threshold: 0.5 }}
+                className="absolute inset-0 w-full h-full md:h-auto -rotate-12"
+              >
+                <Image className="w-full h-full" src={Rect} alt="BG" priority />
+              </motion.div>
+            </div>
+            <div className="flex flex-col w-full md:w-2/3 space-y-2 h-fit">
               <div className="flex flex-row space-x-2">
-                <p className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
+                <p className="text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
                   Hey
                 </p>
-                <p className="text-4xl md:text-6xl font-bold">It's</p>
+                <p className="text-4xl lg:text-6xl font-bold">It's</p>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold">
+              <h1 className="text-4xl lg:text-6xl font-bold">
                 Soumik Das here
               </h1>
-              <h2 className="md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+              <h2 className="md:text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
                 Welcome to my part of the internet!
               </h2>
             </div>
             <Image
               src={Line}
               alt="sectiond divider"
-              className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] ${
-                w1920 && "md:right-[46.5%]"
-              }`}
+              className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] `}
             />
           </div>
           {/* Skills section */}
-          <div
-            className={`relative flex flex-col md:flex-row-reverse space-y-[8%] py-[8%]  md:py-[4%] bg-dark px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            } md:space-y-0 md:justify-between md:items-center`}
-          >
-            <motion.div
-              initial={scaleIn}
-              whileInView={scaleOut}
-              viewport={{ once: true, threshold: 0.5 }}
-              className="w-full md:w-[40%] scale-in"
+          <div className="w-screen bg-dark lg:flex lg:flex-col lg:items-center">
+            <div
+              className={`relative lg:w-[1150px] flex flex-col md:flex-row-reverse space-y-[8%] py-[8%] md:py-[4%] px-10 md:space-y-0 md:justify-between md:items-center`}
             >
-              <Image
-                src={Skills}
-                quality={100}
-                priority
-                alt="sills"
-                className="w-full"
-              />
-            </motion.div>
-            <div className="break-words md:w-1/2 md:pr-8">
-              <h2 className="text-2xl md:text-3xl font-bold inline pr-2">
-                I'm a Front-end Developer, based in
-              </h2>
-              <p className="text-2xl md:text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
-                INDIA
-              </p>
-              <p className="pt-2 break-all text-dim md:text-lg ">
-                I love to get beautiful and interactive designs get into life,
-                with proficiency in front end frameworks and tools like:
-                React/React Native, Next.js, Tailwind Css, Framer Motion and
-                etc. I am very passionate about what i do and so have keen
-                interest in learning new and trending technologies, be that a
-                framework or a tool!
-              </p>
-            </div>
-            <Image
-              src={Line}
-              alt="sectiond divider"
-              className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%] ${
-                w1920 && "md:right-[46.5%]"
-              }`}
-            />
-          </div>
-          {/* My Projects Section */}
-          <div
-            className={`z-10 w-full h-[65vh] md:h-[70vh] relative overflow-x-hidden flex flex-col justify-center items-center ${
-              w1920 && "md:h-[75vh]"
-            }`}
-          >
-            <div className="text-center absolute top-[8%]">
-              <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
-                My Projects
-              </h2>
-              <p className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
-                _
-              </p>
-            </div>
-            <Image
-              placeholder="blur"
-              quality={100}
-              src={Bg}
-              alt="bg"
-              className="z-0 absolute top-0 right-[+20%] scale-50 md:left-[10%] md:scale-75"
-            />
-            {/* imports the carousel component from the components folder. */}
-            <div className="md:hidden relative w-full flex flex-col justify-center items-center z-10 h-[28vh]">
-              <Carousel images={slides} width={true} />
-            </div>
-            <div className="hidden md:flex relative w-full flex-col justify-center items-center z-10 h-[28vh]">
-              <Carousel images={slides} width={false} />
-            </div>
-            <Link
-              passHref
-              rel="noopener noreferrer"
-              href={"/projects"}
-              className="absolute hover:scale-90 bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
-            >
-              <BiShowAlt />
-              <p>show more</p>
-            </Link>
-            <Image
-              src={Line}
-              alt="sectiond divider"
-              className={`z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%] ${
-                w1920 && "md:right-[46.5%]"
-              }`}
-            />
-          </div>
-          {/* About Section */}
-          <div
-            className={`relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[2%] bg-dark px-10 md:px-[16%] ${
-              w1920 && "md:px-[20%]"
-            } md:space-y-0 md:justify-between md:items-center`}
-          >
-            <motion.div
-              initial={offscreen}
-              whileInView={onscreen}
-              viewport={{ once: true, threshold: 0.5 }}
-              className="md:w-[45%]"
-            >
-              <Image
-                src={About}
-                placeholder="blur"
-                quality={100}
-                alt="sills"
-                className="w-full"
-              />
-            </motion.div>
-            <motion.div
-              initial={slideIn}
-              whileInView={slideOut}
-              viewport={{ once: true, threshold: 0.5 }}
-              className="flex flex-col space-y-4"
-            >
-              <div className="flex flex-col justify-start items-start md:justify-start md:items-start">
-                <h2
-                  className={` text-2xl md:text-4xl font-bold ${
-                    w1920 && "md:text-5xl"
-                  }`}
-                >
-                  Wanna know more about
+              <motion.div
+                initial={scaleIn}
+                whileInView={scaleOut}
+                viewport={{ once: true, threshold: 0.5 }}
+                className="w-full md:w-1/3 lg:w-2/5 scale-in"
+              >
+                <Image
+                  src={Skills}
+                  quality={100}
+                  priority
+                  alt="sills"
+                  className="w-full"
+                />
+              </motion.div>
+              <div className="break-words md:w-2/3 lg:w-1/2 md:pr-8">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold inline pr-2">
+                  I'm a Front-end Developer, based in
                 </h2>
-                <p className="text-2xl md:text-4xl break-all font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
-                  me and my work?
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
+                  INDIA
+                </p>
+                <p className="pt-2 text-dim md:text-lg ">
+                  I love to get beautiful and interactive designs get into life,
+                  with proficiency in front end frameworks and tools like:
+                  React/React Native, Next.js, Tailwind Css, Framer Motion and
+                  etc. I am very passionate about what i do and so have keen
+                  interest in learning new and trending technologies, be that a
+                  framework or a tool!
                 </p>
               </div>
-              <div className="flex flex-row  justify-start items-start space-x-4 md:justify-start md:space-x-6">
-                <button
-                  onClick={() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth", // Use 'auto' for instant scrolling without smooth animation
-                    });
-                    setShowModal(!showModal);
-                  }}
-                  className="bg-black hover:scale-90 w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
-                >
-                  <AiOutlineContacts className="text-main" />
-                  <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
-                    Contact
-                  </p>
-                </button>
-                <Link
-                  passHref
-                  rel="noopener noreferrer"
-                  href={"/about"}
-                  className="w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
-                >
-                  <FaAngleDoubleRight />
-                  <p>Know more</p>
-                </Link>
+              <Image
+                src={Line}
+                alt="sectiond divider"
+                className={`z-10 absolute bottom-[-0.3%] right-[35%]  md:right-[45%]`}
+              />
+            </div>
+          </div>
+          {/* My Projects Section */}
+          <div className="w-screen lg:flex lg:flex-col lg:items-center">
+            <div
+              className={`z-10 w-full lg:w-full h-[65vh] md:h-[50vh] lg:h-[70vh] relative overflow-x-hidden flex flex-col justify-center items-center`}
+            >
+              <div className="text-center absolute top-[8%]">
+                <h2 className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-800">
+                  My Projects
+                </h2>
+                <p className="text-3xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
+                  _
+                </p>
               </div>
-            </motion.div>
+              <Image
+                placeholder="blur"
+                quality={100}
+                src={Bg}
+                alt="bg"
+                className="z-0 absolute top-0 right-[+20%] scale-50 md:left-[10%] md:scale-75"
+              />
+              {/* imports the carousel component from the components folder. */}
+              <div className="md:hidden relative w-full flex flex-col justify-center items-center z-10 h-[28vh]">
+                <Carousel images={slides} width={true} />
+              </div>
+              <div className="hidden md:flex relative w-full flex-col justify-center items-center z-10 h-[28vh]">
+                <Carousel images={slides} width={false} />
+              </div>
+              <Link
+                passHref
+                rel="noopener noreferrer"
+                href={"/projects"}
+                className="absolute hover:scale-90 bottom-[8%] w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+              >
+                <BiShowAlt />
+                <p>show more</p>
+              </Link>
+              <Image
+                src={Line}
+                alt="sectiond divider"
+                className={`z-10 absolute bottom-[-0.3%] md:bottom-0 right-[35%] md:right-[45%]`}
+              />
+            </div>
+          </div>
+          {/* About Section */}
+
+          <div className="w-screen bg-dark lg:flex lg:flex-col lg:items-center">
+            <div
+              className={`relative md:w-full flex flex-col md:flex-row space-y-[8%] py-[8%] md:py-[2%] lg:w-[1150px] px-10  md:space-y-0 md:space-x-4 md:justify-between md:items-center`}
+            >
+              <motion.div
+                initial={offscreen}
+                whileInView={onscreen}
+                viewport={{ once: true, threshold: 0.5 }}
+                className="md:w-1/2 lg:w-2/5"
+              >
+                <Image
+                  src={About}
+                  placeholder="blur"
+                  quality={100}
+                  alt="sills"
+                  className="w-full"
+                />
+              </motion.div>
+              <motion.div
+                initial={slideIn}
+                whileInView={slideOut}
+                viewport={{ once: true, threshold: 0.5 }}
+                className="flex flex-col space-y-4 md:w-1/2"
+              >
+                <div className="space-x-2 md:pt-4">
+                  <h2
+                    className={`text-2xl md:text-3xl lg:text-4xl font-bold inline`}
+                  >
+                    Wanna know more about
+                  </h2>
+                  <p className="text-2xl inline md:text-3xl lg:text-4xl break-words font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+                    me and my work?
+                  </p>
+                </div>
+                <div className="flex flex-row lg:text-base justify-start items-start space-x-4 md:justify-start md:space-x-6">
+                  <button
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth", // Use 'auto' for instant scrolling without smooth animation
+                      });
+                      setShowModal(!showModal);
+                    }}
+                    className="bg-black hover:scale-90 w-fit flex flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
+                  >
+                    <AiOutlineContacts className="text-main" />
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white">
+                      Contact
+                    </p>
+                  </button>
+                  <Link
+                    passHref
+                    rel="noopener noreferrer"
+                    href={"/about"}
+                    className="w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+                  >
+                    <FaAngleDoubleRight />
+                    <p>Know more</p>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
         <Footer />

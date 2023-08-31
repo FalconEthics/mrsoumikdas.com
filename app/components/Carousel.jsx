@@ -44,11 +44,11 @@ export default function Carousel({ images, width }) {
     <>
       <AiOutlineDoubleLeft
         onClick={goLeft}
-        className="absolute text-2xl top-[37%] md:top-[43%] left-[5%] text-main"
+        className="absolute text-2xl top-[37%] md:top-[43%] left-[2.5%] text-main"
       />
       <AiOutlineDoubleRight
         onClick={goRight}
-        className="absolute text-2xl top-[37%] md:top-[43%] right-[5%] text-main"
+        className="absolute text-2xl top-[37%] md:top-[43%] right-[2.5%] text-main"
       />
       {images.map((image, index) => {
         return (
@@ -80,7 +80,9 @@ export default function Carousel({ images, width }) {
               type: "spring",
               sriffness: 260,
             }}
-            className="absolute w-[50%] md:w-[20%] space-y-4"
+            className={`absolute w-[50%] md:w-[20%] space-y-4 ${
+              index === midItem ? "z-40" : "z-0 blur-sm"
+            }`}
           >
             <Image
               onClick={() => {
@@ -88,9 +90,7 @@ export default function Carousel({ images, width }) {
               }}
               src={image.img}
               alt="img"
-              className={`w-full ${
-                index === midItem ? "z-40" : "z-0 blur-sm"
-              } drop-shadow-xl shadow-whtie`}
+              className={`w-full drop-shadow-xl shadow-whtie`}
             />
             <div>
               <p className="font-bold text-sm">{image.title}</p>

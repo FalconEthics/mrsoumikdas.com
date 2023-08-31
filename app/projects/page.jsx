@@ -90,7 +90,7 @@ const Projects = (ref) => {
 
   /**
    * Array of project objects
-   * @type {Array}
+   * @type {Array<Object>}
    */
   const projects = [
     // this object contains the details of all the projects
@@ -161,16 +161,16 @@ const Projects = (ref) => {
         <Contact showModal={showModal} setShowModal={setShowModal} />
         {/* Tools Section  */}
         <div className="relative flex flex-col space-y-[8%] md:space-y-0 pt-[8%] md:justify-between md:items-center md:py-0 w-full">
-          <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center md:pt-[3%]">
+          <h1 className="lg:w-[1150px]  text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center md:pt-[3%]">
             Preferred Tech Stacks
           </h1>
           {/* Tech Stack section for mobile */}
-          <div className="flex flex-row md:flex-col w-full justify-between md:items-start px-10 md:px-[16%] md:hidden">
-            <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+          <div className=" flex flex-row w-full justify-between px-10 md:hidden">
+            <div className="flex flex-col justify-start space-y-4 items-center w-1/3 ">
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white text-center ">
                 Frameworks
               </h2>
-              <div className="flex flex-col md:flex-row justify-start  items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
+              <div className="flex flex-col justify-start  items-center space-y-4 w-full">
                 {skills.Frameworks.map((item, index) => {
                   return (
                     <Image
@@ -178,18 +178,18 @@ const Projects = (ref) => {
                       placeholder="blur"
                       quality={100}
                       key={index}
-                      className="w-[60%] md:w-[8%]"
+                      className="w-16"
                       alt="Frameworks i know"
                     />
                   );
                 })}
               </div>
             </div>
-            <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+            <div className="flex flex-col justify-start space-y-4 items-center w-1/3 ">
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white text-center ">
                 Tools
               </h2>
-              <div className="flex flex-col md:flex-row justify-start  items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
+              <div className="flex flex-col justify-start items-center space-y-4 w-full">
                 {skills.Tools.map((item, index) => {
                   return (
                     index < 5 && (
@@ -198,7 +198,7 @@ const Projects = (ref) => {
                         key={index}
                         placeholder="blur"
                         quality={100}
-                        className="w-[60%] md:w-[8%]"
+                        className="w-16"
                         alt="Frameworks i know"
                       />
                     )
@@ -206,11 +206,11 @@ const Projects = (ref) => {
                 })}
               </div>
             </div>
-            <div className="flex flex-col md:flex-row md:justify-center md:items-center justify-start space-y-4 items-center w-1/3 md:w-full">
-              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
+            <div className="flex flex-col justify-start space-y-4 items-center w-1/3">
+              <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main via-secondary to-white text-center md:pr-4">
                 Languages
               </h2>
-              <div className="flex flex-col md:flex-row justify-start pl-[1%] items-center space-y-4 md:space-y-0 md:space-x-4 w-full">
+              <div className="flex flex-col justify-start pl-[1%] items-center space-y-4 w-full">
                 {skills.Languages.map((item, index) => {
                   return (
                     <Image
@@ -218,7 +218,7 @@ const Projects = (ref) => {
                       key={index}
                       placeholder="blur"
                       quality={100}
-                      className="w-[60%]"
+                      className="w-16"
                       alt="Languages i know"
                     />
                   );
@@ -231,9 +231,9 @@ const Projects = (ref) => {
             initial={slideIn}
             whileInView={slideOut}
             viewport={{ once: true, threshold: 0.5 }}
-            className="hidden md:flex flex-row h-full justify-start items-center w-full px-[16%] md:py-[3%]"
+            className="lg:w-[1150px] px-10 hidden md:flex flex-row h-full justify-start items-center w-full md:py-[5%]"
           >
-            <div className="h-full flex flex-col justify-between items-start space-y-14">
+            <div className="h-full flex flex-col justify-between items-start space-y-14 md:space-y-8 lg:space-y-14">
               <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r md:text-xl from-main via-secondary to-white text-center md:pr-4">
                 Frameworks
               </h2>
@@ -253,7 +253,7 @@ const Projects = (ref) => {
                       key={index}
                       placeholder="blur"
                       quality={100}
-                      className="w-[60%] md:w-[8%]"
+                      className="md:w-10 lg:w-16"
                       alt="Frameworks i know"
                     />
                   );
@@ -265,7 +265,7 @@ const Projects = (ref) => {
                     <Image
                       src={item}
                       key={index}
-                      className="w-[60%] md:w-[8%]"
+                      className="md:w-10 lg:w-16"
                       placeholder="blur"
                       quality={100}
                       alt="Tools i know"
@@ -281,7 +281,7 @@ const Projects = (ref) => {
                       key={index}
                       placeholder="blur"
                       quality={100}
-                      className="w-[60%] md:w-[8%]"
+                      className="md:w-10 lg:w-16"
                       alt="Languages i know"
                     />
                   );
@@ -290,7 +290,7 @@ const Projects = (ref) => {
             </div>
           </motion.div>
           {/* Projects showcase section  */}
-          <div className="text-center px-10 md:px-[16%]">
+          <div className="text-center px-10 ">
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
               My Projects
             </h2>
@@ -324,20 +324,20 @@ const Projects = (ref) => {
                   </motion.div>
                   <div
                     className={`flex flex-col px-10 ${
-                      index % 2 == 0 ? "md:pr-[16%]" : "md:pl-[16%]"
-                    } py-[8%] md:justify-between space-y-2 md:w-1/2 ${
+                      index % 2 == 0 ? "md:pr-10" : "md:pl-10"
+                    } py-[8%] md:py-10 lg:p-10 lg:w-[575px] md:justify-between lg:justify-center space-y-2 md:w-1/2 ${
                       index == projects.length - 1 && ""
                     }`}
                   >
-                    <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-3xl">
+                    <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-xl">
                       {item.title}
                     </h3>
-                    <p className="md:text-xl">{item.desc}</p>
+                    <p className="md:text-base">{item.desc}</p>
                     <motion.div
                       initial={slideIn}
                       whileInView={slideOut}
                       viewport={{ once: true, threshold: 0.5 }}
-                      className="flex flex-row items-center justify-start space-x-4"
+                      className="flex flex-row items-center justify-start md:text-sm space-x-4"
                     >
                       <button
                         onClick={() => {
@@ -345,7 +345,7 @@ const Projects = (ref) => {
                         }}
                         className={
                           item.url
-                            ? "bg-black w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 border border-white p-2 px-4 font-bold rounded-lg"
+                            ? "bg-black w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 border border-white p-2 px-4 md:px-3 font-bold rounded-lg"
                             : "w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                         }
                       >
@@ -365,7 +365,7 @@ const Projects = (ref) => {
                           onClick={() => {
                             window.open(item.url, "_blank");
                           }}
-                          className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+                          className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 md:px-3 font-bold rounded-lg"
                         >
                           <p className="text-white">
                             {item.img == keeper || item.img == likely
@@ -387,36 +387,38 @@ const Projects = (ref) => {
             })}
           </div>
           {/* Coming soon section */}
-          <div className="flex flex-col justify-center items-center px-10 md:px-[16%] pb-[5%] space-y-6 bg-dark w-full">
-            <motion.div
-              initial={fadeIn}
-              whileInView={fadeOut}
-              viewport={{ once: true, threshold: 0.5 }}
-              className="w-[80%] md:w-[50%]"
-            >
-              <Image
-                placeholder="blur"
-                quality={100}
-                src={soon}
-                alt="soon"
-                className="w-full"
-              />
-            </motion.div>
-            <h2 className="text-sm md:text-base md:w-[75%] text-dim text-center">
-              I am still working on some of the projects and I don't want to
-              present any unfinished works here. So, as soon as I complete them
-              I will be adding them here 👍 ~ till then you can check out my
-              GitHub profile for all the latest repos:
-            </h2>
-            <button
-              onClick={() => {
-                window.open("https://github.com/FalconEthics", "_blank");
-              }}
-              className="text-sm hover:scale-90 shadow-lg md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
-            >
-              <FaGithubAlt />
-              <p>Know more</p>
-            </button>
+          <div className="w-screen bg-dark lg:flex lg:flex-col lg:items-center">
+            <div className="flex flex-col justify-center items-center px-10  pb-[5%] space-y-6 w-full lg:w-[1150px]">
+              <motion.div
+                initial={fadeIn}
+                whileInView={fadeOut}
+                viewport={{ once: true, threshold: 0.5 }}
+                className="lg:w-2/3"
+              >
+                <Image
+                  placeholder="blur"
+                  quality={100}
+                  src={soon}
+                  alt="soon"
+                  className="w-full"
+                />
+              </motion.div>
+              <h2 className="text-sm md:text-base text-dim text-center">
+                I am still working on some of the projects and I don't want to
+                present any unfinished works here. So, as soon as I complete
+                them I will be adding them here 👍 ~ till then you can check out
+                my GitHub profile for all the latest repos:
+              </h2>
+              <button
+                onClick={() => {
+                  window.open("https://github.com/FalconEthics", "_blank");
+                }}
+                className="text-sm hover:scale-90 shadow-lg md:text-base w-fit flex flex-row justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
+              >
+                <FaGithubAlt />
+                <p>Know more</p>
+              </button>
+            </div>
           </div>
         </div>
         <Footer />
