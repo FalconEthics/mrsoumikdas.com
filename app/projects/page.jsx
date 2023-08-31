@@ -329,15 +329,15 @@ const Projects = (ref) => {
                       index == projects.length - 1 && ""
                     }`}
                   >
-                    <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-xl">
+                    <h3 className="font-bold lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-main from-0% via-secondary via-10% to-white to-70% text-2xl md:text-xl">
                       {item.title}
                     </h3>
-                    <p className="md:text-base">{item.desc}</p>
+                    <p className="md:text-base lg:text-lg">{item.desc}</p>
                     <motion.div
                       initial={slideIn}
                       whileInView={slideOut}
                       viewport={{ once: true, threshold: 0.5 }}
-                      className="flex flex-row items-center justify-start md:text-sm space-x-4"
+                      className="flex flex-row items-center justify-start md:text-sm lg:text-base space-x-4"
                     >
                       <button
                         onClick={() => {
@@ -345,7 +345,7 @@ const Projects = (ref) => {
                         }}
                         className={
                           item.url
-                            ? "bg-black w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 border border-white p-2 px-4 md:px-3 font-bold rounded-lg"
+                            ? "bg-black w-fit flex hover:scale-90 flex-row justify-center items-center space-x-1 border border-white p-2 px-4 md:px-3 lg:px-4 font-bold rounded-lg"
                             : "w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 font-bold rounded-lg"
                         }
                       >
@@ -365,7 +365,7 @@ const Projects = (ref) => {
                           onClick={() => {
                             window.open(item.url, "_blank");
                           }}
-                          className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 md:px-3 font-bold rounded-lg"
+                          className="w-fit flex flex-row hover:scale-90 justify-center items-center space-x-1 bg-gradient-to-r from-main to-secondary p-2 px-4 md:px-3 lg:px-4 font-bold rounded-lg"
                         >
                           <p className="text-white">
                             {item.img == keeper || item.img == likely
