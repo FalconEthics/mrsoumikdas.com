@@ -14,36 +14,36 @@ import { motion } from "framer-motion";
 import PageTrasition from "../components/PageTrasition";
 import { isMobile } from "react-device-detect";
 //Frameworks
-import react from "../assets/projects/Rectangle 29.avif";
-import motionImg from "../assets/projects/Rectangle 30.avif";
-import rn from "../assets/projects/Rectangle 31.avif";
-import expo from "../assets/projects/Rectangle 32.avif";
-import next from "../assets/projects/Rectangle 44.avif";
+import react from "../assets/projects/Rectangle 29.webp";
+import motionImg from "../assets/projects/Rectangle 30.webp";
+import rn from "../assets/projects/Rectangle 31.webp";
+import expo from "../assets/projects/Rectangle 32.webp";
+import next from "../assets/projects/Rectangle 44.webp";
 //Tools
-import tailwind from "../assets/projects/Rectangle 33.avif";
-import git from "../assets/projects/Rectangle 34.avif";
-import firebase from "../assets/projects/Rectangle 35.avif";
-import ad from "../assets/projects/Rectangle 36.avif";
-import seo from "../assets/projects/Rectangle 37.avif";
-import docker from "../assets/projects/Rectangle 38.avif";
-import vercel from "../assets/projects/Rectangle 39.avif";
-import linux from "../assets/projects/Rectangle 40.avif";
+import tailwind from "../assets/projects/Rectangle 33.webp";
+import git from "../assets/projects/Rectangle 34.webp";
+import firebase from "../assets/projects/Rectangle 35.webp";
+import ad from "../assets/projects/Rectangle 36.webp";
+import seo from "../assets/projects/Rectangle 37.webp";
+import docker from "../assets/projects/Rectangle 38.webp";
+import vercel from "../assets/projects/Rectangle 39.webp";
+import linux from "../assets/projects/Rectangle 40.webp";
 //Languages
-import js from "../assets/projects/Rectangle 41.avif";
-import c from "../assets/projects/Rectangle 43.avif";
-import asm from "../assets/projects/Rectangle 45.avif";
+import js from "../assets/projects/Rectangle 41.webp";
+import c from "../assets/projects/Rectangle 43.webp";
+import asm from "../assets/projects/Rectangle 45.webp";
 import Image from "next/image";
 //projects
-import keeper from "../assets/projects/Group 17.avif";
-import covid from "../assets/projects/Rectangle 22.avif";
-import oiram from "../assets/projects/Group 18.avif";
-import apply from "../assets/projects/Group 13.avif";
-import likely from "../assets/projects/Group 14.avif";
-import gpt from "../assets/projects/Rectangle 26.avif";
-import tri from "../assets/projects/Rectangle 27.avif";
-import calc from "../assets/projects/Rectangle 28.avif";
+import keeper from "../assets/projects/Group 17.webp";
+import covid from "../assets/projects/Rectangle 22.webp";
+import oiram from "../assets/projects/Group 18.webp";
+import apply from "../assets/projects/Group 13.webp";
+import likely from "../assets/projects/Group 14.webp";
+import gpt from "../assets/projects/Rectangle 26.webp";
+import tri from "../assets/projects/Rectangle 27.webp";
+import calc from "../assets/projects/Rectangle 28.webp";
 //coming soon img
-import soon from "../assets/projects/Group 16.avif";
+import soon from "../assets/projects/Group 16.webp";
 import dynamic from "next/dynamic";
 
 /**

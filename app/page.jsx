@@ -14,22 +14,22 @@ import PageTrasition from "./components/PageTrasition";
 import { isMobile } from "react-device-detect";
 
 // importing images
-import Banner from "./assets/home/banner.avif";
-import Rect from "./assets/home/rect.avif";
-import Line from "./assets/home/line.avif";
-import Skills from "./assets/home/Skills.avif";
-import Bg from "./assets/home/bg.avif";
-import About from "./assets/home/about.avif";
+import Banner from "./assets/home/banner.webp";
+import Rect from "./assets/home/rect.webp";
+import Line from "./assets/home/line.webp";
+import Skills from "./assets/home/Skills.webp";
+import Bg from "./assets/home/bg.webp";
+import About from "./assets/home/about.webp";
 import { BiShowAlt } from "@react-icons/all-files/bi/BiShowAlt";
 import { FaAngleDoubleRight } from "@react-icons/all-files/fa/FaAngleDoubleRight";
 import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
 
 // for slides
-import p2 from "./assets/home/p2.avif";
-import p1 from "./assets/home/p1.avif";
-import p5 from "./assets/home/p5.avif";
-import p4 from "./assets/home/p4.avif";
-import p3 from "./assets/home/p3.avif";
+import p2 from "./assets/home/p2.webp";
+import p1 from "./assets/home/p1.webp";
+import p5 from "./assets/home/p5.webp";
+import p4 from "./assets/home/p4.webp";
+import p3 from "./assets/home/p3.webp";
 
 import { useContext } from "react";
 import { UserContext } from "./store/UserContext";
@@ -60,7 +60,7 @@ export default function Home(ref) {
     "@type": "Person",
     name: "Soumik Das",
     url: "https://mrsoumikdas.com/",
-    image: "https://mrsoumikdas.com/assets/logo.avif",
+    image: "https://mrsoumikdas.com/assets/logo.webp",
     jobTitle: "Frontend Developer",
     worksFor: {
       "@type": "Organization",

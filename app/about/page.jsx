@@ -8,29 +8,29 @@
 const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
 import Contact from "../components/Contact";
 import Image from "next/image";
-import Line from "../assets/home/line.avif";
+import Line from "../assets/home/line.webp";
 import { motion } from "framer-motion";
 import PageTrasition from "../components/PageTrasition";
 import { isMobile } from "react-device-detect";
 //images
-import tripsy from "../assets/about/tripsy.avif";
-import traceworks from "../assets/about/traceworks.avif";
-import ngl from "../assets/about/ngl.avif";
-import cit from "../assets/about/cit.avif";
-import uol from "../assets/about/uol.avif";
+import tripsy from "../assets/about/tripsy.webp";
+import traceworks from "../assets/about/traceworks.webp";
+import ngl from "../assets/about/ngl.webp";
+import cit from "../assets/about/cit.webp";
+import uol from "../assets/about/uol.webp";
 //certificates
-import cs50 from "../assets/about/cs50.avif";
-import ai4 from "../assets/about/ai4students.avif";
-import bharat from "../assets/about/baratAcharya.avif";
-import londonApp from "../assets/about/londonApp.avif";
-import personal from "../assets/about/personalBranding.avif";
+import cs50 from "../assets/about/cs50.webp";
+import ai4 from "../assets/about/ai4students.webp";
+import bharat from "../assets/about/baratAcharya.webp";
+import londonApp from "../assets/about/londonApp.webp";
+import personal from "../assets/about/personalBranding.webp";
 //icons
 import { AiOutlineContacts } from "@react-icons/all-files/ai/AiOutlineContacts";
 import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
-import mConnector from "../assets/about/mConnector.avif";
-import connector from "../assets/about/connector.avif";
-import connector2 from "../assets/about/connector2.avif";
+import mConnector from "../assets/about/mConnector.webp";
+import connector from "../assets/about/connector.webp";
+import connector2 from "../assets/about/connector2.webp";
 import dynamic from "next/dynamic";
 
 /**

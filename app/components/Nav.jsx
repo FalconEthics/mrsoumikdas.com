@@ -6,9 +6,9 @@
 
 "use client";
 import Image from "next/image";
-import flatLogo from "../assets/flatLogo.avif";
-import menuBtn from "../assets/menu bar.avif";
-import borderBottom from "../assets/Line 4.avif";
+import flatLogo from "../assets/flatLogo.webp";
+import menuBtn from "../assets/menu bar.webp";
+import borderBottom from "../assets/Line 4.webp";
 import { useContext } from "react";
 import { UserContext } from "../store/UserContext";
 import Link from "next/link";
