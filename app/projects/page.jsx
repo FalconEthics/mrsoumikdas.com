@@ -42,6 +42,7 @@ import likely from "../assets/projects/Group 14.webp";
 import gpt from "../assets/projects/Rectangle 26.webp";
 import tri from "../assets/projects/Rectangle 27.webp";
 import calc from "../assets/projects/Rectangle 28.webp";
+import edia from "../assets/projects/edia.webp";
 //coming soon img
 import soon from "../assets/projects/Group 16.webp";
 import dynamic from "next/dynamic";
@@ -97,48 +98,54 @@ const Projects = (ref) => {
     {
       img: keeper,
       title: "Keeper-App",
-      desc: "a quick notes-keeping app with cloud save feature made with 	React & Firebase",
+      desc: "it's a quick notes keeping application that provides a convenient way to create and organize quick notes with cloud save features made with React & Firebase",
       repo: "https://github.com/FalconEthics/keeper-app",
       url: "https://the-keeper-app-fe.web.app/",
     },
     {
       img: covid,
-      title: "COVID-UN",
-      desc: "a one-stop solution for all covid-19 stats & updates made with React Native",
+      title: "CO-UN",
+      desc: "Covid Updates & News provides users with up-to-date pandemic info. Users can view current stats & News for countries around the world - made with React Native",
       repo: "https://github.com/FalconEthics/COVID-UN",
       url: "https://github.com/FalconEthics/COVID-UN/releases/tag/v-1.0.0",
     },
     {
       img: oiram,
       title: "Oiram",
-      desc: "a browser-based survival game inspired by Mario that runs with the help of p5.js",
+      desc: "Welcome to OIRAM, the game that's not a Mario clone xD! a browser-based wacky adventurous survival game that runs with the help of p5.js",
       repo: "https://github.com/FalconEthics/OIRAM",
       url: "https://oiram-falconethics.vercel.app/",
     },
     {
       img: apply,
       title: "Appy3D",
-      desc: "a 3D website that features stunning animations that activate as the user scrolls!",
+      desc: "a 3D website that features stunning animations that activate as the user scrolls! I designed this for one of my favourite new startups, @Nothing phones",
       repo: "https://github.com/FalconEthics/Appy3d",
       url: "https://appy3d-ooesozt5u-falconethics.vercel.app/",
     },
     {
       img: likely,
       title: "Likey",
-      desc: "A social media platform frontend inspired from Twitter and Insta made with Vue.js",
+      desc: "a functional social media platform frontend inspired from Twitter and Insta populated with JsonPlaceHolder mock data, made with Vue.js",
       repo: "https://github.com/FalconEthics/Likey",
       url: "https://likey-falconethics.vercel.app/",
     },
     {
       img: gpt,
       title: "Mr. GPT",
-      desc: "a Discord bot that uses OpenAI's GPT 3 learning model to generate text responses.",
+      desc: "a Discord bot that uses OpenAI's GPT 3 learning model to generate text responses. made with node.js, discord api and openai's gpt 3 api",
       repo: "https://github.com/FalconEthics/Mr-GPT",
+    },
+    {
+      img: edia,
+      title: "E-DIA",
+      desc: "Enhanced Duplicate Image Analyzer is a command-line application written in C that helps you efficiently find and delete duplicate images in a directory",
+      repo: "https://github.com/FalconEthics/E-DIA",
     },
     {
       img: tri,
       title: "Trinetro",
-      desc: "a single RPAS/Drone that can be used on Air, Water and Land for various purposes.",
+      desc: "a single RPAS/Drone that can be used operate on Air, Water and Land that can be utilized for various purposes like surveillance, delivery and etc.",
       repo: "https://github.com/FalconEthics/Trinetro-Drone",
     },
     {
@@ -325,7 +332,7 @@ const Projects = (ref) => {
                   <div
                     className={`flex flex-col px-10 ${
                       index % 2 == 0 ? "md:pr-10" : "md:pl-10"
-                    } py-[8%] md:py-10 lg:p-10 lg:w-[575px] md:justify-between lg:justify-center space-y-2 md:w-1/2 ${
+                    } py-[8%] md:py-10 lg:p-10 lg:w-[575px] md:justify-between lg:justify-center space-y-3 md:w-1/2 ${
                       index == projects.length - 1 && ""
                     }`}
                   >
