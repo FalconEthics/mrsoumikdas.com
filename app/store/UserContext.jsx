@@ -93,10 +93,12 @@ const UserContextProvider = ({ children }) => {
       duration: 0.8,
     },
   };
+
   const offscreen = {
     y: -300,
     opacity: 0,
   };
+
   const onscreen = {
     y: 0,
     opacity: 1,
