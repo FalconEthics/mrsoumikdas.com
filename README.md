@@ -166,7 +166,7 @@ London.
 
 [linkedin-url]: https://www.linkedin.com/in/soumik-das-profile/
 
-[product-screenshot]: https://raw.githubusercontent.com/FalconEthics/Ms-Paint-Lite/main/screenshot.png
+[//]: # ([product-screenshot]: https://raw.githubusercontent.com/FalconEthics/Ms-Paint-Lite/main/screenshot.png)
 
 [Bootstrap.com]: https://img.shields.io/badge/tailwind-563D7C?style=for-the-badge&logo=tailwindcss&logoColor=white
 
