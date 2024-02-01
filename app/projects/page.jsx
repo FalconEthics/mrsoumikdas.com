@@ -12,13 +12,13 @@ import {AiFillGithub} from "@react-icons/all-files/ai/AiFillGithub";
 import {FaGithubAlt} from "@react-icons/all-files/fa/FaGithubAlt";
 import {motion} from "framer-motion";
 import PageTrasition from "../components/PageTrasition";
-import {isMobile} from "react-device-detect";
 //Frameworks
 import react from "../assets/projects/Rectangle 29.webp";
 import motionImg from "../assets/projects/Rectangle 30.webp";
 import rn from "../assets/projects/Rectangle 31.webp";
 import expo from "../assets/projects/Rectangle 32.webp";
 import next from "../assets/projects/Rectangle 44.webp";
+import i18 from "../assets/projects/i18n.webp";
 //Tools
 import tailwind from "../assets/projects/Rectangle 33.webp";
 import git from "../assets/projects/Rectangle 34.webp";
@@ -85,9 +85,9 @@ const Projects = (ref) => {
      * @type {Object}
      */
     const skills = {
-        Frameworks: [next, react, motionImg, rn, expo],
+        Frameworks: [next, react, motionImg, rn, expo, i18],
         Tools: [tailwind, git, firebase, ad, seo, docker, vercel, linux],
-        Languages: [js, cplusplus, c, asm],
+        Languages: [js, c, asm],
     };
 
     /**
@@ -187,7 +187,7 @@ const Projects = (ref) => {
                                             placeholder="blur"
                                             quality={100}
                                             key={index}
-                                            className="w-16"
+                                            className="w-16 rounded-md"
                                             alt="Frameworks i know"
                                         />
                                     );
@@ -207,7 +207,7 @@ const Projects = (ref) => {
                                                 key={index}
                                                 placeholder="blur"
                                                 quality={100}
-                                                className="w-16"
+                                                className="w-16 rounded-md"
                                                 alt="Frameworks i know"
                                             />
                                         )
@@ -227,7 +227,7 @@ const Projects = (ref) => {
                                             key={index}
                                             placeholder="blur"
                                             quality={100}
-                                            className="w-16"
+                                            className="w-16 rounded-md"
                                             alt="Languages i know"
                                         />
                                     );
@@ -264,7 +264,7 @@ const Projects = (ref) => {
                                             key={index}
                                             placeholder="blur"
                                             quality={100}
-                                            className="md:w-10 lg:w-16"
+                                            className="md:w-10 lg:w-16 rounded-md"
                                             alt="Frameworks i know"
                                         />
                                     );
@@ -277,7 +277,7 @@ const Projects = (ref) => {
                                         <Image
                                             src={item}
                                             key={index}
-                                            className="md:w-10 lg:w-16"
+                                            className="md:w-10 lg:w-16 rounded-md"
                                             placeholder="blur"
                                             quality={100}
                                             alt="Tools i know"
@@ -294,7 +294,7 @@ const Projects = (ref) => {
                                             key={index}
                                             placeholder="blur"
                                             quality={100}
-                                            className="md:w-10 lg:w-16"
+                                            className="md:w-10 lg:w-16 rounded-md"
                                             alt="Languages i know"
                                         />
                                     );
