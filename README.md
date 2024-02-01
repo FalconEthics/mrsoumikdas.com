@@ -35,7 +35,7 @@
 
 <details>
   <summary>Table of Contents</summary>
-  <ol>
+  <ol> o
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
@@ -49,7 +49,16 @@
 </details>
 
 [![Product Name Screen Shot][product-screenshot]](https://mrsoumikdas.com)
-Initially a fiend of mine helped me 
+The initial design of my portfolio site was a collaborative effort with a friend, featuring an array of 3D designs and
+animations. The site was built using Next.js and million.js, with additional functionality provided by Framer Motion.
+However, upon sharing it with a colleague, I received feedback that the site was too resource-intensive, leading to slow
+load times on mobile devices.
+
+Taking this feedback into account, I decided to overhaul the site, focusing on optimizing performance without
+compromising on the design and animation elements. The result is the current version of the site. While it may not be
+the most graphically advanced portfolio you've ever seen, it is lightweight, fast, and effectively showcases my work and
+skills. This site is a testament to my ability to adapt and improve, making it not just a portfolio, but a reflection of
+my journey as a developer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -58,11 +67,11 @@ Initially a fiend of mine helped me
 Here are all the tools used in the build.
 
 * [![JS][Es6.com]][Es6-url] - JavaScript Framework
+* [![JS][Ref]][Ref-url] - Performance Profiler
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url] - CSS Library
-* [![Git][Git.com]][Git-url] - Deployment
+* [![Git][Git.com]][Git-url] - Animation Library
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Contributing
 
@@ -147,14 +156,18 @@ Distributed under the GNU License. See `LICENSE.txt` for more information.
 
 [product-screenshot]: https://raw.githubusercontent.com/FalconEthics/mrsoumikdas.com/main/screenshot.png
 
-[Bootstrap.com]: https://img.shields.io/badge/tailwind-563D7C?style=for-the-badge&logo=tailwindcss&logoColor=white
+[Bootstrap.com]: https://img.shields.io/badge/tailwind-62BAF3?style=for-the-badge&logo=tailwindcss&logoColor=white
 
 [Bootstrap-url]: https://tailwindcss.com/
 
-[Es6.com]: https://img.shields.io/badge/P5.js-7BDCB5?style=for-the-badge&logo=p5.js&logoColor=white
+[Es6.com]: https://img.shields.io/badge/Next_JS-black?style=for-the-badge&logo=Next.js&logoColor=white
 
-[Es6-url]: https://p5js.org/
+[Es6-url]: https://nextjs.org/
 
-[Git.com]: https://img.shields.io/badge/vercel-FF6900?style=for-the-badge&logo=vercel&logoColor=white
+[Ref]: https://img.shields.io/badge/Million_js-black?style=for-the-badge&logo=preact&logoColor=purple
 
-[Git-url]: https://vercel.com/
+[Ref-url]: https://million.dev/
+
+[Git.com]: https://img.shields.io/badge/Framer_Motion-white?style=for-the-badge&logo=Framer&logoColor=black
+
+[Git-url]: https://www.framer.com/motion/
