@@ -106,13 +106,10 @@ export default function Contact({ showModal, setShowModal }) {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      window.open(
-                        "https://twitter.com/Mr_Soumik_Das",
-                        "_blank"
-                      );
+                      window.open("https://discord.gg/qkcm8qGP8b", "_blank");
                     }}
                   >
-                    <AiFillInstagram className="hover:text-4xl lg:hover:text-5xl" />
+                    <FaDiscord className="hover:text-4xl lg:hover:text-5xl" />
                   </button>
                   <button
                     onClick={(e) => {
@@ -123,7 +120,7 @@ export default function Contact({ showModal, setShowModal }) {
                       );
                     }}
                   >
-                    <FaDiscord className="hover:text-4xl lg:hover:text-5xl" />
+                    <AiFillInstagram className="hover:text-4xl lg:hover:text-5xl" />
                   </button>
                 </div>
               </div>
