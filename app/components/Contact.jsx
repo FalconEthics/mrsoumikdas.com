@@ -117,14 +117,6 @@ export default function Contact({ showModal, setShowModal }) {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      window.open("https://discord.gg/qkcm8qGP8b", "_blank");
-                    }}
-                  >
-                    <AiFillTwitterCircle className="hover:text-4xl lg:hover:text-5xl" />
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
                       window.open(
                         "https://www.instagram.com/itz.raaj.das/",
                         "_blank"
