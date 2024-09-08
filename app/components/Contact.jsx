@@ -115,7 +115,7 @@ export default function Contact({ showModal, setShowModal }) {
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(
-                        "https://www.instagram.com/itz.raaj.das/",
+                        "https://www.instagram.com/account.soumik.das/",
                         "_blank"
                       );
                     }}
