@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import PageTrasition from "../components/PageTrasition";
 import { isMobile } from "react-device-detect";
 //images
+import technorishi from "../assets/about/technorishi.webp";
 import tripsy from "../assets/about/tripsy.webp";
 import traceworks from "../assets/about/traceworks.webp";
 import ngl from "../assets/about/ngl.webp";
@@ -108,21 +109,31 @@ export default function About(ref) {
    */
   const work = [
     {
-      img: tripsy,
-      title: "React Native, ",
-      role: "Developer",
-      time: "Tripsy Games - present",
-      desc: "Currently working as a react-native web developer at TripsyGames (formerly known as Wisedeck Technologies)",
+      img: technorishi,
+      title: "Cross-platform, ",
+      role: "App Developer",
+      time: "Technorishi : Present",
+      desc: "Currently I am working as a Cross-platform App Developer at Technorishi, a consultancy firm based in Bangalore, India.",
       summary:
-        "I work closely with a team of developers, designers, and project managers to ensure timely delivery of projects and high-quality outputs. I am responsible for developing and maintaining the front-end of both web and android applications, as well as implementing new features and functionalities.",
+        "I am responsible for developing cross-platform apps for Android, IOS, PC & etc.. I have developed several apps for clients and have also been working on a few  internel tools that wil enable them to expand their services across multiple platforms and devices",
+      url: "http://technorishi.co.in/",
+    },
+    {
+      img: tripsy,
+      title: "Full-stack, ",
+      role: "Developer",
+      time: "Tripsy Games : 2023-24",
+      desc: "I joined TripsyGames (formerly known as Wisedeck Technologies) in 2023 to expand their infrastructure to support a bigger userbase",
+      summary:
+        "I played a key role in a project with over 20,000 active users, resolving nearly 70% of the frontend bugs related to functionality and performance. To enhance SEO and improve Web Vitals scores, I rewrote the entire web application using vanilla JavaScript and CSS, achieving a score of 90+ on critical landing pages. Additionally, I designed and implemented the complete administration infrastructure, including the Operations Configuration Portal, within just two months.",
       url: "https://tripsygames.com",
     },
     {
       img: traceworks,
       title: "Front-end, ",
       role: "Developer",
-      time: "Trace-works - 2022",
-      desc: "I joined Traceworks as an intern last year to start my cs journey and gain some experience in web dev. domain",
+      time: "Trace-works : 2022-23",
+      desc: "I joined Traceworks in 2022 as an intern to start my cs journey and gain some experience in web dev. domain",
       summary:
         "I primarily worked there with React & Firebase there and got to learn from some great industry experts. Overall i gained a lot of experience there but unfortunately had to leave after a few months for some uncertain reasons.",
       url: "https://traceworks.in",
@@ -131,7 +142,7 @@ export default function About(ref) {
       img: ngl,
       title: "Cc & Creatives ",
       role: "Team Lead",
-      time: "NGL INDIA - 2021",
+      time: "NGL INDIA : 2021-22",
       desc: "I joined NGL INDIA (branch of ngl.one Germany) in 2021 as a Video Editor/VFX artist there at first but later on I was promoted to Handle all the Creatives and Content Creation operations. In easy words I was responsible for all the uploads going live on their Social handles and YouTube Channel.",
       summary:
         "Only within the first two months of my joining I made NGL India reach 8k+ online audience in total.",
