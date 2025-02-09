@@ -2,6 +2,7 @@ import "./globals.css";
 import { Space_Grotesk } from "next/font/google";
 import UserContextProvider from "./store/UserContext";
 import Nav from "./components/Nav";
+import { Analytics } from "@vercel/analytics/react";
 
 // Define font subset and display type
 const inter = Space_Grotesk({ subsets: ["latin"], display: "swap" });
@@ -85,6 +86,7 @@ export default function RootLayout({ children }) {
         <UserContextProvider>
           <Nav />
           {children}
+          <Analytics />
         </UserContextProvider>
       </body>
     </html>
