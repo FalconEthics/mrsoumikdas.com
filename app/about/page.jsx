@@ -17,6 +17,7 @@ import technorishi from "../assets/about/technorishi.webp";
 import tripsy from "../assets/about/tripsy.webp";
 import traceworks from "../assets/about/traceworks.webp";
 import ngl from "../assets/about/ngl.webp";
+import priti from "../assets/about/priti.webp";
 import cit from "../assets/about/cit.webp";
 import uol from "../assets/about/uol.webp";
 //certificates
@@ -125,7 +126,7 @@ export default function About(ref) {
       time: "Tripsy Games : 2023-24",
       desc: "I joined TripsyGames (formerly known as Wisedeck Technologies) in 2023 to expand their infrastructure to support a bigger userbase",
       summary:
-        "I played a key role in a project with over 20,000 active users, resolving nearly 70% of the frontend bugs related to functionality and performance. To enhance SEO and improve Web Vitals scores, I rewrote the entire web application using vanilla JavaScript and CSS, achieving a score of 90+ on critical landing pages. Additionally, I designed and implemented the complete administration infrastructure, including the Operations Configuration Portal, within just two months.",
+        "I played a key role in a project with over 20,000 active users, resolving nearly 70% of the frontend bugs related to functionality and performance. To enhance SEO and improve Web Vitals scores, I rewrote the entire web application using vanilla JavaScript and CSS, achieving a score of 90+ on critical landing pages. Additionally, I designed and implemented the complete administration infrastructure, including the Operations Configuration Portal, within just two months that capable of handling the suddent growth of the app's userbase.",
       url: "https://tripsygames.com",
     },
     {
@@ -135,7 +136,7 @@ export default function About(ref) {
       time: "Trace-works : 2022-23",
       desc: "I joined Traceworks in 2022 as an intern to start my cs journey and gain some experience in web dev. domain",
       summary:
-        "I primarily worked there with React & Firebase there and got to learn from some great industry experts. Overall i gained a lot of experience there but unfortunately had to leave after a few months for some uncertain reasons.",
+        "I primarily worked there with React & Firebase there and got to learn from some great industry experts. Overall i gained a lot of experience and was part of a very passionate and dedicated team of web and app developers and during my tenure there worked with many renowned international clients like Nectar Dating, SOUL Radio and many more. but unfortunately had to leave after a few months for some uncertain reasons.",
       url: "https://traceworks.in",
     },
     {
@@ -148,6 +149,15 @@ export default function About(ref) {
         "Only within the first two months of my joining I made NGL India reach 8k+ online audience in total.",
       url: "https://ngl.one",
     },
+    {
+      img: priti,
+      title: "Technical, ",
+      role: "Support Associate",
+      time: "M/s Priti Upahar : 2019-21",
+      desc: "I started my career as a Technical Support Associate at M/s Priti Upahar, a local business in my hometown.",
+      summary:
+        "I was responsible for handling all the technical issues and queries of the customers and also for the maintenance of the company's website and social media handles.",
+    }
   ];
 
   /**
@@ -159,7 +169,7 @@ export default function About(ref) {
       course: "University of London, ",
       uni: "Goldsmiths",
       time: "BSc in Computer Science - present",
-      desc: "I am doing my B.Sc in Computer Science Engineering from Goldsmiths University of London, UK with Artificial Intelligence as my Honorary Subject/Specialization.",
+      desc: "I am doing my B.Sc in Computer Science Engineering from Goldsmiths University of London, UK in Hybrid Learning Module with Artificial Intelligence as my Honorary Subject/Specialization.",
       url: "https://www.london.ac.uk/",
     },
     {
@@ -167,7 +177,7 @@ export default function About(ref) {
       course: "Central Institute of ",
       uni: "Technology",
       time: "Diploma in CSE - 2019 to 2022",
-      desc: "I did my Diploma in Computer Science Engineering from Central Institute of Technology, Kokrajhar, Assam, India with a CGPA of 7.6 in 2022.",
+      desc: "I did my Diploma in Computer Science Engineering from Central Institute of Technology, Kokrajhar, India with Specialization in Web Development and a CGPA of 7.6 in 2022.",
       url: "https://cit.ac.in/",
     },
   ];
@@ -239,7 +249,7 @@ export default function About(ref) {
                     initial={index % 2 ? slide : slideIn}
                     whileInView={slideOut}
                     viewport={{ once: true, threshold: 0.5 }}
-                    className="flex flex-col text-sm lg:text-base break-word space-y-1 break-all md:w-96 lg:w-[450px]"
+                    className="flex flex-col text-sm lg:text-base break-word space-y-1 md:w-96 lg:w-[450px]"
                   >
                     <div className="">
                       <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 text-center inline">
@@ -269,6 +279,12 @@ export default function About(ref) {
               src={connector}
               alt="connector1"
               className={`hidden lg:block absolute scale-[80%] top-[8%] left-[30%] z-10`}
+            />
+            <Image
+              quality={100}
+              src={connector}
+              alt="connector2"
+              className={`hidden lg:block absolute scale-[80%] top-[43%] left-[30%] z-10`}
             />
             <Image
               src={Line}
