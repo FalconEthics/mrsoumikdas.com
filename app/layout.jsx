@@ -27,7 +27,7 @@ const inter = Space_Grotesk({ subsets: ["latin"], display: "swap" });
  * @type {Metadata}
  */
 export const metadata = {
-  title: "Soumik Das | Frontend Web Developer",
+  title: "Soumik Das | Cross-Platform App Developer",
   description:
     "I love to get beautiful and interactive designs get into life, with proficiency in front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
   keywords: [
@@ -63,9 +63,9 @@ export const metadata = {
   },
   robots: "INDEX, FOLLOW",
   openGraph: {
-    title: "Soumik Das | Frontend Web Developer",
+    title: "Soumik Das | Cross-Platform Web Developer",
     description:
-      "I love to get beautiful and interactive designs get into life, with proficiency in front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
+      "I love to get beautiful and interactive designs get into life, with proficiency in cross-platform front end frameworks and tools like: React/React Native, Next.js, Tailwind Css, Framer Motion and etc. I am very passionate about what i do and so have keen interest in learning new and trending technologies, be that a framework or a tool!",
     url: "https://mrsoumikdas.com/",
     siteName: "Soumik's Portfolio Site",
     locale: "en_US",

@@ -121,8 +121,8 @@ export default function About(ref) {
     },
     {
       img: tripsy,
-      title: "Full-stack, ",
-      role: "Developer",
+      title: "Cross-platform, ",
+      role: "App Developer",
       time: "Tripsy Games : 2023-24",
       desc: "I joined TripsyGames (formerly known as Wisedeck Technologies) in 2023 to expand their infrastructure to support a bigger userbase",
       summary:
@@ -131,8 +131,8 @@ export default function About(ref) {
     },
     {
       img: traceworks,
-      title: "Front-end, ",
-      role: "Developer",
+      title: "Cross-platform, ",
+      role: "App Developer",
       time: "Trace-works : 2022-23",
       desc: "I joined Traceworks in 2022 as an intern to start my cs journey and gain some experience in web dev. domain",
       summary:

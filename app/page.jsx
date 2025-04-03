@@ -229,14 +229,14 @@ export default function Home(ref) {
               </motion.div>
               <div className="break-words md:w-2/3 lg:w-1/2 md:pr-8">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold inline pr-2">
-                  I'm a Front-end Developer, based in
+                  I'm a Cross-Platform App Developer, based in
                 </h2>
                 <p className="text-2xl md:text-3xl lg:text-4xl font-bold inline text-transparent bg-clip-text bg-gradient-to-r from-main to-secondary">
                   INDIA
                 </p>
                 <p className="pt-2 text-dim md:text-lg ">
                   I love to get beautiful and interactive designs get into life,
-                  with proficiency in front end frameworks and tools like:
+                  with proficiency in cross-platform front end frameworks and tools like:
                   React/React Native, Next.js, Tailwind Css, Framer Motion and
                   etc. I am very passionate about what i do and so have keen
                   interest in learning new and trending technologies, be that a
