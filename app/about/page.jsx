@@ -121,8 +121,8 @@ export default function About(ref) {
     },
     {
       img: tripsy,
-      title: "Cross-platform, ",
-      role: "App Developer",
+      title: "App ",
+      role: "Developer",
       time: "Tripsy Games : 2023-24",
       desc: "I joined TripsyGames (formerly known as Wisedeck Technologies) in 2023 to expand their infrastructure to support a bigger userbase",
       summary:
@@ -131,8 +131,8 @@ export default function About(ref) {
     },
     {
       img: traceworks,
-      title: "Cross-platform, ",
-      role: "App Developer",
+      title: "Front-end, ",
+      role: "Developer",
       time: "Trace-works : 2022-23",
       desc: "I joined Traceworks in 2022 as an intern to start my cs journey and gain some experience in web dev. domain",
       summary:
@@ -284,7 +284,7 @@ export default function About(ref) {
               quality={100}
               src={connector}
               alt="connector2"
-              className={`hidden lg:block absolute scale-[80%] top-[43%] left-[30%] z-10`}
+              className={`hidden lg:block absolute scale-[80%] top-[43.4%] left-[30%] z-10`}
             />
             <Image
               src={Line}
